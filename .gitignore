@@ -18,13 +18,13 @@ venv/
 # ---------- 数据集本体（约 1.87 GB，默认不随 git 提交） ----------
 # 只保留 README / manifest / 汇总与审计 JSON；图像文件按扩展名忽略。
 # 如课程要求随仓库提交整份数据，注释掉下面 6 行即可（注意 GitHub 100 MB 限制）。
-Images/**/*.JPEG
-Images/**/*.jpg
-Images/**/*.jpeg
-Images/**/*.PNG
-Images/**/*.png
-Images/**/*.webp
-!Images/preview_contact_sheet.png
+# Images/**/*.JPEG
+# Images/**/*.jpg
+# Images/**/*.jpeg
+# Images/**/*.PNG
+# Images/**/*.png
+# Images/**/*.webp
+# !Images/preview_contact_sheet.png
 
 # ---------- 数据缓存与中间产物（约 15.5 GB） ----------
 tools/dataset/cache/
