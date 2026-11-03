@@ -1,0 +1,5 @@
+# The dataset builder needs pyarrow (+ numpy / pillow which ship with the DSH runtime).
+# pyarrow 26.0.1 installed by unzipping the cp312 win_amd64 wheel into <repo>/.pydeps
+pyarrow==26.0.1
+numpy
+pillow

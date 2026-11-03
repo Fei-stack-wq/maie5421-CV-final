@@ -1,0 +1,122 @@
+{
+  "by_generator": [
+    {
+      "generator": "real",
+      "n": 6000,
+      "format": [
+        "JPEG"
+      ],
+      "w_min": 38,
+      "w_med": 500,
+      "w_max": 3648,
+      "h_min": 38,
+      "h_med": 375,
+      "h_max": 3485,
+      "bytes_mean_kb": 111.8
+    },
+    {
+      "generator": "BigGAN",
+      "n": 2250,
+      "format": [
+        "PNG"
+      ],
+      "w_min": 128,
+      "w_med": 128,
+      "w_max": 128,
+      "h_min": 128,
+      "h_med": 128,
+      "h_max": 128,
+      "bytes_mean_kb": 28.9
+    },
+    {
+      "generator": "stable_diffusion_v_1_4",
+      "n": 2250,
+      "format": [
+        "PNG"
+      ],
+      "w_min": 512,
+      "w_med": 512,
+      "w_max": 512,
+      "h_min": 512,
+      "h_med": 512,
+      "h_max": 512,
+      "bytes_mean_kb": 448.0
+    },
+    {
+      "generator": "ADM",
+      "n": 750,
+      "format": [
+        "PNG"
+      ],
+      "w_min": 256,
+      "w_med": 256,
+      "w_max": 256,
+      "h_min": 256,
+      "h_med": 256,
+      "h_max": 256,
+      "bytes_mean_kb": 116.4
+    },
+    {
+      "generator": "GLIDE",
+      "n": 750,
+      "format": [
+        "PNG"
+      ],
+      "w_min": 256,
+      "w_med": 256,
+      "w_max": 256,
+      "h_min": 256,
+      "h_med": 256,
+      "h_max": 256,
+      "bytes_mean_kb": 76.5
+    }
+  ],
+  "by_split": [
+    {
+      "split": "train",
+      "n": 6000,
+      "classes": 1000,
+      "per_class_min": 5,
+      "per_class_max": 7,
+      "real": 3000,
+      "fake": 3000
+    },
+    {
+      "split": "val",
+      "n": 1500,
+      "classes": 375,
+      "per_class_min": 4,
+      "per_class_max": 4,
+      "real": 750,
+      "fake": 750
+    },
+    {
+      "split": "test_seen",
+      "n": 1500,
+      "classes": 375,
+      "per_class_min": 4,
+      "per_class_max": 4,
+      "real": 750,
+      "fake": 750
+    },
+    {
+      "split": "test_unseen_ADM",
+      "n": 1500,
+      "classes": 750,
+      "per_class_min": 2,
+      "per_class_max": 2,
+      "real": 750,
+      "fake": 750
+    },
+    {
+      "split": "test_unseen_GLIDE",
+      "n": 1500,
+      "classes": 750,
+      "per_class_min": 2,
+      "per_class_max": 2,
+      "real": 750,
+      "fake": 750
+    }
+  ],
+  "total_bytes_mb": 1934.0
+}
