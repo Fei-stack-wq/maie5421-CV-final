@@ -1,60 +1,42 @@
-# WANG Yitian 工作计划与交接记录
+# WANG Yitian 工作进度
 
-更新日期：2026-11-05。当前阶段：初始化完成，算法实现与联调待开始。
+2026-11-05 · 第 1 天
 
-职责和相对日程以《AI生成图像检测_五人两周工作安排》为准，proposal 仅作为技术参考。第 1 天以全组实际开工日为准，尚未确认绝对日期。仓库 README 的六周安排不用于本记录。
+我负责一致性损失、C 配置和 C 的两个模型，以及六次训练的排期和运行记录。时间安排按《AI生成图像检测_五人两周工作安排》执行。
 
-## 本人交付与进度
+## 今天完成
 
-| 编号 | 工作 | 验收证据 | 计划 | 状态 |
-| --- | --- | --- | --- | --- |
-| W00 | 阅读分工、核查仓库、建立计划与运行台账 | 本文件与 six-run-ledger.csv | 开工准备 | 已完成 |
-| W01 | 实现 Bernoulli Jensen–Shannon 一致性损失 | 相等输入零散度、对称性、极端值稳定、双分支梯度、lambda=0 等价性检查 | 第 1–2 天 | 下一步 |
-| W02 | 统一 A/B/C 配置草案、共享种子与 GPU 排期 | 与 TONG/OUYANG 确认的字段、配置版本和资源窗口 | 第 1–2 天 | 待接口确认 |
-| W03 | C 接入、完整试跑与实验控制核查 | 数据→训练→保存→恢复→预测日志；B/C 批次、视图与更新预算对齐；实测耗时 | 第 3 天 | 等待上游接口 |
-| W04 | C 两个种子训练并统筹六次运行 | 六个运行记录；本人两个 best checkpoint、配置、逐 epoch 日志 | 第 4–7 天 | 未开始 |
-| W05 | 方法、公式与消融说明 | 方法章节、A/B 与 B/C 受控因素说明；效果分析引用正式评估 | 第 8–12 天 | 未开始 |
-| W06 | 模型配置复核与展示 | 与 TONG 对账、复核记录、本人约 1.5 分钟展示内容 | 第 13–14 天 | 未开始 |
+一致性损失已实现，代码见 [src/losses](../src/losses/)，提交 [16be274](https://github.com/Fei-stack-wq/maie5421-CV-final/commit/16be27498bd7beb2653528048ce40dc727c38c69)。
 
-下一项可独立完成的是 W01，无需等待真实图片或训练入口。当前未运行任何正式训练、未产出 checkpoint 或指标。
+- `bernoulli_js_divergence`：计算原图与变换图预测之间的 Bernoulli JS 散度，两路都保留梯度。
+- `paired_view_loss`：两路 BCE 取平均，再加一致性项；`consistency_weight=0` 对应 B，`1` 对应 C。
+- 13 项测试通过，包括公式对照、零散度、对称性、梯度检查、极端数值和 CUDA 混合精度。测试使用模拟输入，尚未进行真实数据联调或正式训练。
 
-## 技术初始约定与待定字段
+复查命令：
 
-- A：clean 单视图 BCE；B：clean 与 T(x) 的 BCE 平均；C：B + lambda × Bernoulli JS，lambda 初值为 1。JS 使用两类 Bernoulli 分布与自然对数。
-- 公共设置：ImageNet 预训练 ResNet-18，224×224 RGB，仅训练最后残差块与分类头，更早层及其归一化统计冻结。
-- proposal 初始参数：AdamW、lr=1e-4、有效 batch=16、混合精度、最多 8 epoch、验证 AUC 早停 patience=2。试跑后共同固定，不提前声称已经冻结。
-- 种子草案为 5421、2026，每个种子执行 A/B/C；需全组确认。它们是训练种子，不替代 manifest 中已有的数据抽样种子。
-- B/C 对齐 batch 顺序、成对视图和更新预算；同 seed 本身不足以保证一致，需要约定 sampler、worker、变换 RNG 与恢复状态。
-- AI=1，阈值固定 0.5。只用 val 选 checkpoint；测试集不得参与调参、早停或阈值选择。
-- 真实读取字段是 `split`、`rel_path`、`label`、`image_id`，路径相对 `Images/`。不用 ImageFolder 把 split 误作类别。
-- 待确认：loader 返回结构、单 logit/双 logit、AMP dtype、预处理和训练变换参数、microbatch/梯度累积、checkpoint/RNG 恢复字段、环境与 GPU 窗口。
+```bash
+python -m unittest discover -s tests -p test_consistency.py -v
+```
 
-## 协作依赖
+六次训练的记录表已建好，见 [six-run-ledger.csv](six-run-ledger.csv)。目前均未开始；表中的 5421、2026 和执行顺序尚未共同确认。
 
-这里的“待交接”表示本次仓库核查中未见交付，不代表成员线下未开展工作。
+## 接入方式
 
-| 提供方 | 需要的内容 | 时间与影响 |
-| --- | --- | --- |
-| TONG Shaojun | 训练入口、模型输出、冻结策略、checkpoint 保存恢复接口、pilot 耗时 | 第 1 天先约定接口，第 3 天完成 C 联调；A/B 四次正式训练由 TONG 负责 |
-| OUYANG Di | manifest loader、预处理、成对视图、变换随机性、数据 QA 与感知近重复记录 | 第 3 天联调前交付并固定数据/变换版本；正式训练门槛 |
-| 全组 / GPU 持有者 | 实际开工日、共享种子确认、GPU 型号与可用窗口 | 确认后才能把相对日程转成具体排期 |
-| ZHANG Yiming | 六个模型的独立正式评估与关键差异区间 | 第 8–10 天交付，用于消融效果分析；当前不阻塞 W01 |
-| ZHUO Mianjun | 模型加载复现和独立复核 | 最终 checkpoint 交接后配合 |
+损失函数接收原图和变换图的原始 AI logit，形状为 `(N,)` 或 `(N, 1)`；标签为 `0=real, 1=AI`，两路样本顺序要一致。
 
-## 六次训练台账规则
+```python
+from src.losses import paired_view_loss
 
-见 [six-run-ledger.csv](six-run-ledger.csv)。顺序草案为种子 5421 的 A→B→C，再执行种子 2026 的 A→B→C，先完成第一组比较；实际顺序以共享 GPU 排期为准。协调者为 WANG，A/B 执行者为 TONG，C 执行者为 WANG。
+loss = paired_view_loss(logits, view_logits, labels, consistency_weight=1.0)
+loss.backward()
+```
 
-台账当前六行均为 `planned`；`seed_status=proposed`。未实测字段留空，不填造估算耗时或路径。第 3 天用 pilot 估算剩余 GPU 总时长，加入可用窗口和重跑余量；若第 7 天无法完成，当天调整资源。
+如果模型输出 `[real, AI]` 两个 logit，先取 `output[:, 1] - output[:, 0]`。公式和完整接口说明见 [损失模块说明](../src/losses/README.md)。
 
-启动正式训练前必须通过：完整数据与 fixture 可访问、数据 QA 与近重复检查完成、训练/变换设置固定、C 试跑及恢复通过、B/C 受控因素核查通过、两个种子与 GPU 排期确认。
+## 接下来需要对齐
 
-每次运行记录代码提交 SHA、manifest SHA256、配置路径及 SHA256、GPU、起止时间、耗时、checkpoint 与日志位置、最佳 epoch/val AUC。失败保留原记录，新建 attempt，不覆盖失败历史。模型只按验证集选择。大的 checkpoint 与完整日志按仓库已有忽略规则在外部交付，台账保留可追溯路径。
+- **TONG**：确认模型输出和训练入口的配置字段，把损失接入训练；对齐有效 batch、梯度累积、checkpoint 和随机状态恢复方式。
+- **OUYANG**：确认 loader 的双视图与标签返回方式，以及变换参数和随机性控制，让 B/C 使用相同批次与视图。
+- **训练安排**：共同确定两个种子和 GPU 可用时间。第 3 天试跑后按实测耗时排六次训练；C 的两次由我负责，A/B 的四次由 TONG 负责。
 
-## 本次仓库核查
-
-- 基线提交：`e7db18d0657865d5f344632534a3248cb49a6355`。
-- 已有数据脚本、manifest、fixture 清单、审计与 dataset card；未见训练、损失与评估代码。
-- 仓库历史验证报告记录 `ok=true`；本次仅做清单核查，不将其当成本机图像解码/哈希复验。
-- 实际 Git 树追踪了 12,100 张数据/fixture 图片，另有一张预览图；`.gitignore` 的图片排除条目被注释。这与 README“图片不入库”的描述存在差异。初始化采用稀疏检出，只获取文本，未改动已追踪数据。后续应与数据维护者核对交付方式，本地图片尚未就绪。
-- 尚未取得 GPU 排期和接口确认，正式训练未开始。后续完成事项需附提交或运行证据，不能仅更新状态。
+下一步完成 A/B/C 配置和 C 联调。按分工，第 3 天通过完整试跑，第 7 天前交付两个 C 模型和六次运行记录，第 8–12 天完成一致性方法与消融分析。正式 checkpoint 只按验证集 AUC 选择，推理阈值固定 0.5。
