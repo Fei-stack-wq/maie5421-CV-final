@@ -1,0 +1,62 @@
+test_condition_c_adds_weighted_js (test_consistency.ConsistencyLossTests.test_condition_c_adds_weighted_js) ... ok
+test_cpu_cuda_agree (test_consistency.ConsistencyLossTests.test_cpu_cuda_agree) ... skipped 'CUDA unavailable'
+test_cpu_extreme_logits (test_consistency.ConsistencyLossTests.test_cpu_extreme_logits) ... ok
+test_cuda_mixed_precision (test_consistency.ConsistencyLossTests.test_cuda_mixed_precision) ... skipped 'CUDA unavailable'
+test_finite_difference_gradients (test_consistency.ConsistencyLossTests.test_finite_difference_gradients) ... ok
+test_identical_views_have_zero_js (test_consistency.ConsistencyLossTests.test_identical_views_have_zero_js) ... ok
+test_js_backpropagates_through_both_views (test_consistency.ConsistencyLossTests.test_js_backpropagates_through_both_views) ... ok
+test_matches_probability_reference (test_consistency.ConsistencyLossTests.test_matches_probability_reference) ... ok
+test_opposite_confident_predictions_reach_log_two (test_consistency.ConsistencyLossTests.test_opposite_confident_predictions_reach_log_two) ... ok
+test_reductions_and_column_vectors (test_consistency.ConsistencyLossTests.test_reductions_and_column_vectors) ... ok
+test_rejects_invalid_inputs (test_consistency.ConsistencyLossTests.test_rejects_invalid_inputs) ... ok
+test_symmetry_and_bounds (test_consistency.ConsistencyLossTests.test_symmetry_and_bounds) ... ok
+test_weight_zero_is_condition_b_including_gradients (test_consistency.ConsistencyLossTests.test_weight_zero_is_condition_b_including_gradients) ... ok
+test_auc_matches_independent_pairwise_definition (test_tong_extended_validation.TrainingGuardTests.test_auc_matches_independent_pairwise_definition) ... ok
+test_patience_stops_after_two_non_improvements_and_rejects_resume (test_tong_extended_validation.TrainingGuardTests.test_patience_stops_after_two_non_improvements_and_rejects_resume) ... {"epoch": 0, "train_loss": 0.9058824380238851, "optimizer_steps": 1, "amp_skipped_steps": 0, "train_images": 6, "val_loss": 0.9501134753227234, "val_auc": 0.25, "val_accuracy": 0.5, "val_images": 4, "seconds": 0.025380056999892986, "is_best": true, "bad_epochs": 0}
+{"epoch": 1, "train_loss": 0.9057523608207703, "optimizer_steps": 1, "amp_skipped_steps": 0, "train_images": 6, "val_loss": 0.9499503970146179, "val_auc": 0.25, "val_accuracy": 0.5, "val_images": 4, "seconds": 0.020904871000311687, "is_best": false, "bad_epochs": 1}
+{"epoch": 2, "train_loss": 0.9056223233540853, "optimizer_steps": 1, "amp_skipped_steps": 0, "train_images": 6, "val_loss": 0.9497871398925781, "val_auc": 0.25, "val_accuracy": 0.5, "val_images": 4, "seconds": 0.026559975000054692, "is_best": false, "bad_epochs": 2}
+ok
+test_unavailable_cuda_is_reported_before_data_or_weight_loading (test_tong_extended_validation.TrainingGuardTests.test_unavailable_cuda_is_reported_before_data_or_weight_loading) ... ok
+test_formal_rejects_limits_and_random_init (test_tong_training.ConfigTests.test_formal_rejects_limits_and_random_init) ... ok
+test_formal_requires_protocol_and_factory (test_tong_training.ConfigTests.test_formal_requires_protocol_and_factory) ... ok
+test_invalid_numeric_settings (test_tong_training.ConfigTests.test_invalid_numeric_settings) ... ok
+test_unknown_config_field (test_tong_training.ConfigTests.test_unknown_config_field) ... ok
+test_declared_hash_verification_and_required_hashes (test_tong_training.DataTests.test_declared_hash_verification_and_required_hashes) ... ok
+test_duplicate_id_rejected (test_tong_training.DataTests.test_duplicate_id_rejected) ... ok
+test_factory_requires_canonical_order (test_tong_training.DataTests.test_factory_requires_canonical_order) ... ok
+test_factory_rng_does_not_change_initialization (test_tong_training.DataTests.test_factory_rng_does_not_change_initialization) ... {"epoch": 0, "train_loss": 0.9058824380238851, "optimizer_steps": 1, "amp_skipped_steps": 0, "train_images": 6, "val_loss": 0.9501134753227234, "val_auc": 0.25, "val_accuracy": 0.5, "val_images": 4, "seconds": 0.024189662999560824, "is_best": true, "bad_epochs": 0}
+{"epoch": 0, "train_loss": 0.9058824380238851, "optimizer_steps": 1, "amp_skipped_steps": 0, "train_images": 6, "val_loss": 0.9501134753227234, "val_auc": 0.25, "val_accuracy": 0.5, "val_images": 4, "seconds": 0.026762978000078874, "is_best": true, "bad_epochs": 0}
+ok
+test_factory_sample_schema_and_labels_are_checked (test_tong_training.DataTests.test_factory_sample_schema_and_labels_are_checked) ... ok
+test_hash_leakage_rejected (test_tong_training.DataTests.test_hash_leakage_rejected) ... ok
+test_heldout_generator_rejected (test_tong_training.DataTests.test_heldout_generator_rejected) ... ok
+test_manifest_train_val (test_tong_training.DataTests.test_manifest_train_val) ... ok
+test_paired_views_ignore_global_rng (test_tong_training.DataTests.test_paired_views_ignore_global_rng) ... ok
+test_path_escape_rejected (test_tong_training.DataTests.test_path_escape_rejected) ... ok
+test_subset_is_balanced_and_deterministic (test_tong_training.DataTests.test_subset_is_balanced_and_deterministic) ... ok
+test_accumulation_matches_large_batch_including_remainder (test_tong_training.EngineTests.test_accumulation_matches_large_batch_including_remainder) ... ok
+test_auc_preserves_saturated_logit_order (test_tong_training.EngineTests.test_auc_preserves_saturated_logit_order) ... ok
+test_auc_ties_and_order (test_tong_training.EngineTests.test_auc_ties_and_order) ... ok
+test_b_is_mean_of_two_bces_and_c_zero_matches (test_tong_training.EngineTests.test_b_is_mean_of_two_bces_and_c_zero_matches) ... ok
+test_rng_round_trip (test_tong_training.EngineTests.test_rng_round_trip) ... ok
+test_scaler_overflow_skips_and_reduces_scale (test_tong_training.EngineTests.test_scaler_overflow_skips_and_reduces_scale) ... ok
+test_validation_uses_clean_images (test_tong_training.EngineTests.test_validation_uses_clean_images) ... ok
+test_checkpoint_load_has_no_download_and_same_predictions (test_tong_training.ModelTests.test_checkpoint_load_has_no_download_and_same_predictions) ... ok
+test_freeze_batchnorm_and_gradient_policy (test_tong_training.ModelTests.test_freeze_batchnorm_and_gradient_policy) ... ok
+test_predict_requires_eval (test_tong_training.ModelTests.test_predict_requires_eval) ... ok
+test_changed_resume_config_rejected (test_tong_training.ResumeTests.test_changed_resume_config_rejected) ... {"epoch": 0, "train_loss": 0.9058824380238851, "optimizer_steps": 1, "amp_skipped_steps": 0, "train_images": 6, "val_loss": 0.9501134753227234, "val_auc": 0.25, "val_accuracy": 0.5, "val_images": 4, "seconds": 0.020123551999859046, "is_best": true, "bad_epochs": 0}
+ok
+test_epoch_boundary_resume_matches_uninterrupted_run (test_tong_training.ResumeTests.test_epoch_boundary_resume_matches_uninterrupted_run) ... {"epoch": 0, "train_loss": 0.9058611690998077, "optimizer_steps": 2, "amp_skipped_steps": 0, "train_images": 6, "val_loss": 0.9499709010124207, "val_auc": 0.25, "val_accuracy": 0.5, "val_images": 4, "seconds": 0.020977201000278, "is_best": true, "bad_epochs": 0}
+{"epoch": 1, "train_loss": 0.9055992960929871, "optimizer_steps": 2, "amp_skipped_steps": 0, "train_images": 6, "val_loss": 0.9496665000915527, "val_auc": 0.25, "val_accuracy": 0.5, "val_images": 4, "seconds": 0.01724831899991841, "is_best": false, "bad_epochs": 1}
+{"epoch": 0, "train_loss": 0.9058611690998077, "optimizer_steps": 2, "amp_skipped_steps": 0, "train_images": 6, "val_loss": 0.9499709010124207, "val_auc": 0.25, "val_accuracy": 0.5, "val_images": 4, "seconds": 0.026707310000347206, "is_best": true, "bad_epochs": 0}
+{"epoch": 1, "train_loss": 0.9055992960929871, "optimizer_steps": 2, "amp_skipped_steps": 0, "train_images": 6, "val_loss": 0.9496665000915527, "val_auc": 0.25, "val_accuracy": 0.5, "val_images": 4, "seconds": 0.017579707000550115, "is_best": false, "bad_epochs": 1}
+ok
+test_existing_output_never_overwritten (test_tong_training.ResumeTests.test_existing_output_never_overwritten) ... ok
+test_resume_recovers_best_file_ahead_of_committed_last (test_tong_training.ResumeTests.test_resume_recovers_best_file_ahead_of_committed_last) ... {"epoch": 0, "train_loss": 0.9058824380238851, "optimizer_steps": 1, "amp_skipped_steps": 0, "train_images": 6, "val_loss": 0.9501134753227234, "val_auc": 0.25, "val_accuracy": 0.5, "val_images": 4, "seconds": 0.021430722999866703, "is_best": true, "bad_epochs": 0}
+{"epoch": 1, "train_loss": 0.9057523608207703, "optimizer_steps": 1, "amp_skipped_steps": 0, "train_images": 6, "val_loss": 0.9499503970146179, "val_auc": 0.25, "val_accuracy": 0.5, "val_images": 4, "seconds": 0.018717128000389494, "is_best": false, "bad_epochs": 1}
+ok
+
+----------------------------------------------------------------------
+Ran 45 tests in 1.705s
+
+OK (skipped=2)

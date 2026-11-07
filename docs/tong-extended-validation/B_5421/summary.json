@@ -1,0 +1,27 @@
+{
+  "condition": "B",
+  "seed": 5421,
+  "best_epoch": 1,
+  "best_val_auc": 0.75,
+  "completed_epochs": 2,
+  "early_stopped": false,
+  "provenance": {
+    "commit": "a337e000aa81ebaa60884c27c53870b5fa7fd448",
+    "working_tree_dirty": false,
+    "torch": "2.15.0+cpu",
+    "torchvision": "0.29.2+cpu",
+    "device": "cpu",
+    "amp_enabled": false,
+    "manifest_sha256": "265cdc4036036058666479cf2d717ed6eb2a7cdb6c7554109819b9c9280fa5f5",
+    "run_kind": "pilot",
+    "purpose": "workflow validation, not final results",
+    "train_images": 32,
+    "val_images": 16,
+    "data_audit": {
+      "manifest_rows": 12000,
+      "sha256_verified": 12000,
+      "missing_hashes": 0,
+      "perceptual_duplicates_checked": false
+    }
+  }
+}

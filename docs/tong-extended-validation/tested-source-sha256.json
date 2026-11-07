@@ -1,0 +1,15 @@
+{
+  "src/losses/README.md": "d820ed407e0a9022ae5f1b482ec4132188e360bbd6eb5590a93b0f477483ec4f",
+  "src/losses/__init__.py": "5f080426d3ce5f630a88e9e352f8601b7a9a2e2c8961b00c22a7ec14b9a3b030",
+  "src/losses/consistency.py": "8042118c83c23c4459a6049e676bf585d7440c23d637f440fc36348d5796bcac",
+  "src/models/__init__.py": "043ab5ed380e93827c033dbc640493dc8cd5c5f460bac38c6bab57d025e3d4dd",
+  "src/models/resnet18.py": "717a8cead8b997f38cc4542407f6a955c793283f2c8d01881b79d596e225af1e",
+  "src/train.py": "e78ce52f345e5518544cbdfae524b7245319fcf67e9177eadb511fe70123fcdc",
+  "src/training/__init__.py": "2a4d2f243a48b416d6055929d36be1f4549ba29841c2430a8c99f8319011579c",
+  "src/training/checkpoint.py": "5110c587663c164e9733f15b5098663fda6ca52e8bd50b6620dfff0274a5cfee",
+  "src/training/data.py": "182bf61692f9eacbdb26f355f13b9630293fb26541c3b851bae5fb8b1d1849f9",
+  "src/training/engine.py": "543103c01849611b6d9abd85648c4598e061e8f9e1a8e232f5bd2de41d32ecff",
+  "tests/test_consistency.py": "ccec4742accaf268408934d0f9adbb8810f4c07b27437c0f092b1f92b7ca6a0a",
+  "tests/test_tong_training.py": "8a5b68175a8e1942452ccbe9c43989fab12ab863b3e40905be9f394de6a0848a",
+  "tests/test_tong_extended_validation.py": "e0595072c371b46fe9624a2100fe153a42afd3b9638255f8fdabf7a756d49586"
+}
