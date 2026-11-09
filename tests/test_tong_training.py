@@ -68,7 +68,8 @@ class ConfigTests(unittest.TestCase):
 
     def test_invalid_numeric_settings(self):
         for values in ({"batch": 0}, {"batch": True}, {"epochs": 1.5}, {"lr": float("nan")},
-                       {"num_workers": -1}, {"seed": -1}, {"train_limit": 3}, {"amp": "false"}):
+                       {"num_workers": -1}, {"seed": -1}, {"train_limit": 3}, {"amp": "false"},
+                       {"amp_init_scale": 0}, {"amp_init_scale": -1}, {"amp_init_scale": float("nan")}):
             with self.subTest(values=values), self.assertRaises(ValueError):
                 TrainConfig(**values).validate()
 
@@ -306,6 +307,21 @@ class EngineTests(unittest.TestCase):
 
 
 class ResumeTests(unittest.TestCase):
+    def test_resume_checkpoint_without_amp_init_scale(self):
+        with tempfile.TemporaryDirectory() as temp, patch("src.train.BinaryResNet18", TinyModel):
+            root = Path(temp)
+            manifest = fixture(root)
+            config = TrainConfig(data_manifest=str(manifest), data_root=str(root), weights=None,
+                                 train_limit=None, val_limit=None, epochs=1, amp=False, early_stop=4)
+            run(config, root / "run")
+            old = read_checkpoint(root / "run/last.pt")
+            old["config"].pop("amp_init_scale")
+            atomic_save(old, root / "run/last.pt")
+            run(replace(config, epochs=2), root / "run", root / "run/last.pt")
+            last = read_checkpoint(root / "run/last.pt")
+            self.assertEqual(last["epoch"], 1)
+            self.assertEqual(last["config"]["amp_init_scale"], 65536.0)
+
     def test_epoch_boundary_resume_matches_uninterrupted_run(self):
         with tempfile.TemporaryDirectory() as temp, patch("src.train.BinaryResNet18", TinyModel):
             root = Path(temp)

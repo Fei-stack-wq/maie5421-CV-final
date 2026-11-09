@@ -50,6 +50,7 @@ class TrainConfig:
     early_stop: int = 2
     min_delta: float = 0.0
     amp: bool = True
+    amp_init_scale: float = 65536.0
     deterministic: bool = True
     device: str = "auto"
     num_workers: int = 0
@@ -77,12 +78,14 @@ class TrainConfig:
             raise ValueError("seed must be an integer in [0, 2**32)")
         if isinstance(self.num_workers, bool) or not isinstance(self.num_workers, int) or self.num_workers < 0:
             raise ValueError("num_workers must be a nonnegative integer")
-        for key in ("lr", "weight_decay", "min_delta", "consistency_weight"):
+        for key in ("lr", "weight_decay", "min_delta", "consistency_weight", "amp_init_scale"):
             value = getattr(self, key)
             if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value) or value < 0:
                 raise ValueError(f"{key} must be finite and nonnegative")
         if self.lr == 0:
             raise ValueError("lr must be positive")
+        if self.amp_init_scale == 0:
+            raise ValueError("amp_init_scale must be positive")
         for key in ("amp", "deterministic", "protocol_confirmed"):
             if not isinstance(getattr(self, key), bool):
                 raise ValueError(f"{key} must be a YAML boolean")
@@ -221,7 +224,7 @@ def run(config, output, resume=None):
         (param for param in model.parameters() if param.requires_grad),
         lr=config.lr, weight_decay=config.weight_decay,
     )
-    scaler = torch.amp.GradScaler("cuda", enabled=amp)
+    scaler = torch.amp.GradScaler("cuda", init_scale=config.amp_init_scale, enabled=amp)
     start_epoch, best_epoch, best_auc, bad_epochs, history = 0, -1, -math.inf, 0, []
     provenance = {
         **git_revision(), "torch": str(torch.__version__), "torchvision": str(torchvision.__version__),
@@ -234,6 +237,8 @@ def run(config, output, resume=None):
     if resume:
         state = read_checkpoint(resume)
         previous = dict(state["config"])
+        # Checkpoints written before this field used GradScaler's default.
+        previous.setdefault("amp_init_scale", 65536.0)
         current = asdict(config)
         previous.pop("epochs")
         current.pop("epochs")
