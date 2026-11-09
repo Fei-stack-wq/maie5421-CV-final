@@ -1,7 +1,7 @@
 run_id,condition,seed,seed_status,owner,queue_order,status,attempt,code_commit,manifest_sha256,config_path,config_sha256,gpu,started_at,finished_at,elapsed_seconds,best_epoch,best_val_auc,checkpoint_path,epoch_log_path,notes
 A_5421,A,5421,proposed,TONG Shaojun,1,planned,1,,,,,,,,,,,,,Await pilot and shared settings freeze
 B_5421,B,5421,proposed,TONG Shaojun,2,planned,1,,,,,,,,,,,,,Match batches views and update budget with C_5421
-C_5421,C,5421,proposed,WANG Yitian,3,planned,1,,,,,,,,,,,,,Loss module ready; await training integration paired views and pilot
+C_5421,C,5421,proposed,WANG Yitian,3,planned,1,,,,,,,,,,,,,CUDA pilot passed; await formal factory and protocol confirmation
 A_2026,A,2026,proposed,TONG Shaojun,4,planned,1,,,,,,,,,,,,,Await pilot and shared settings freeze
 B_2026,B,2026,proposed,TONG Shaojun,5,planned,1,,,,,,,,,,,,,Match batches views and update budget with C_2026
-C_2026,C,2026,proposed,WANG Yitian,6,planned,1,,,,,,,,,,,,,Loss module ready; await training integration paired views and pilot
+C_2026,C,2026,proposed,WANG Yitian,6,planned,1,,,,,,,,,,,,,CUDA workflow ready; seed 2026 not run on GPU; await formal protocol
