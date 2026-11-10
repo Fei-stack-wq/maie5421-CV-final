@@ -1,6 +1,6 @@
 # WANG Yitian 工作进度
 
-更新：2026-11-09。项目第 1 天为 2026-11-05。
+更新：2026-11-10。项目第 1 天为 2026-11-05。
 
 我负责一致性损失、C 配置和 C 的两个模型，以及六次训练的排期和记录。按《AI生成图像检测_五人两周工作安排》执行。
 
@@ -16,17 +16,19 @@
 - 发现默认 AMP 初始 scale 导致更新溢出跳过，增加 `amp_init_scale` 配置；pilot 使用1024后每轮2次更新、无跳步。旧 checkpoint 恢复兼容性已验证。
 - 当前共46项单元测试，45通过；因为本机有GPU，跳过1项“无CUDA”检查。
 
-配置见 [pilot_c_cuda.yaml](../examples/wang/pilot_c_cuda.yaml)，实测耗时、显存及复查步骤见 [GPU联调记录](wang-gpu-pilot/README.md)。这些小样本结果用于联调，正式C模型仍为 **0/2**。
+**11 月 10 日**：在本分支整合 OUYANG 的数据模块，新增 factory 适配，接入其固定预处理与成对视图。100项合并测试中99项通过，1项因本机有GPU而跳过。使用实际数据模块再次完成GPU联调：64组成对样本的B/C输入逐项一致，C的续训和重载检查通过，每轮2次更新且无AMP跳步。
+
+当前配置见 [pilot_c_ouyang_cuda.yaml](../examples/wang/pilot_c_ouyang_cuda.yaml)，接入方式、checkpoint预处理交接及证据见 [数据模块联调记录](wang-ouyang-integration/README.md)。11月9日使用临时变换的记录保留在 [前次GPU联调](wang-gpu-pilot/README.md)。正式C模型仍为 **0/2**。
 
 ## 接口与配置
 
 TONG 的 `BinaryResNet18` 已输出单个 raw AI logit，训练入口已调用 `paired_view_loss`；`consistency_weight=0` 对应 B，`1` 对应 C。无需再手动转换输出。损失支持 `(N,)` 和 `(N,1)`，标签 `0=real, 1=AI`，两路样本顺序一致。
 
-本次配置为有效 batch=16（microbatch=4，累积4次）、AdamW lr=1e-4、lambda=1。训练共用 TONG 的临时 JPEG/downsample 视图；它还不是 OUYANG 的正式变换。
+本次配置为有效 batch=16（microbatch=4，累积4次）、AdamW lr=1e-4、lambda=1。现已使用 OUYANG v1 的 bicubic/EXIF 预处理及成对视图，配置指纹随checkpoint保存；不再使用临时变换。
 
 ## 下一步与交接
 
-- **OUYANG**：接入正式 `dataset_factory`，对齐双视图返回、clean validation、变换参数及版本，并完成近重复检查。接口契约见 [训练说明](tong-training.md)。
+- **数据接入已完成**：OUYANG模块与训练入口已联调；全量QA和候选处置记录已收到。本机完整Images/尚未检出，正式训练前仍需本机接收核验。
 - **TONG / WANG**：共同确认共享种子、weight_decay、BN冻结策略、AMP初始scale和更新预算，补齐正式A/B/C配置。GPU已联调通过，但正式设置尚未冻结。
 - **训练排期**：确认GPU可用窗口、完整Images/可访问后安排六次运行；C的两次由我负责，A/B的四次由TONG负责。记录见 [six-run-ledger.csv](six-run-ledger.csv)，全部正式运行仍未开始；5421/2026仍为待确认种子。
 

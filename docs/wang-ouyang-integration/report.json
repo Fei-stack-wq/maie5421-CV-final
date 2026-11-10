@@ -1,0 +1,309 @@
+{
+  "purpose": "CUDA integration pilot, not formal model results",
+  "protocol_confirmed": false,
+  "formal_c_models_completed": 0,
+  "source_commit": "853be94ec9bbabe4969caa6905e949a96ad404e2",
+  "source_sha256": {
+    "src\\__init__.py": "dbfff2a856646cf7e00433bfa66b1ac39f7ff804f5bc9611f9c8ddb21e9a9da5",
+    "src\\datasets\\__init__.py": "382b1df0def8d9e57f029517888f24a045f51aca433b76d97a254678f917d1db",
+    "src\\datasets\\config.py": "db97d5261b2a3c0faf9dc8de335e0d5583188e2f85d7f9fcf596f792499a3d64",
+    "src\\datasets\\manifest.py": "40530915125c3f416b170abc1b1b09ed6a354c993bc4d6e249ed9f6daf50c01a",
+    "src\\datasets\\transforms.py": "65e8f65bdfadc777d6b6b30ad38c5f21f18694404237774b9d2cc1ac8d391cc9",
+    "src\\losses\\__init__.py": "5f080426d3ce5f630a88e9e352f8601b7a9a2e2c8961b00c22a7ec14b9a3b030",
+    "src\\losses\\consistency.py": "8042118c83c23c4459a6049e676bf585d7440c23d637f440fc36348d5796bcac",
+    "src\\models\\__init__.py": "b37d5fe3dc62512319eca39550debe6d294cb1ccca783748442245979f6144bc",
+    "src\\models\\resnet18.py": "9bab282a3da7ffa8d4692a4492f460ff0a1f6d4d0d149168ccc91a7b3791d6c0",
+    "src\\train.py": "389a2367c587f412533de2a5c085e2d9692aa6f13dc6b6d4dbde7ecfedc4e6d6",
+    "src\\training\\__init__.py": "824a7b20b59049b72bfeab52c2b2bc9c7f61530cc8097b6d3c50ccd4a25d6eea",
+    "src\\training\\checkpoint.py": "f2892170c3f2af13cc8c0d29e3095a4d84b26954e47342ab55ac86c5cec8e13a",
+    "src\\training\\data.py": "a82f450a1c0056836159bc42214be6730c735c7feea5267c54d081509541e0e8",
+    "src\\training\\engine.py": "b18f020859d6e562fbd1faf0d959bc5d9661dc61d67477b0202d498ec6c93b65",
+    "src\\training\\ouyang_factory.py": "b12a86173c98caf2095c00e014f2c81e55b03c9226cf69bf2e02cbb9bece243a",
+    "tools\\training\\cuda_pilot.py": "992d638d941053984c4d54f25858272c3e5f2edd9e06ef711ddb6b312d43e7c5"
+  },
+  "config_sha256": "cf47450e00d983daa4a12f34978cb60a553dcff73934c25c9eff4648ff0e4608",
+  "source_manifest_sha256": "abc40960e3dd2b2a49b92ce95e454ac6802f9c7aaefbf3cde9345c2f617a53e9",
+  "pilot_manifest_sha256": "12b45dce0632bfa80d06f3c2069a93236cd7e9cab4767b0c03f40673c57ee6e6",
+  "dataset_factory": "src.training.ouyang_factory:build_datasets",
+  "data_config": "configs/ouyang_data_v1.json",
+  "environment": {
+    "python": "3.11.9",
+    "torch": "2.3.0+cu121",
+    "torchvision": "0.18.0+cu121",
+    "pillow": "11.3.0",
+    "cuda_runtime": "12.1",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_total_bytes": 8585216000
+  },
+  "runs": {
+    "B": {
+      "summary": {
+        "condition": "B",
+        "seed": 5421,
+        "best_epoch": 1,
+        "best_val_auc": 0.75,
+        "completed_epochs": 2,
+        "early_stopped": false,
+        "provenance": {
+          "commit": "853be94ec9bbabe4969caa6905e949a96ad404e2",
+          "working_tree_dirty": false,
+          "torch": "2.3.0+cu121",
+          "torchvision": "0.18.0+cu121",
+          "device": "cuda",
+          "amp_enabled": true,
+          "manifest_sha256": "12b45dce0632bfa80d06f3c2069a93236cd7e9cab4767b0c03f40673c57ee6e6",
+          "run_kind": "pilot",
+          "purpose": "workflow validation, not final results",
+          "train_images": 32,
+          "val_images": 16,
+          "data_audit": {
+            "manifest_rows": 48,
+            "sha256_verified": 48,
+            "missing_hashes": 0,
+            "perceptual_duplicates_checked": false
+          }
+        }
+      },
+      "wall_seconds": 6.366773300105706,
+      "peak_allocated_bytes": 261752320,
+      "peak_reserved_bytes": 289406976,
+      "frozen_tensors_unchanged": true,
+      "frozen_tensor_count": 105,
+      "changed_trainable_tensors": 17,
+      "checkpoint_sha256": "0be4582698393d24bbd270aa7cf066c25fc4b5b4fcd8182b2f82457846dee6d2",
+      "reload_max_probability_error": 0.0
+    },
+    "C_zero": {
+      "summary": {
+        "condition": "C",
+        "seed": 5421,
+        "best_epoch": 1,
+        "best_val_auc": 0.75,
+        "completed_epochs": 2,
+        "early_stopped": false,
+        "provenance": {
+          "commit": "853be94ec9bbabe4969caa6905e949a96ad404e2",
+          "working_tree_dirty": false,
+          "torch": "2.3.0+cu121",
+          "torchvision": "0.18.0+cu121",
+          "device": "cuda",
+          "amp_enabled": true,
+          "manifest_sha256": "12b45dce0632bfa80d06f3c2069a93236cd7e9cab4767b0c03f40673c57ee6e6",
+          "run_kind": "pilot",
+          "purpose": "workflow validation, not final results",
+          "train_images": 32,
+          "val_images": 16,
+          "data_audit": {
+            "manifest_rows": 48,
+            "sha256_verified": 48,
+            "missing_hashes": 0,
+            "perceptual_duplicates_checked": false
+          }
+        }
+      },
+      "wall_seconds": 4.685860000085086,
+      "peak_allocated_bytes": 261801472,
+      "peak_reserved_bytes": 289406976,
+      "frozen_tensors_unchanged": true,
+      "frozen_tensor_count": 105,
+      "changed_trainable_tensors": 17,
+      "checkpoint_sha256": "ae71cccfd119941c3d57cdc7ba148d23a0dd59a4ddd63b316f7f29a7d05269f4",
+      "reload_max_probability_error": 0.0
+    },
+    "C": {
+      "summary": {
+        "condition": "C",
+        "seed": 5421,
+        "best_epoch": 1,
+        "best_val_auc": 0.75,
+        "completed_epochs": 2,
+        "early_stopped": false,
+        "provenance": {
+          "commit": "853be94ec9bbabe4969caa6905e949a96ad404e2",
+          "working_tree_dirty": false,
+          "torch": "2.3.0+cu121",
+          "torchvision": "0.18.0+cu121",
+          "device": "cuda",
+          "amp_enabled": true,
+          "manifest_sha256": "12b45dce0632bfa80d06f3c2069a93236cd7e9cab4767b0c03f40673c57ee6e6",
+          "run_kind": "pilot",
+          "purpose": "workflow validation, not final results",
+          "train_images": 32,
+          "val_images": 16,
+          "data_audit": {
+            "manifest_rows": 48,
+            "sha256_verified": 48,
+            "missing_hashes": 0,
+            "perceptual_duplicates_checked": false
+          }
+        }
+      },
+      "wall_seconds": 4.948389100143686,
+      "peak_allocated_bytes": 261801472,
+      "peak_reserved_bytes": 289406976,
+      "frozen_tensors_unchanged": true,
+      "frozen_tensor_count": 105,
+      "changed_trainable_tensors": 17,
+      "checkpoint_sha256": "0988c6fa0ce19f3a2ba2dd965133a5d904a48b73286569e16c4812bdc5931dd0",
+      "reload_max_probability_error": 0.0
+    },
+    "C_resume": {
+      "summary": {
+        "condition": "C",
+        "seed": 5421,
+        "best_epoch": 0,
+        "best_val_auc": 0.734375,
+        "completed_epochs": 1,
+        "early_stopped": false,
+        "provenance": {
+          "commit": "853be94ec9bbabe4969caa6905e949a96ad404e2",
+          "working_tree_dirty": false,
+          "torch": "2.3.0+cu121",
+          "torchvision": "0.18.0+cu121",
+          "device": "cuda",
+          "amp_enabled": true,
+          "manifest_sha256": "12b45dce0632bfa80d06f3c2069a93236cd7e9cab4767b0c03f40673c57ee6e6",
+          "run_kind": "pilot",
+          "purpose": "workflow validation, not final results",
+          "train_images": 32,
+          "val_images": 16,
+          "data_audit": {
+            "manifest_rows": 48,
+            "sha256_verified": 48,
+            "missing_hashes": 0,
+            "perceptual_duplicates_checked": false
+          }
+        }
+      },
+      "wall_seconds": 2.939378899987787,
+      "peak_allocated_bytes": 261703168,
+      "peak_reserved_bytes": 289406976,
+      "frozen_tensors_unchanged": true,
+      "frozen_tensor_count": 105,
+      "changed_trainable_tensors": 17,
+      "checkpoint_sha256": "b23639d4fe11ab17b7df90c66a33362da4c937aa248fc10a9b1acb3be5728261",
+      "reload_max_probability_error": 0.0
+    },
+    "C_resume_resumed": {
+      "summary": {
+        "condition": "C",
+        "seed": 5421,
+        "best_epoch": 1,
+        "best_val_auc": 0.75,
+        "completed_epochs": 2,
+        "early_stopped": false,
+        "provenance": {
+          "commit": "853be94ec9bbabe4969caa6905e949a96ad404e2",
+          "working_tree_dirty": false,
+          "torch": "2.3.0+cu121",
+          "torchvision": "0.18.0+cu121",
+          "device": "cuda",
+          "amp_enabled": true,
+          "manifest_sha256": "12b45dce0632bfa80d06f3c2069a93236cd7e9cab4767b0c03f40673c57ee6e6",
+          "run_kind": "pilot",
+          "purpose": "workflow validation, not final results",
+          "train_images": 32,
+          "val_images": 16,
+          "data_audit": {
+            "manifest_rows": 48,
+            "sha256_verified": 48,
+            "missing_hashes": 0,
+            "perceptual_duplicates_checked": false
+          },
+          "resumed_from_epoch": 0
+        }
+      },
+      "wall_seconds": 3.4222860999871045,
+      "peak_allocated_bytes": 261752320,
+      "peak_reserved_bytes": 289406976,
+      "frozen_tensors_unchanged": true,
+      "frozen_tensor_count": 105,
+      "changed_trainable_tensors": 17,
+      "checkpoint_sha256": "2dc21ff23fa678c0e518ab9b38e6c3e05c7891814e345b760438ade9f2ecefcc",
+      "reload_max_probability_error": 0.0
+    }
+  },
+  "checks": {
+    "factory_views": {
+      "paired_samples_checked": 64,
+      "clean_val_samples_checked": 16,
+      "equal": true
+    },
+    "b_matches_c_zero": {
+      "model_state": true,
+      "optimizer_state": true,
+      "scaler_state": true,
+      "rng_state": true,
+      "epoch": true,
+      "best_epoch": true,
+      "best_val_auc": true,
+      "bad_epochs": true,
+      "val_predictions": true,
+      "history_except_seconds": true
+    },
+    "c_epoch_resume_matches_full": {
+      "model_state": true,
+      "optimizer_state": true,
+      "scaler_state": true,
+      "rng_state": true,
+      "epoch": true,
+      "best_epoch": true,
+      "best_val_auc": true,
+      "bad_epochs": true,
+      "val_predictions": true,
+      "history_except_seconds": true
+    }
+  },
+  "ok": true,
+  "preprocessing": {
+    "provider": "src.datasets",
+    "version": "ouyang-v1",
+    "data_config": {
+      "version": "ouyang-v1",
+      "image_size": 224,
+      "resize_size": 256,
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ],
+      "jpeg_quality_min": 50,
+      "jpeg_quality_max": 95,
+      "downsample_min": 0.5,
+      "downsample_max": 0.9,
+      "control_size": 256,
+      "control_quality": 95
+    },
+    "config_fingerprint": "a5618523e8077bdb917d2ed63b483e20487014f2e5b59a2e7195f6d21622bbae",
+    "config_file_sha256": "6828fd402ce43f669fa026ab530e947b6fa32a87fe074c23d08b3f47ef0905c9",
+    "rgb": true,
+    "exif_transpose": true,
+    "resize_short_edge": 256,
+    "center_crop": 224,
+    "interpolation": "bicubic",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "validation_suite": "clean",
+    "paired_view": "JPEG/downsample/both, parameters from data_config"
+  },
+  "test_suite": {
+    "tests": "100",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "1",
+    "time": "70.118"
+  }
+}
