@@ -1,0 +1,13 @@
+{
+  "version": "ouyang-v1",
+  "image_size": 224,
+  "resize_size": 256,
+  "mean": [0.485, 0.456, 0.406],
+  "std": [0.229, 0.224, 0.225],
+  "jpeg_quality_min": 50,
+  "jpeg_quality_max": 95,
+  "downsample_min": 0.5,
+  "downsample_max": 0.9,
+  "control_size": 256,
+  "control_quality": 95
+}

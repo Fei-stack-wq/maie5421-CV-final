@@ -1,0 +1,47 @@
+{
+  "date_local": "2026-11-10",
+  "timezone": "Asia/Hong_Kong",
+  "reviewer_type": "assistant_visual_inspection",
+  "reviewer": "Codex",
+  "source_qa_sha256": "30a24052954cbc8300835f088bd59ab5d5fdaa17cdc35d853d099f00170bdd93",
+  "manifest_sha256": "265cdc4036036058666479cf2d717ed6eb2a7cdb6c7554109819b9c9280fa5f5",
+  "screening_algorithm": "phash_ac63_dct32_lanczos_v1",
+  "threshold_hamming": 4,
+  "candidate_pair_count": 1,
+  "reviewed_non_duplicate_pairs": 1,
+  "confirmed_duplicate_pairs": 0,
+  "unresolved_pairs": 0,
+  "status": "all_screening_candidates_visually_reviewed",
+  "reviews": [
+    {
+      "left": {
+        "image_id": "train-72c90cdf3fa7",
+        "split": "train",
+        "label": "1",
+        "generator": "BigGAN",
+        "rel_path": "train/BigGAN/021_72c90cdf3f.PNG"
+      },
+      "right": {
+        "image_id": "test_seen-7dbe0a810000",
+        "split": "test_seen",
+        "label": "1",
+        "generator": "BigGAN",
+        "rel_path": "test_seen/BigGAN/417_7dbe0a8100.PNG"
+      },
+      "hamming_distance": 4,
+      "left_sha256": "89494d3b9ff8e42a40f30e3a4f0ee66cac19926e5374eafa9c1df7f7ae632bc1",
+      "right_sha256": "6c1a682de48c011e69cadf309d8655b60340fbef6587f60de8c31784e41c6086",
+      "decision": "different_images_false_positive",
+      "evidence": "The training image has a small dark bird-like silhouette against a pale cyan sky. The test image has a coloured rounded balloon-like subject against a blue-grey sky. Subject shape, colour, layout and background differ; visual inspection does not indicate a resized/recompressed copy. Similar simple backgrounds can produce close low-frequency perceptual hashes.",
+      "action": "retain both images and original splits; no automatic deletion or resplitting",
+      "evidence_image": "near_duplicate_review.png"
+    }
+  ],
+  "interpretation": "Raw screening JSON intentionally remains review_required and full_qa_pass=false. This separate record closes its one candidate through assistant visual inspection; it does not claim human sign-off or absence of all possible crop/rotation/semantic duplicates.",
+  "independent_review": {
+    "reviewer": "Codex protocol_review subagent",
+    "reviewer_type": "assistant_visual_inspection",
+    "decision": "different_images_false_positive",
+    "evidence": "Independently inspected both original-resolution images: bird-like dark foreground versus yellow/orange hot-air balloon; foreground structure, scale, colour and orientation differ. Shared simple skies and isolated central subjects can explain low-frequency hash proximity."
+  }
+}

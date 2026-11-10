@@ -38,6 +38,8 @@ runs/
 checkpoints/
 predictions/
 outputs/
+# The second-worker preview duplicates the shared sample image.
+artifacts/ouyang/smoke_workers2/preview.png
 wandb/
 *.pt
 *.pth
