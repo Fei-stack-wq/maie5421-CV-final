@@ -316,6 +316,7 @@ class ResumeTests(unittest.TestCase):
             run(config, root / "run")
             old = read_checkpoint(root / "run/last.pt")
             old["config"].pop("amp_init_scale")
+            old["config"].pop("data_config")
             atomic_save(old, root / "run/last.pt")
             run(replace(config, epochs=2), root / "run", root / "run/last.pt")
             last = read_checkpoint(root / "run/last.pt")

@@ -40,6 +40,7 @@ class TrainConfig:
     run_kind: str = "pilot"
     protocol_confirmed: bool = False
     dataset_factory: str | None = None
+    data_config: str | None = None
     weights: str | None = "IMAGENET1K_V1"
     freeze_policy: str = "layer4_head_frozen_bn"
     lr: float = 1e-4
@@ -239,6 +240,7 @@ def run(config, output, resume=None):
         previous = dict(state["config"])
         # Checkpoints written before this field used GradScaler's default.
         previous.setdefault("amp_init_scale", 65536.0)
+        previous.setdefault("data_config", None)
         current = asdict(config)
         previous.pop("epochs")
         current.pop("epochs")

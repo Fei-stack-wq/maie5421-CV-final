@@ -117,6 +117,7 @@ def main():
         "config_sha256": sha256(args.config),
         "source_manifest_sha256": sha256(base.data_manifest),
         "pilot_manifest_sha256": sha256(manifest),
+        "dataset_factory": config.dataset_factory, "data_config": config.data_config,
         "environment": {
             "python": platform.python_version(), "torch": str(torch.__version__),
             "torchvision": str(torchvision.__version__), "pillow": PIL.__version__,
@@ -130,6 +131,28 @@ def main():
         (output / "report.json").write_text(json.dumps(report, indent=2, allow_nan=False) + "\n", encoding="utf-8")
 
     save()
+    if config.dataset_factory:
+        train_b, val_b, metadata_b, _ = make_datasets(replace(config, condition="B"))
+        train_c, val_c, metadata_c, _ = make_datasets(config)
+        assert metadata_b == metadata_c
+        checked = 0
+        for epoch in range(config.epochs):
+            train_b.set_epoch(epoch)
+            train_c.set_epoch(epoch)
+            for i in range(len(train_b)):
+                b, c = train_b[i], train_c[i]
+                assert b["image_id"] == c["image_id"]
+                assert all(torch.equal(b[k], c[k]) for k in ("image", "view", "label"))
+                assert b["view_params"] == c["view_params"]
+                checked += 1
+        for i in range(len(val_c)):
+            b, c = val_b[i], val_c[i]
+            assert "view" not in c and b["image_id"] == c["image_id"]
+            assert torch.equal(b["image"], c["image"])
+        report["checks"]["factory_views"] = {"paired_samples_checked": checked,
+            "clean_val_samples_checked": len(val_c), "equal": True}
+        report["preprocessing"] = metadata_c
+        save()
     seed_everything(config.seed, config.deterministic)
     initial = BinaryResNet18(weights=config.weights)
     initial_state = {k: v.clone() for k, v in initial.state_dict().items()}
