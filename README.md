@@ -27,14 +27,29 @@
 |---|---|---|
 | 12,000 张数据集（4 生成器 × 5 划分） | ✅ 完成 | `Images/`（FEI） |
 | 来源清单 manifest + 偏置审计 + 校验报告 | ✅ 完成（0 error） | `Images/manifest.csv` 等（FEI） |
-| 数据读取 / paired-view 变换 / 扰动模块 | 🚧 待实现 | OUYANG |
+| 数据读取 / paired-view 变换 / 扰动模块 | ✅ 已实现，接口与接收 QA 见交接说明 | OUYANG |
 | ResNet-18 封装 + A/B 训练入口 + pilot | 🚧 待实现 | TONG |
 | 一致性损失（C）+ configs + 六次运行调度 | 🚧 待实现 | WANG |
 | 评测脚本 / bootstrap / 图表 | 🚧 待实现 | ZHANG |
 | CLI + 一键复现 + 环境锁定 | ⏳ 待实现 | ZHUO |
 | 6 页 CVPR 报告 + 10 分钟展示 | ⏳ W3 起并行 | FEI 统稿 / ZHUO 主讲 |
 
-> 本仓库目前只包含**数据管线**；训练与评测代码尚未落地。数据集本体（1.87 GB 图像）**不在 git 中**，见 `.gitignore`。
+> 数据接口、成对视图、固定扰动及接收 QA 已落地；模型训练与指标评测仍由对应成员实现。
+> 当前基准提交 `e7db18d` 实际已追踪完整图片，早期“图像不入 git”的说明已过时。完整接收情况以本机 QA 为准。
+
+### OUYANG Di 数据模块
+
+使用说明、下游接口、报告章节和复现命令见 [`docs/ouyang_handoff.md`](docs/ouyang_handoff.md)。
+本次验收记录见 [`docs/ouyang_qa.md`](docs/ouyang_qa.md)：50 项测试通过，12,100 张图片文件核验通过；pHash 的唯一候选经助手视觉复核判为不同图像，原始筛查和复核证据分别保留。
+
+```bash
+python -m pip install -r requirements-data.txt
+python -m pytest -q
+python -m tools.dataset.smoke_data
+python tools/dataset/qa_received.py --check-images --phash --output artifacts/ouyang/qa_received.json
+```
+
+若本地缺少图片，可运行 `python -m tools.dataset.receive_images`，从固定项目提交接收清单所列图片并逐张检查 SHA256，无需重新下载上游分片。不要把元数据通过或 fixture 试跑等同于全量接收通过。
 
 ## 3. 数据集（已经可用的部分）
 
@@ -134,7 +149,7 @@ AI = 正类。报告 **accuracy / precision / recall / F1 / ROC-AUC / 混淆矩�
 
 ```
 .
-├── Images/                     # 数据集（图像不入 git）
+├── Images/                     # 数据集（当前基准提交已追踪图像）
 │   ├── train/ val/ test_seen/ test_unseen_ADM/ test_unseen_GLIDE/
 │   ├── fixture/                # 100 张开发样例
 │   ├── manifest.csv            # 12,000 行来源清单（共享接口）
@@ -153,7 +168,7 @@ AI = 正类。报告 **accuracy / precision / recall / F1 / ROC-AUC / 混淆矩�
 └── README.md
 ```
 
-随实验推进将新增 `src/datasets/`（OUYANG）、`src/models/` + `src/train.py`（TONG）、
+当前已提供 `src/datasets/`（OUYANG）；随实验推进将新增 `src/models/` + `src/train.py`（TONG）、
 `src/losses/` + `configs/`（WANG）、`eval/`（ZHANG）、`cli/`（ZHUO）、`runs/`（只读产物）。
 
 ### 共享接口契约
@@ -191,8 +206,8 @@ AI = 正类。报告 **accuracy / precision / recall / F1 / ROC-AUC / 混淆矩�
 
 1. **格式/分辨率捷径**：real 全 JPEG 且尺寸连续分布，fake 全 PNG 且固定尺寸。仅凭这一点就能拿到虚高准确率；三条件预处理必须一致，并补"重采样到统一尺寸再重编码"的对照实验。
 2. **划分来源**：数据集继承镜像的冻结重划分（同源 GenImage 官方 train 分区），与"官方 train/val 目录"不同，报告中需如实说明。
-3. **数据不入库**：共享数据请直接拷贝 `Images/` 或用 §4 命令重建；仓库只保留清单与脚本。
-4. **尚未完成**：感知近重复检测（pHash / DINO embedding）与 ImageNet 类别先验分布审计。
+3. **数据接收**：当前基准提交已包含图片；本地缺图时可运行 `python -m tools.dataset.receive_images` 按固定提交和清单接收，或直接拷贝完整 `Images/`，再运行接收 QA。
+4. **数据 QA**：清单与 real/AI 类别分布审计、图片接收核验和跨划分 pHash 筛查已实现。全量覆盖及候选复核情况见本次 QA 记录；子集类别分布审计不等同于 ImageNet 自然类别先验估计。
 
 ## 11. 引用
 

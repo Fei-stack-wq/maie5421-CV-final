@@ -1,0 +1,85 @@
+% Author: OUYANG Di. Insert into the group's CVPR document.
+% Requires no packages beyond the CVPR template's standard math support.
+% This is a methods fragment, not a standalone document or an empirical result.
+
+\subsection{Data loading and common preprocessing}
+\label{sec:ouyang-data}
+We load images from the frozen manifest using its split, relative path, and
+binary label, where real and AI-generated images are labelled 0 and 1,
+respectively. The image identifier and generator metadata are retained for
+prediction alignment and audit. We keep the training, validation, seen-test,
+ADM-test, and GLIDE-test partitions separate; the development fixture is not
+added to the formal training or evaluation sets. These partitions inherit the
+mirror dataset's frozen re-split of the upstream GenImage training partition,
+rather than the original GenImage training/validation directory split.
+
+All conditions use the same preprocessing. We correct EXIF orientation,
+convert to RGB, resize the shorter side to 256 pixels with bicubic
+interpolation while preserving aspect ratio, and take a $224\times224$ centre
+crop. Pixel intensities are scaled to $[0,1]$ and normalised using ImageNet
+channel means $(0.485,0.456,0.406)$ and standard deviations
+$(0.229,0.224,0.225)$. The clean input receives no additional corruption;
+compression or resampling already present in the source image is retained.
+
+\subsection{Paired views and reproducible augmentation}
+\label{sec:ouyang-views}
+For conditions B and C, each sample supplies the common clean crop and a
+transformed view of the same crop. We draw uniformly from three modes:
+JPEG recompression, downsampling followed by resizing back to the crop size,
+or downsampling followed by JPEG recompression. JPEG quality is sampled
+uniformly from the integers 50 through 95; the downsampling factor is sampled
+uniformly between 0.5 and 0.9. Both labels follow the same transformation
+distribution. Corruptions operate on RGB pixels before tensor conversion and
+normalisation. No additional random crop, flip, or colour perturbation is
+introduced by this module. Resizing down and back uses bicubic interpolation;
+downsampled dimensions are floored and bounded below by one pixel. JPEG
+encoding uses Pillow with 4:2:0 subsampling, without progressive encoding or
+optimisation. Exact codec and dependency versions are retained in run records.
+
+Transformation parameters are determined by a stable seed derived from the
+shared run seed, epoch, and image identifier. The derivation excludes the
+condition, label, worker identifier, and access order. Consequently, B and C
+receive identical views when their run seed, epoch, manifest, and data
+configuration agree. An epoch-dependent sampler also reproduces the batch
+order when loader settings agree. The training procedure must separately
+match optimisation and update budgets; matching views alone does not enforce
+those controls. Run records should retain the code revision, dependency
+versions, manifest and configuration hashes, seed, epoch, and loader settings.
+
+\subsection{Fixed robustness tests and bias control}
+\label{sec:ouyang-robustness}
+For each of the seen, ADM, and GLIDE test sets, the fixed suites comprise
+clean preprocessing, JPEG quality 70, JPEG quality 50, $0.5\times$
+downsampling, and Gaussian blur. JPEG recompression is applied to the common
+$224\times224$ crop and decoded before normalisation. Downsampling changes
+the crop from $224\times224$ to $112\times112$ and back. Blur uses Pillow's
+GaussianBlur implementation with radius 1.0. These suites preserve image IDs
+so that clean and corrupted predictions can be paired. The classification
+threshold is fixed at 0.5, and checkpoint selection uses validation data only.
+
+The source dataset has format and resolution confounds: real images are JPEG
+with varying dimensions, whereas generated images are PNG with
+generator-specific dimensions. We therefore provide a separate input-control
+suite that resizes every RGB image to $256\times256$, recompresses it as JPEG
+at quality 95, decodes it, and then applies the common preprocessing. The
+control runs in memory without overwriting the source files or manifest.
+It standardises the newly applied encoding and dimensions, but cannot remove
+traces of previous JPEG compression or native-resolution history. Its
+results should therefore be reported as a sensitivity check, rather than
+proof that shortcut learning has been eliminated.
+
+\subsection{Data reception and leakage checks}
+\label{sec:ouyang-qa}
+Reception QA checks manifest consistency, unique identifiers and paths,
+label--generator agreement, held-out generator isolation, and SHA256/source
+MD5 overlap across the formal partitions and development fixture. Full-image
+checks compare actual file hashes, decoding, dimensions, format, and file
+size against the manifest. Perceptual hashing retrieves cross-partition
+near-duplicate candidates for manual review; perceptual similarity alone is
+not treated as a duplicate label and does not trigger automatic deletion.
+Any accepted partition correction requires a new manifest version and
+corresponding updates to the training records. Missing files, unperformed
+perceptual checks, and unresolved candidates must remain explicit in the QA
+record. This methods description does not assert that the current reception
+audit or manual review has passed; empirical audit outcomes belong in the
+final data-quality record.
