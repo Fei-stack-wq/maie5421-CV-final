@@ -1,0 +1,16 @@
+{
+  "C_5421": {
+    "best_sha256": "5f07fbcc7ffdf9126b6c3338f109479c298c24be283cde35c838d98a52d9ec7c",
+    "config": "C_5421/config.yaml",
+    "best_epoch_zero_based": 5,
+    "best_val_auc": 0.9648533333333333,
+    "download_url": "https://github.com/Fei-stack-wq/maie5421-CV-final/releases/download/wang-c-formal-2026-11-12/C_5421_best.pt"
+  },
+  "C_2026": {
+    "best_sha256": "958b0f820bb205954370cf87f0aa011289c05b2efed4d090b00176140c612f4c",
+    "config": "C_2026/config.yaml",
+    "best_epoch_zero_based": 5,
+    "best_val_auc": 0.9612248888888889,
+    "download_url": "https://github.com/Fei-stack-wq/maie5421-CV-final/releases/download/wang-c-formal-2026-11-12/C_2026_best.pt"
+  }
+}

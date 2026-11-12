@@ -1,28 +1,44 @@
-# 两个正式 C 模型结果与交接
+# 两个正式 C 模型交付
 
-2026-11-12，两个正式C实验及独立checkpoint核验完成。使用Superpod NVIDIA H800 80GB，训练源码固定为b16b057；每次使用6000张训练图和1500张clean验证图。
+两个正式C模型、配置、逐轮日志、逐图验证预测和QA记录均通过本仓库交付，不需要访问训练服务器。
+
+## 下载模型
+
+[GitHub Release](https://github.com/Fei-stack-wq/maie5421-CV-final/releases/tag/wang-c-formal-2026-11-12)
+
+- [C_5421_best.pt](https://github.com/Fei-stack-wq/maie5421-CV-final/releases/download/wang-c-formal-2026-11-12/C_5421_best.pt)
+- [C_2026_best.pt](https://github.com/Fei-stack-wq/maie5421-CV-final/releases/download/wang-c-formal-2026-11-12/C_2026_best.pt)
+- [配置和记录打包下载](https://github.com/Fei-stack-wq/maie5421-CV-final/releases/download/wang-c-formal-2026-11-12/wang_c_records.zip)
+
+也可在仓库根目录运行以下命令，自动下载并检查SHA256：
+
+```bash
+python tools/download_c_models.py
+```
+
+默认保存到checkpoints/wang。文件哈希见 [checkpoint-manifest.json](checkpoint-manifest.json)。模型较大，作为Release附件交付；源码分支为wang/initial-preparation，训练源码固定为b16b057。
+
+## 运行记录
+
+2026-11-12，在Superpod NVIDIA H800 80GB上训练。每次使用6000张train和1500张clean-val。
 
 | 种子 | 完成epoch | 最佳轮次 | 最佳clean-val AUC | 实际更新 | AMP跳步 |
 | --- | --- | --- | --- | --- | --- |
 | 5421 | 8 | 第6轮 | 0.9648533333 | 3000 | 0 |
 | 2026 | 8 | 第6轮 | 0.9612248889 | 3000 | 0 |
 
-checkpoint中epoch从0计，最佳epoch均为5。两次在第8轮达到patience=2，且已到8轮上限。上述是验证集选模型的指标，不是测试集或鲁棒性结论。
+checkpoint中epoch从0计，最佳epoch均为5。两个模型均重载复核1500条验证预测，最大误差0。训练作业耗时19分01秒，独立核验45秒。以上是验证集选模型的指标，不是测试集或鲁棒性结论。
 
-训练作业775722耗时19分01秒，含GPU测试和短试跑；独立核验775793耗时45秒，两个作业均退出码0。核验重新加载模型、核对配置和预处理，复现各1500张验证图的概率，最大误差均为0。
+每个种子目录包含config.yaml、history.csv、summary.json和val_predictions.csv；本目录还包含独立核验报告、依赖版本、测试计数、数据接收及QA记录。
 
-## 权重位置
+## ZHANG / ZHUO 接入
 
-```text
-$HOME/arin5201-wang/runs/C_5421/best.pt
-$HOME/arin5201-wang/runs/C_2026/best.pt
+```python
+from src.training.checkpoint import load_model
+from src.datasets import DataConfig, EvalTransform
+
+model, metadata = load_model("checkpoints/wang/C_5421_best.pt", device="cpu")
+transform = EvalTransform(DataConfig(**metadata["preprocessing"]["data_config"]), suite="clean")
 ```
 
-最佳权重SHA256：
-
-- C_5421：`5f07fbcc7ffdf9126b6c3338f109479c298c24be283cde35c838d98a52d9ec7c`
-- C_2026：`958b0f820bb205954370cf87f0aa011289c05b2efed4d090b00176140c612f4c`
-
-配置、history、完整报告与逐图验证预测保存在服务器对应run目录，并已取回本地备份，未公开上传。推理使用best.pt；恢复还需last.pt及对应的best_epoch_005.pt。
-
-ZHANG/ZHUO可使用src.training.checkpoint.load_model恢复，再按checkpoint里的preprocessing.data_config构建OUYANG的DataConfig和EvalTransform。阈值固定0.5，AI为正类。权重和完整记录另行交接；后续测试、扰动和配对统计由评估环节完成。
+模型输出一个raw AI logit；对其sigmoid得到P(AI)，阈值固定0.5，AI为正类。替换文件名即可加载另一个种子。评估时复用OUYANG变换和稳定图片ID；当前val_predictions.csv是验证集记录，正式测试预测由ZHANG生成。依赖见requirements-training.txt。

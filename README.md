@@ -227,3 +227,13 @@ AI = 正类。报告 **accuracy / precision / recall / F1 / ROC-AUC / 混淆矩�
 ## 12. 许可
 
 代码仅供课程使用；数据沿用上游 **CC BY-NC-SA 4.0**，ImageNet 图像仅限研究用途。
+
+## WANG 的正式 C 模型交付
+
+两个种子的模型、配置、训练日志、逐图验证预测与 QA 记录通过 GitHub 交付。下载入口见 [C 模型交付页](docs/wang-formal-results/README.md) 和 [GitHub Release](https://github.com/Fei-stack-wq/maie5421-CV-final/releases/tag/wang-c-formal-2026-11-12)。
+
+```bash
+python tools/download_c_models.py
+```
+
+该命令下载两个 best checkpoint 并核对 SHA256；无需访问训练服务器。模型在验证集选定，正式测试与扰动评估由后续评估环节完成。

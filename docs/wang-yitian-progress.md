@@ -35,4 +35,4 @@ TONG 的 `BinaryResNet18` 已输出单个 raw AI logit，训练入口已调用 `
 - **训练位置**：11月12日确定在HKUST Superpod执行本人两次C实验，使用Slurm申请1张GPU，两个种子顺序执行。先完成服务器数据和环境核验，再启动正式训练；A/B四次由TONG负责。
 - **运行记录**：见 [six-run-ledger.csv](six-run-ledger.csv)，本人两次C已完成并通过独立核验；A/B的状态和交付由TONG更新。服务器作业入口及依赖关系见 [运行说明](../scripts/superpod/README.md)。
 
-正式模型只按 clean-val AUC 选择，推理阈值固定0.5。下一步向ZHANG/ZHUO交接C权重，跟踪A/B交付；方法章节可以继续整理，消融结论等待正式评估。
+正式模型只按 clean-val AUC 选择，推理阈值固定0.5。C权重、配置、日志与逐图验证记录统一通过GitHub Release和本分支交付，下一步跟踪A/B交付及正式评估；方法章节可以继续整理，消融结论等待正式评估。
