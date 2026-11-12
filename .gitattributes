@@ -1,2 +1,3 @@
 # Preserve QA evidence bytes so the recorded report hashes remain valid.
 artifacts/ouyang/** -text whitespace=cr-at-eol
+scripts/superpod/*.sbatch text eol=lf
