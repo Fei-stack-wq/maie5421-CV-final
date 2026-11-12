@@ -18,7 +18,9 @@
 
 **11 月 10 日**：在本分支整合 OUYANG 的数据模块，新增 factory 适配，接入其固定预处理与成对视图。100项合并测试中99项通过，1项因本机有GPU而跳过。使用实际数据模块再次完成GPU联调：64组成对样本的B/C输入逐项一致，C的续训和重载检查通过，每轮2次更新且无AMP跳步。
 
-当前配置见 [pilot_c_ouyang_cuda.yaml](../examples/wang/pilot_c_ouyang_cuda.yaml)，接入方式、checkpoint预处理交接及证据见 [数据模块联调记录](wang-ouyang-integration/README.md)。11月9日使用临时变换的记录保留在 [前次GPU联调](wang-gpu-pilot/README.md)。正式C模型仍为 **0/2**。
+**11 月 12 日**：在Superpod H800完成两个正式C实验，均训练8轮、3000次更新、AMP跳步0，最佳模型均来自第6轮。种子5421/2026的最佳clean-val AUC分别为0.9648533333和0.9612248889；独立重载全部验证预测，最大误差均为0。正式C模型已完成 **2/2**，配置、日志和权重位置见 [正式结果与交接](wang-formal-results/README.md)。
+
+历史接入方式及证据保留在 [数据模块联调记录](wang-ouyang-integration/README.md) 和 [前次GPU联调](wang-gpu-pilot/README.md)。这些pilot不计入正式模型数量。
 
 ## 接口与配置
 
@@ -31,6 +33,6 @@ TONG 的 `BinaryResNet18` 已输出单个 raw AI logit，训练入口已调用 `
 - **数据接入已完成**：OUYANG模块与训练入口已联调；全量QA和候选处置记录已收到。本机完整Images/尚未检出，正式训练前仍需本机接收核验。
 - **参数确认**：11月11日已同意TONG交接清单中的参数，种子确定为5421/2026；C配置已生成，见 [正式训练设置](wang-training-protocol.md)。AMP初始scale=1024是本分支的GPU实测设置，A/B执行时需显式对齐。
 - **训练位置**：11月12日确定在HKUST Superpod执行本人两次C实验，使用Slurm申请1张GPU，两个种子顺序执行。先完成服务器数据和环境核验，再启动正式训练；A/B四次由TONG负责。
-- **运行记录**：见 [six-run-ledger.csv](six-run-ledger.csv)，当前正式训练均未开始。服务器作业入口及依赖关系见 [运行说明](../scripts/superpod/README.md)。
+- **运行记录**：见 [six-run-ledger.csv](six-run-ledger.csv)，本人两次C已完成并通过独立核验；A/B的状态和交付由TONG更新。服务器作业入口及依赖关系见 [运行说明](../scripts/superpod/README.md)。
 
-正式模型只按 clean-val AUC 选择，推理阈值固定0.5。后续按分工交付两个C模型、六次运行记录，以及一致性方法与消融分析。
+正式模型只按 clean-val AUC 选择，推理阈值固定0.5。下一步向ZHANG/ZHUO交接C权重，跟踪A/B交付；方法章节可以继续整理，消融结论等待正式评估。
