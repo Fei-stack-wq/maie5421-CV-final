@@ -1,7 +1,7 @@
 run_id,condition,seed,seed_status,owner,queue_order,status,attempt,code_commit,manifest_sha256,config_path,config_sha256,gpu,started_at,finished_at,elapsed_seconds,best_epoch,best_val_auc,checkpoint_path,epoch_log_path,notes
 A_5421,A,5421,confirmed_by_wang,TONG Shaojun,1,planned,1,,,,,,,,,,,,,Await pilot and shared settings freeze; WANG accepted proposed protocol on 2026-11-11
 B_5421,B,5421,confirmed_by_wang,TONG Shaojun,2,planned,1,,,,,,,,,,,,,Match batches views and update budget with C_5421; WANG accepted proposed protocol on 2026-11-11
-C_5421,C,5421,confirmed_by_wang,WANG Yitian,3,planned,1,,,configs/wang/c_5421.yaml,d179e49539e46d8219dcca29f12c014e2d13171cfa083b8531a4391d3b5a3ba3,,,,,,,,,Superpod selected; await server data and GPU allocation; formal run not started
+C_5421,C,5421,confirmed_by_wang,WANG Yitian,3,queued,1,b16b057ab82802da016639d605707fb482be72b1,,configs/wang/c_5421.yaml,d179e49539e46d8219dcca29f12c014e2d13171cfa083b8531a4391d3b5a3ba3,,,,,,,,,Slurm 775722; after CPU preparation 775721; both seeds sequential; training not started
 A_2026,A,2026,confirmed_by_wang,TONG Shaojun,4,planned,1,,,,,,,,,,,,,Await pilot and shared settings freeze; WANG accepted proposed protocol on 2026-11-11
 B_2026,B,2026,confirmed_by_wang,TONG Shaojun,5,planned,1,,,,,,,,,,,,,Match batches views and update budget with C_2026; WANG accepted proposed protocol on 2026-11-11
-C_2026,C,2026,confirmed_by_wang,WANG Yitian,6,planned,1,,,configs/wang/c_2026.yaml,903a0b210d18a78ffcb4ee2c279fac9f1d5e42e58552fae07604010e047f80ce,,,,,,,,,Superpod selected; await server data and GPU allocation; formal run not started
+C_2026,C,2026,confirmed_by_wang,WANG Yitian,6,queued,1,b16b057ab82802da016639d605707fb482be72b1,,configs/wang/c_2026.yaml,903a0b210d18a78ffcb4ee2c279fac9f1d5e42e58552fae07604010e047f80ce,,,,,,,,,Slurm 775722; after CPU preparation 775721; both seeds sequential; training not started
