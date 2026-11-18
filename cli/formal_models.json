@@ -1,0 +1,128 @@
+{
+  "A_5421": {
+    "condition": "A",
+    "seed": 5421,
+    "files": {
+      "checkpoint": {
+        "path": "checkpoints/tong/A_5421_best.pt",
+        "sha256": "11ac81f9140311b32244e23d49802f179251dea582bb6f2b058d0427af72b7a4",
+        "url": "https://github.com/Fei-stack-wq/maie5421-CV-final/releases/download/tong-ab-formal-2026-11-18/A_5421_best.pt"
+      },
+      "config": {
+        "path": "checkpoints/tong/A_5421/config.yaml",
+        "sha256": "c9de9df65c69ecd2ee0bb91b81124b02b74823497efa32d61afbb903a56b963e",
+        "url": "https://raw.githubusercontent.com/Fei-stack-wq/maie5421-CV-final/d59c6e090456ae729fed2fae4d2d4dd36f21b2b2/docs/tong-formal-results/A_5421/config.yaml"
+      },
+      "predictions": {
+        "path": "checkpoints/tong/A_5421/val_predictions.csv",
+        "sha256": "621f237b4f2cc01eba7d8f8860e26cc39552e5f107344dc937966afede94db3a",
+        "url": "https://raw.githubusercontent.com/Fei-stack-wq/maie5421-CV-final/d59c6e090456ae729fed2fae4d2d4dd36f21b2b2/docs/tong-formal-results/A_5421/val_predictions.csv"
+      }
+    }
+  },
+  "A_2026": {
+    "condition": "A",
+    "seed": 2026,
+    "files": {
+      "checkpoint": {
+        "path": "checkpoints/tong/A_2026_best.pt",
+        "sha256": "ce42faa622bcbad10338eb739ea0efc53f380c1434f6affde488210a487708fd",
+        "url": "https://github.com/Fei-stack-wq/maie5421-CV-final/releases/download/tong-ab-formal-2026-11-18/A_2026_best.pt"
+      },
+      "config": {
+        "path": "checkpoints/tong/A_2026/config.yaml",
+        "sha256": "2174ce2d8df8185aa2356f1816bdb50094d92eacb06862977de83713fad51ed1",
+        "url": "https://raw.githubusercontent.com/Fei-stack-wq/maie5421-CV-final/d59c6e090456ae729fed2fae4d2d4dd36f21b2b2/docs/tong-formal-results/A_2026/config.yaml"
+      },
+      "predictions": {
+        "path": "checkpoints/tong/A_2026/val_predictions.csv",
+        "sha256": "ff452b47363f4c64468d7dc8916197b5b8e2760195812f3680a83e9a4f9521dd",
+        "url": "https://raw.githubusercontent.com/Fei-stack-wq/maie5421-CV-final/d59c6e090456ae729fed2fae4d2d4dd36f21b2b2/docs/tong-formal-results/A_2026/val_predictions.csv"
+      }
+    }
+  },
+  "B_5421": {
+    "condition": "B",
+    "seed": 5421,
+    "files": {
+      "checkpoint": {
+        "path": "checkpoints/tong/B_5421_best.pt",
+        "sha256": "69c6c49d4a146760ebf76c5c851cbb16190c237c9397f3fd6d145d7476f80f07",
+        "url": "https://github.com/Fei-stack-wq/maie5421-CV-final/releases/download/tong-ab-formal-2026-11-18/B_5421_best.pt"
+      },
+      "config": {
+        "path": "checkpoints/tong/B_5421/config.yaml",
+        "sha256": "f56c99b68086125229e6041d11800e3b1bd3052f7b4e02d3135640ec2a80b3d7",
+        "url": "https://raw.githubusercontent.com/Fei-stack-wq/maie5421-CV-final/d59c6e090456ae729fed2fae4d2d4dd36f21b2b2/docs/tong-formal-results/B_5421/config.yaml"
+      },
+      "predictions": {
+        "path": "checkpoints/tong/B_5421/val_predictions.csv",
+        "sha256": "2e3b17312168cb2246cdfe5f2adb7f6bd0bd293dfcc958dc50bf014b225a81ed",
+        "url": "https://raw.githubusercontent.com/Fei-stack-wq/maie5421-CV-final/d59c6e090456ae729fed2fae4d2d4dd36f21b2b2/docs/tong-formal-results/B_5421/val_predictions.csv"
+      }
+    }
+  },
+  "B_2026": {
+    "condition": "B",
+    "seed": 2026,
+    "files": {
+      "checkpoint": {
+        "path": "checkpoints/tong/B_2026_best.pt",
+        "sha256": "e38a1c2ac1b41c90be33be8865c7625970e8a46b8aa48dafa8eb126c68a394e1",
+        "url": "https://github.com/Fei-stack-wq/maie5421-CV-final/releases/download/tong-ab-formal-2026-11-18/B_2026_best.pt"
+      },
+      "config": {
+        "path": "checkpoints/tong/B_2026/config.yaml",
+        "sha256": "080d8e353a3e3292512bb8a434cacb1dde248187d42da13eeed4ee711fd31cd3",
+        "url": "https://raw.githubusercontent.com/Fei-stack-wq/maie5421-CV-final/d59c6e090456ae729fed2fae4d2d4dd36f21b2b2/docs/tong-formal-results/B_2026/config.yaml"
+      },
+      "predictions": {
+        "path": "checkpoints/tong/B_2026/val_predictions.csv",
+        "sha256": "1aa9a9148e5c8c46cf1c4f196d7734d7d8abe5d33fcdec97f1b3fd1987c31142",
+        "url": "https://raw.githubusercontent.com/Fei-stack-wq/maie5421-CV-final/d59c6e090456ae729fed2fae4d2d4dd36f21b2b2/docs/tong-formal-results/B_2026/val_predictions.csv"
+      }
+    }
+  },
+  "C_5421": {
+    "condition": "C",
+    "seed": 5421,
+    "files": {
+      "checkpoint": {
+        "path": "checkpoints/wang/C_5421_best.pt",
+        "sha256": "5f07fbcc7ffdf9126b6c3338f109479c298c24be283cde35c838d98a52d9ec7c",
+        "url": "https://github.com/Fei-stack-wq/maie5421-CV-final/releases/download/wang-c-formal-2026-11-12/C_5421_best.pt"
+      },
+      "config": {
+        "path": "docs/wang-formal-results/C_5421/config.yaml",
+        "sha256": "c7ab35d2d10a4968ab6af1bff407aeee53b1f65b43684a17570accc294c93841",
+        "url": "https://raw.githubusercontent.com/Fei-stack-wq/maie5421-CV-final/0cb7e982c91e6be208dc3d18afc584988f5f0f5f/docs/wang-formal-results/C_5421/config.yaml"
+      },
+      "predictions": {
+        "path": "docs/wang-formal-results/C_5421/val_predictions.csv",
+        "sha256": "4cdd2b01dd9458fa061307ec0f7ec4cee2c5adc754cd29422e5d21705879bb3a",
+        "url": "https://raw.githubusercontent.com/Fei-stack-wq/maie5421-CV-final/0cb7e982c91e6be208dc3d18afc584988f5f0f5f/docs/wang-formal-results/C_5421/val_predictions.csv"
+      }
+    }
+  },
+  "C_2026": {
+    "condition": "C",
+    "seed": 2026,
+    "files": {
+      "checkpoint": {
+        "path": "checkpoints/wang/C_2026_best.pt",
+        "sha256": "958b0f820bb205954370cf87f0aa011289c05b2efed4d090b00176140c612f4c",
+        "url": "https://github.com/Fei-stack-wq/maie5421-CV-final/releases/download/wang-c-formal-2026-11-12/C_2026_best.pt"
+      },
+      "config": {
+        "path": "docs/wang-formal-results/C_2026/config.yaml",
+        "sha256": "7da627d546e2092154a5e903a48d13045d8e3911ea752d2d790510f5285f5420",
+        "url": "https://raw.githubusercontent.com/Fei-stack-wq/maie5421-CV-final/0cb7e982c91e6be208dc3d18afc584988f5f0f5f/docs/wang-formal-results/C_2026/config.yaml"
+      },
+      "predictions": {
+        "path": "docs/wang-formal-results/C_2026/val_predictions.csv",
+        "sha256": "8bfd621190af170de376d9596c2283716097ae0d225769184c28110bb0b7e65c",
+        "url": "https://raw.githubusercontent.com/Fei-stack-wq/maie5421-CV-final/0cb7e982c91e6be208dc3d18afc584988f5f0f5f/docs/wang-formal-results/C_2026/val_predictions.csv"
+      }
+    }
+  }
+}

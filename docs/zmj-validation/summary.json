@@ -1,0 +1,94 @@
+{
+  "checked_at_utc": "2026-11-18T18:33:15.771737+00:00",
+  "scope": "Six CPU CLI models, four fixed clean-validation images each; AUC recomputed from published validation CSVs.",
+  "runtime": {
+    "python": "3.12.14",
+    "platform": "macOS-27.0-arm64-arm-64bit",
+    "torch": "2.15.0",
+    "torchvision": "0.29.2",
+    "pillow": "13.0.0"
+  },
+  "source_sha256": {
+    "cli/predict.py": "77c1341a994261c285011ae0ff8edf36671a6d800a224d661b2b7b94f0a7a5e6",
+    "cli/verify_models.py": "630ea636612e4b93009c3e28167723ee5b133b178bef0e774c701c34eacc863f",
+    "cli/formal_models.json": "812b8bffabbe6b161d865f49b05c82dfd29ae20d40dff12fe5dbf75a825a0560",
+    "src/training/checkpoint.py": "5110c587663c164e9733f15b5098663fda6ca52e8bd50b6620dfff0274a5cfee",
+    "src/datasets/transforms.py": "5a46c9ff86ac9025cfe9a2b1136e19441172e24aa77b6d90462f9c9f7b6e9bd0",
+    "Images/manifest.csv": "265cdc4036036058666479cf2d717ed6eb2a7cdb6c7554109819b9c9280fa5f5"
+  },
+  "sample_ids": [
+    "val-001510c78c44",
+    "val-001cd7d5a0a5",
+    "val-002c37a9130b",
+    "val-008618d5511b"
+  ],
+  "runs": {
+    "A_5421": {
+      "validation_csv_rows": 1500,
+      "validation_auc_from_csv": 0.9674808888888888,
+      "checkpoint_best_val_auc": 0.9674808888888888,
+      "auc_abs_difference": 0.0,
+      "sample_predictions": 4,
+      "label_agreements": 4,
+      "max_published_probability_difference": 0.0002210661768913269,
+      "max_shared_api_difference": 0.0,
+      "checkpoint_sha256": "11ac81f9140311b32244e23d49802f179251dea582bb6f2b058d0427af72b7a4"
+    },
+    "A_2026": {
+      "validation_csv_rows": 1500,
+      "validation_auc_from_csv": 0.9729191111111111,
+      "checkpoint_best_val_auc": 0.9729191111111111,
+      "auc_abs_difference": 0.0,
+      "sample_predictions": 4,
+      "label_agreements": 4,
+      "max_published_probability_difference": 0.00042213499546051025,
+      "max_shared_api_difference": 0.0,
+      "checkpoint_sha256": "ce42faa622bcbad10338eb739ea0efc53f380c1434f6affde488210a487708fd"
+    },
+    "B_5421": {
+      "validation_csv_rows": 1500,
+      "validation_auc_from_csv": 0.9651288888888889,
+      "checkpoint_best_val_auc": 0.9651288888888889,
+      "auc_abs_difference": 0.0,
+      "sample_predictions": 4,
+      "label_agreements": 4,
+      "max_published_probability_difference": 8.511543273925781e-05,
+      "max_shared_api_difference": 0.0,
+      "checkpoint_sha256": "69c6c49d4a146760ebf76c5c851cbb16190c237c9397f3fd6d145d7476f80f07"
+    },
+    "B_2026": {
+      "validation_csv_rows": 1500,
+      "validation_auc_from_csv": 0.9623946666666666,
+      "checkpoint_best_val_auc": 0.9623946666666666,
+      "auc_abs_difference": 0.0,
+      "sample_predictions": 4,
+      "label_agreements": 4,
+      "max_published_probability_difference": 0.0002796053886413574,
+      "max_shared_api_difference": 0.0,
+      "checkpoint_sha256": "e38a1c2ac1b41c90be33be8865c7625970e8a46b8aa48dafa8eb126c68a394e1"
+    },
+    "C_5421": {
+      "validation_csv_rows": 1500,
+      "validation_auc_from_csv": 0.9648533333333333,
+      "checkpoint_best_val_auc": 0.9648533333333333,
+      "auc_abs_difference": 0.0,
+      "sample_predictions": 4,
+      "label_agreements": 4,
+      "max_published_probability_difference": 0.0009191036224365234,
+      "max_shared_api_difference": 0.0,
+      "checkpoint_sha256": "5f07fbcc7ffdf9126b6c3338f109479c298c24be283cde35c838d98a52d9ec7c"
+    },
+    "C_2026": {
+      "validation_csv_rows": 1500,
+      "validation_auc_from_csv": 0.9612248888888889,
+      "checkpoint_best_val_auc": 0.9612248888888889,
+      "auc_abs_difference": 0.0,
+      "sample_predictions": 4,
+      "label_agreements": 4,
+      "max_published_probability_difference": 0.0003291964530944824,
+      "max_shared_api_difference": 0.0,
+      "checkpoint_sha256": "958b0f820bb205954370cf87f0aa011289c05b2efed4d090b00176140c612f4c"
+    }
+  },
+  "ok": true
+}
