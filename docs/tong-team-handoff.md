@@ -1,6 +1,10 @@
 # TONG：组员同步清单与运行边界
 
-> 2026-11-18 更新：四组正式 A/B 已训练并独立验收，当前交接入口为 [正式结果与加载说明](tong-formal-results/README.md)。下方保留早期协调清单作为历史记录，不代表当前训练仍未完成；组员收讫和后续评估仍须另行确认。
+> 2026-11-18 发布更新：四组正式 A/B 权重、配置、逐轮日志、逐图验证预测和验收记录已公开，下载入口为 [GitHub Release](https://github.com/Fei-stack-wq/maie5421-CV-final/releases/tag/tong-ab-formal-2026-11-18)，加载说明见 [正式交接](tong-formal-results/README.md)。
+
+当前接手事项：ZHANG 下载四组 A/B 并联合 WANG 的两组 C 开展 seen/unseen/扰动评估、bootstrap 和图表；ZHUO 将 A/B 权重接入推理工具并确认运行说明；TONG 配合加载问题及实验设置章节整合。
+
+以下均为早期协调记录，不能用其中的“待训练”“当前 CPU 环境”等旧描述判断本次正式交付状态。组员收讫和各自后续工作仍须另行确认。
 
 本文是需要共同确认的事项，不代表已经得到组员确认，也没有代替任何人完成正式实验。代码与验证入口见 `docs/tong-training.md`，本轮实测结果见 `docs/tong-extended-validation/`。
 

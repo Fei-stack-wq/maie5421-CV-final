@@ -48,11 +48,26 @@ last.pt 仅核对记录与哈希，没有额外做恢复训练实验。
 精确汇总见 [results.json](results.json)，逐个 checkpoint 的大小/哈希见 [checkpoint-manifest.json](checkpoint-manifest.json)，
 四个完整模型 ZIP 的大小/哈希见 [artifact-archives.json](artifact-archives.json)。
 
-完整模型归档保存在项目所有者的 DSW 工作区和 Windows D 盘，两份均已校验；当前没有 GitHub 模型下载地址。
-请向项目所有者取得对应的 `TONG_<run_id>_artifacts.zip`，逐项核对本目录的 SHA256。
-解压后模型位于 `models/<run_id>/best.pt`。所有 last.pt 与 best_epoch_NNN.pt 均已保留。
-这些约 112 MB/份的模型按项目约定不进入 Git。
-本次同步交接信息不等于已经授予其他成员 DSW/本机文件访问权限，也不冒称其他成员已收讫。
+**四份最佳权重与完整实验记录已公开发布：[tong-ab-formal-2026-11-18](https://github.com/Fei-stack-wq/maie5421-CV-final/releases/tag/tong-ab-formal-2026-11-18)。**
+所有 8 个发布附件均已核对 GitHub 端 SHA256，并在未登录状态检查下载链接可用。
+
+| 实验 | 权重下载 | 下载后放置位置 |
+| --- | --- | --- |
+| A_5421 | [A_5421_best.pt](https://github.com/Fei-stack-wq/maie5421-CV-final/releases/download/tong-ab-formal-2026-11-18/A_5421_best.pt) | `models/A_5421/best.pt` |
+| B_5421 | [B_5421_best.pt](https://github.com/Fei-stack-wq/maie5421-CV-final/releases/download/tong-ab-formal-2026-11-18/B_5421_best.pt) | `models/B_5421/best.pt` |
+| A_2026 | [A_2026_best.pt](https://github.com/Fei-stack-wq/maie5421-CV-final/releases/download/tong-ab-formal-2026-11-18/A_2026_best.pt) | `models/A_2026/best.pt` |
+| B_2026 | [B_2026_best.pt](https://github.com/Fei-stack-wq/maie5421-CV-final/releases/download/tong-ab-formal-2026-11-18/B_2026_best.pt) | `models/B_2026/best.pt` |
+
+记录包：[TONG_AB_records.zip](https://github.com/Fei-stack-wq/maie5421-CV-final/releases/download/tong-ab-formal-2026-11-18/TONG_AB_records.zip)。
+校验清单：[SHA256SUMS.txt](https://github.com/Fei-stack-wq/maie5421-CV-final/releases/download/tong-ab-formal-2026-11-18/SHA256SUMS.txt)；
+机器可读下载清单见 [release-assets.json](release-assets.json)。
+记录包固定为发布前已验收的快照，内含历史交付状态文字；当前下载位置以本页和 Release 为准。
+逐轮、逐图、配置及独立验收记录保持原始字节，不因发布而改写。
+
+`TONG_AB_training_source.bundle` 保留实际训练源码提交；该提交同时已包含在本交接分支历史中。
+完整模型归档（含 last.pt 和所有 best_epoch_NNN.pt）仍保存在项目所有者的 DSW 工作区及 Windows D 盘，两份均已校验；
+本次 Release 提供评测和推理所需的四份 best.pt。权重作为 Release 附件提供，不进入 Git 文件树。
+公开下载已可用，组员收讫和后续评估完成情况仍需由对应成员确认。
 
 ## ZHANG / ZHUO 加载接口
 
