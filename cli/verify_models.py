@@ -117,7 +117,7 @@ def main(argv=None):
         comparisons.extend(run_rows)
         print(f"{run_id}: {runs[run_id]['label_agreements']}/4 labels match; CSV AUC={csv_auc:.10f}", flush=True)
     with (output_dir / "sample_predictions.csv").open("w", newline="") as stream:
-        writer = csv.DictWriter(stream, fieldnames=comparisons[0].keys())
+        writer = csv.DictWriter(stream, fieldnames=comparisons[0].keys(), lineterminator="\n")
         writer.writeheader()
         writer.writerows(comparisons)
     summary = {

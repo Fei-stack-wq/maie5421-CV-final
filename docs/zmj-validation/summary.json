@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-18T18:33:15.771737+00:00",
+  "checked_at_utc": "2026-11-18T18:36:27.225515+00:00",
   "scope": "Six CPU CLI models, four fixed clean-validation images each; AUC recomputed from published validation CSVs.",
   "runtime": {
     "python": "3.12.14",
@@ -10,7 +10,7 @@
   },
   "source_sha256": {
     "cli/predict.py": "77c1341a994261c285011ae0ff8edf36671a6d800a224d661b2b7b94f0a7a5e6",
-    "cli/verify_models.py": "630ea636612e4b93009c3e28167723ee5b133b178bef0e774c701c34eacc863f",
+    "cli/verify_models.py": "7f0d98e9f4e5961b48a8a2eb8f16c63d4bc7673c4c77f0e3613bb05c2d5311eb",
     "cli/formal_models.json": "812b8bffabbe6b161d865f49b05c82dfd29ae20d40dff12fe5dbf75a825a0560",
     "src/training/checkpoint.py": "5110c587663c164e9733f15b5098663fda6ca52e8bd50b6620dfff0274a5cfee",
     "src/datasets/transforms.py": "5a46c9ff86ac9025cfe9a2b1136e19441172e24aa77b6d90462f9c9f7b6e9bd0",
