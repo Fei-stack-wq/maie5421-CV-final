@@ -1,0 +1,194 @@
+{
+  "model_backup_archives": {
+    "A_5421": {
+      "file": "TONG_A_5421_artifacts.zip",
+      "bytes": 730314012,
+      "sha256": "87831caad0025c7961e494f2bc7eb2d6fa824643d944d3c82f4f3bad0ca4b26e",
+      "includes_all_versioned_checkpoints": true,
+      "windows_copy_and_extraction_verified": true,
+      "verified_files": 14,
+      "public_download_url": null,
+      "availability": "Preserved in authorized DSW workspace and owner D-drive delivery; obtain archive from project owner."
+    },
+    "B_5421": {
+      "file": "TONG_B_5421_artifacts.zip",
+      "bytes": 625751899,
+      "sha256": "dd1d433adfa99ca9662c1c550012ad33e01808188e2c5ed4f02d809eca28acd9",
+      "includes_all_versioned_checkpoints": true,
+      "windows_copy_and_extraction_verified": true,
+      "verified_files": 13,
+      "public_download_url": null,
+      "availability": "Preserved in authorized DSW workspace and owner D-drive delivery; obtain archive from project owner."
+    },
+    "A_2026": {
+      "file": "TONG_A_2026_artifacts.zip",
+      "bytes": 731237847,
+      "sha256": "c138171178f64b0ec458185491d7c78f16a3d324ed62117eb01ef04268e1d357",
+      "includes_all_versioned_checkpoints": true,
+      "windows_copy_and_extraction_verified": true,
+      "verified_files": 14,
+      "public_download_url": null,
+      "availability": "Preserved in authorized DSW workspace and owner D-drive delivery; obtain archive from project owner."
+    },
+    "B_2026": {
+      "file": "TONG_B_2026_artifacts.zip",
+      "bytes": 417106959,
+      "sha256": "08b0decefaed297c6c48f4766411ad155d2a85c8d6e926ff73de0a099d2cb0d0",
+      "includes_all_versioned_checkpoints": true,
+      "windows_copy_and_extraction_verified": true,
+      "verified_files": 11,
+      "public_download_url": null,
+      "availability": "Preserved in authorized DSW workspace and owner D-drive delivery; obtain archive from project owner."
+    }
+  },
+  "all_four_verified": true,
+  "verification_method": "Existing independent per-run CUDA best.pt reloads, plus current artifact SHA256 recheck; no redundant retraining or resume experiment",
+  "source_commit": "d1a7752e557d77ba0f99a8d7243f4b51e166729b",
+  "base_commit": "0cb7e982c91e6be208dc3d18afc584988f5f0f5f",
+  "environment": {
+    "python": "3.11.11",
+    "packages": {
+      "torch": "2.3.0+cu121",
+      "torchvision": "0.18.0+cu121",
+      "numpy": "1.26.4",
+      "Pillow": "11.3.0",
+      "scipy": "1.13.1",
+      "PyYAML": "6.0.2",
+      "requests": "2.32.5",
+      "pytest": "8.3.5"
+    },
+    "cuda_runtime": "12.1",
+    "gpu": "NVIDIA A100-SXM4-80GB",
+    "weights_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec"
+  },
+  "reference_C_hardware": "NVIDIA H800 80GB; A/B used NVIDIA A100-SXM4-80GB, so hardware was not identical",
+  "driver_version": "570.133.20",
+  "os": "Ubuntu 22.04.5 LTS",
+  "started_at_utc": "2026-11-17T18:34:17.799384+00:00",
+  "finished_at_utc": "2026-11-17T19:14:04.516182+00:00",
+  "formal_job_wall_seconds": 2386.716798,
+  "timing_definition": "Job wall time includes final preflight, sequential training, checkpoint I/O and four independent reloads. Per-run recorded seconds sum history.csv train+validation timers and exclude checkpoint I/O, initial data audit and independent reload. Setup/download/QA/unit-test/pilot time excluded from job wall time. Packaging and network backup of completed groups overlapped later training; these are operational timings, not controlled hardware benchmark measurements.",
+  "tests": {
+    "passed": 139,
+    "skipped": 1,
+    "deselected": 1,
+    "skip_reason": "CUDA-unavailable guard is inapplicable because CUDA is available",
+    "deselection_reason": "Documented persistent-worker hang; formal num_workers=0"
+  },
+  "data_ready": {
+    "ready_for_training": true,
+    "fresh_qa_sha256": "1ef812f9a2d586a1fb38eeb1882de808f5e34caed635b366b09100967d6f02c6",
+    "manifest_sha256": "265cdc4036036058666479cf2d717ed6eb2a7cdb6c7554109819b9c9280fa5f5",
+    "verified_images": 12100,
+    "reviewed_candidate_pairs": 1,
+    "reviewer_type": "assistant_visual_inspection",
+    "raw_qa_full_pass": false,
+    "note": "Fresh byte audit and screening match the existing versioned review; not new human sign-off."
+  },
+  "data_qa_caveat": "Raw pHash QA retained review_required for one known candidate. The unmodified readiness gate matched the versioned assistant visual false-positive review; no new human sign-off or gate bypass.",
+  "held_out_evaluation": "Not performed in this TONG handoff; validation AUC is not a held-out or robustness score. ZHANG owns subsequent held-out evaluation.",
+  "last_checkpoint_scope": "Record and hash checks only, no resume training experiment",
+  "runs": {
+    "A_5421": {
+      "condition": "A",
+      "seed": 5421,
+      "epochs": 7,
+      "best_epoch_zero_based": 4,
+      "best_epoch_one_based": 5,
+      "best_clean_val_auc": 0.9674808888888888,
+      "early_stopped": true,
+      "optimizer_updates": 2625,
+      "amp_skips": 0,
+      "recorded_train_validation_seconds": 491.8415158729913,
+      "validation_images": 1500,
+      "reload_max_probability_error": 0.0,
+      "best_checkpoint_sha256": "11ac81f9140311b32244e23d49802f179251dea582bb6f2b058d0427af72b7a4",
+      "last_checkpoint_sha256": "e663eacdbe916dc45170808530bab9d6aa8238c91b779687fc5a69a68ea34a5f",
+      "artifact_sha256": {
+        "best.pt": "11ac81f9140311b32244e23d49802f179251dea582bb6f2b058d0427af72b7a4",
+        "last.pt": "e663eacdbe916dc45170808530bab9d6aa8238c91b779687fc5a69a68ea34a5f",
+        "config.yaml": "c9de9df65c69ecd2ee0bb91b81124b02b74823497efa32d61afbb903a56b963e",
+        "summary.json": "d57b6c2bf563728f9dce028f334bde6918f24313ce2912f29dfba922a7183a41",
+        "history.csv": "2c65b0b25e7797842a49a2b33c31a804e56c24016ca07e9e83ffbfaaf819e7fe",
+        "val_predictions.csv": "621f237b4f2cc01eba7d8f8860e26cc39552e5f107344dc937966afede94db3a"
+      },
+      "verification_report": "A_5421/verification.json"
+    },
+    "B_5421": {
+      "condition": "B",
+      "seed": 5421,
+      "epochs": 7,
+      "best_epoch_zero_based": 4,
+      "best_epoch_one_based": 5,
+      "best_clean_val_auc": 0.9651288888888889,
+      "early_stopped": true,
+      "optimizer_updates": 2625,
+      "amp_skips": 0,
+      "recorded_train_validation_seconds": 630.6016024360288,
+      "validation_images": 1500,
+      "reload_max_probability_error": 0.0,
+      "best_checkpoint_sha256": "69c6c49d4a146760ebf76c5c851cbb16190c237c9397f3fd6d145d7476f80f07",
+      "last_checkpoint_sha256": "a8ff70f032ae726fa71153d2f145271bff34b577ba02d22c5aa7f95b2e3bced2",
+      "artifact_sha256": {
+        "best.pt": "69c6c49d4a146760ebf76c5c851cbb16190c237c9397f3fd6d145d7476f80f07",
+        "last.pt": "a8ff70f032ae726fa71153d2f145271bff34b577ba02d22c5aa7f95b2e3bced2",
+        "config.yaml": "f56c99b68086125229e6041d11800e3b1bd3052f7b4e02d3135640ec2a80b3d7",
+        "summary.json": "f898c3df09c67a730a781581b9077fce463dc2fa5ccb4cfacef83b0fa31f4025",
+        "history.csv": "a53d6c3d4eca5a4b49d7e6d34a189a644042825322d2081ab1040c0e9bb27850",
+        "val_predictions.csv": "2e3b17312168cb2246cdfe5f2adb7f6bd0bd293dfcc958dc50bf014b225a81ed"
+      },
+      "verification_report": "B_5421/verification.json"
+    },
+    "A_2026": {
+      "condition": "A",
+      "seed": 2026,
+      "epochs": 8,
+      "best_epoch_zero_based": 6,
+      "best_epoch_one_based": 7,
+      "best_clean_val_auc": 0.9729191111111111,
+      "early_stopped": false,
+      "optimizer_updates": 3000,
+      "amp_skips": 0,
+      "recorded_train_validation_seconds": 563.739731308,
+      "validation_images": 1500,
+      "reload_max_probability_error": 0.0,
+      "best_checkpoint_sha256": "ce42faa622bcbad10338eb739ea0efc53f380c1434f6affde488210a487708fd",
+      "last_checkpoint_sha256": "8edc4018e6bd674792ec3d83da268d4aa9c6486cf1b3cf18ff7171ea33d73a8e",
+      "artifact_sha256": {
+        "best.pt": "ce42faa622bcbad10338eb739ea0efc53f380c1434f6affde488210a487708fd",
+        "last.pt": "8edc4018e6bd674792ec3d83da268d4aa9c6486cf1b3cf18ff7171ea33d73a8e",
+        "config.yaml": "2174ce2d8df8185aa2356f1816bdb50094d92eacb06862977de83713fad51ed1",
+        "summary.json": "1b9afb171f3aadfdcd6c2835d934d5c266760d63d8c2801c4b86bbae2b9bf2df",
+        "history.csv": "4db1aaf9c77e599ad1e8481270f674552acfcc75ca94ae22c578c624a55c4901",
+        "val_predictions.csv": "ff452b47363f4c64468d7dc8916197b5b8e2760195812f3680a83e9a4f9521dd"
+      },
+      "verification_report": "A_2026/verification.json"
+    },
+    "B_2026": {
+      "condition": "B",
+      "seed": 2026,
+      "epochs": 4,
+      "best_epoch_zero_based": 1,
+      "best_epoch_one_based": 2,
+      "best_clean_val_auc": 0.9623946666666666,
+      "early_stopped": true,
+      "optimizer_updates": 1500,
+      "amp_skips": 0,
+      "recorded_train_validation_seconds": 364.62795907798863,
+      "validation_images": 1500,
+      "reload_max_probability_error": 0.0,
+      "best_checkpoint_sha256": "e38a1c2ac1b41c90be33be8865c7625970e8a46b8aa48dafa8eb126c68a394e1",
+      "last_checkpoint_sha256": "d076a7479dbab09e3619e8b9fd55377087a87f68a38ebc2c0192f95ae9a91680",
+      "artifact_sha256": {
+        "best.pt": "e38a1c2ac1b41c90be33be8865c7625970e8a46b8aa48dafa8eb126c68a394e1",
+        "last.pt": "d076a7479dbab09e3619e8b9fd55377087a87f68a38ebc2c0192f95ae9a91680",
+        "config.yaml": "080d8e353a3e3292512bb8a434cacb1dde248187d42da13eeed4ee711fd31cd3",
+        "summary.json": "2d77b1cc33d0e0d9c7e74d9e91cc8e85958bc333d8507bc6bf63685b3a1e9d7d",
+        "history.csv": "9560fd71c3911ef695e25ba36bf72388f9890adab4b796dd1a3e412f0fea7c42",
+        "val_predictions.csv": "1aa9a9148e5c8c46cf1c4f196d7734d7d8abe5d33fcdec97f1b3fd1987c31142"
+      },
+      "verification_report": "B_2026/verification.json"
+    }
+  },
+  "publication_note": "Portable summary derived from verified delivery; machine identifiers and personal absolute paths omitted. Large model artifacts are not tracked in Git."
+}

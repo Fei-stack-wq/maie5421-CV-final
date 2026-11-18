@@ -1,6 +1,6 @@
 # TONG: formal A/B preparation and handoff
 
-**Preparation only. Four formal A/B models are still NOT RUN (0/4).** This work
+**Execution update (2026-11-18): all four formal A/B models are complete and independently verified (4/4).** See [the verified handoff](tong-formal-results/README.md). Preparation instructions below are retained for reproducibility. Actual training source: `d1a7752e557d77ba0f99a8d7243f4b51e166729b`. This work
 starts from WANG integration commit `0cb7e982c91e6be208dc3d18afc584988f5f0f5f`.
 It adds separate files; it does not change the trainer, OUYANG data pipeline,
 completed C experiments, `main`, or a teammate's branch.
@@ -42,9 +42,9 @@ Do not train on a login node.
   environment, caches and multiple best-epoch/last checkpoints. This is not a
   measured minimum. Keep large weights and raw outputs out of Git.
 
-Current cloud preparation/testing used CPU and Python 3.12. That is useful for
+Historical preparation/testing used CPU and Python 3.12. That is useful for
 unit tests, **not** evidence of formal CUDA training or the user's own computer's
-capabilities. Neither GPU jobs nor formal training were started here.
+capabilities. No GPU jobs or formal training were started during that preparation stage. The subsequent authorized CUDA execution is recorded in the verified handoff.
 
 ## Prepare your checkout
 

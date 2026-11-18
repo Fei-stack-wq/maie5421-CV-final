@@ -1,0 +1,7 @@
+{
+  "passed": 139,
+  "skipped": 1,
+  "deselected": 1,
+  "skip_reason": "CUDA-unavailable guard is inapplicable because CUDA is available",
+  "deselection_reason": "Documented persistent-worker hang; formal num_workers=0"
+}

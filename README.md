@@ -28,13 +28,13 @@
 | 12,000 张数据集（4 生成器 × 5 划分） | ✅ 完成 | `Images/`（FEI） |
 | 来源清单 manifest + 偏置审计 + 校验报告 | ✅ 完成（0 error） | `Images/manifest.csv` 等（FEI） |
 | 数据读取 / paired-view 变换 / 扰动模块 | ✅ 已实现，接口与接收 QA 见交接说明 | OUYANG |
-| ResNet-18 封装 + A/B 训练入口 + pilot | 🚧 待实现 | TONG |
+| ResNet-18 + A/B 正式训练与独立验收 | ✅ 4/4 完成；模型双份备份已核验 | [TONG 正式交接](docs/tong-formal-results/README.md) |
 | 一致性损失（C）+ configs + 六次运行调度 | 🚧 待实现 | WANG |
 | 评测脚本 / bootstrap / 图表 | 🚧 待实现 | ZHANG |
 | CLI + 一键复现 + 环境锁定 | ⏳ 待实现 | ZHUO |
 | 6 页 CVPR 报告 + 10 分钟展示 | ⏳ W3 起并行 | FEI 统稿 / ZHUO 主讲 |
 
-> 数据接口、成对视图、固定扰动及接收 QA 已落地；模型训练与指标评测仍由对应成员实现。
+> 数据接口、成对视图、固定扰动及接收 QA 已落地；TONG 四组正式 A/B 已完成并验收，后续测试评估与 CLI 集成仍由对应成员负责。
 > 当前基准提交 `e7db18d` 实际已追踪完整图片，早期“图像不入 git”的说明已过时。完整接收情况以本机 QA 为准。
 
 ### OUYANG Di 数据模块
