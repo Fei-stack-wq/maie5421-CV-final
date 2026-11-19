@@ -47,6 +47,8 @@ def predict(args):
     torch.set_num_threads(args.threads)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     manifest_hash = verify_data(args)
+    # Git may materialize the same CSV with CRLF on Windows.
+    normalized_manifest_hash = hashlib.sha256(args.manifest.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
     models = {}
     for name, spec in MODELS.items():
         files = spec["files"]
@@ -57,13 +59,16 @@ def predict(args):
         if (meta["model_status"] != "formal" or run_config["condition"] != spec["condition"]
                 or run_config["seed"] != spec["seed"]):
             raise ValueError(f"Unexpected model identity: {name}")
+        if meta["training_provenance"]["manifest_sha256"] not in {manifest_hash, normalized_manifest_hash}:
+            raise ValueError(f"Training manifest differs from the evaluation manifest: {name}")
         if models and transform.config.fingerprint != data_config.fingerprint:
             raise ValueError(f"Preprocessing mismatch: {name}")
         data_config = transform.config
         model = model.to(device, memory_format=torch.channels_last)
         models[name] = model
     args.output.mkdir(parents=True, exist_ok=False)
-    metadata = dict(manifest_sha256=manifest_hash, preprocessing_sha256=data_config.fingerprint,
+    metadata = dict(manifest_sha256=manifest_hash, manifest_lf_sha256=normalized_manifest_hash,
+                    preprocessing_sha256=data_config.fingerprint,
                     python=platform.python_version(), torch=torch.__version__, pillow=pillow_version,
                     device=str(device), batch_size=args.batch_size,
                     models={name: spec["files"]["checkpoint"]["sha256"] for name, spec in MODELS.items()})
