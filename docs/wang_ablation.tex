@@ -1,0 +1,65 @@
+% Author: WANG Yitian. Results fragment; requires the report's math support.
+% Source: ZHANG evaluation commit 2d724acb8527d0e2424c239e3aea264576345f8d.
+
+\subsection{Augmentation and consistency ablations}
+\label{sec:wang-ablation-results}
+We compare clean-view supervision (A), paired-view supervision (B), and
+paired-view supervision with JS consistency (C). Results average the
+seed-specific metrics of seeds 5421 and 2026, rather than ensemble their
+predictions. Each test split contains 750 real and 750 generated images.
+The 95\% intervals use 2,000 label-stratified image-bootstrap draws,
+paired across models and views within each split.
+
+\paragraph{Augmentation has a clean-performance cost.}
+The clean AUCs of A/B/C are 0.967/0.957/0.954 on seen,
+0.576/0.528/0.558 on ADM, and 0.960/0.878/0.878 on GLIDE.
+B therefore has lower clean AUC than A on all three splits.
+On seen images, B improves AUC over A by 2.25 percentage points (pp)
+under JPEG q50, 6.41 pp under downsampling, and 6.39 pp under blur.
+These benefits do not extend uniformly to unseen generators:
+on GLIDE, B lowers JPEG q50 AUC by 2.64 pp (95\% interval
+$[-3.79,-1.47]$).
+
+\paragraph{Consistency improves specific perturbations.}
+Table~\ref{tab:wang-consistency} shows positive C--B AUC differences
+for downsampling and blur on every split. JPEG q70/q50 intervals span
+zero on seen and GLIDE, whereas ADM gains 2.31/2.08 pp.
+On clean ADM, C improves over B by 3.06 pp ($[2.02,4.15]$),
+but its AUC remains only 0.558. Clean seen and GLIDE C--B intervals
+include zero. Thus the observed benefit concerns particular
+generator--perturbation combinations, rather than general superiority.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{llr}
+\hline
+Split & Perturbation & C--B AUC, pp [95\% interval] \\
+\hline
+Seen & Downsample & $1.33\ [0.68,1.97]$ \\
+Seen & Blur & $1.65\ [0.98,2.27]$ \\
+ADM & Downsample & $1.15\ [0.18,2.22]$ \\
+ADM & Blur & $1.34\ [0.38,2.37]$ \\
+GLIDE & Downsample & $2.84\ [1.87,3.82]$ \\
+GLIDE & Blur & $2.83\ [1.85,3.82]$ \\
+\hline
+\end{tabular}
+\caption{Two-seed mean AUC contrasts on paired test images. Downsampling
+uses factor 0.5; blur uses radius 1.0. Intervals are pointwise.}
+\label{tab:wang-consistency}
+\end{table}
+
+\paragraph{Ranking gains do not ensure better fixed-threshold decisions.}
+On seen blur, C raises AUC from 0.894 to 0.910, while accuracy at the
+fixed 0.5 threshold falls from 0.713 to 0.700. Resizing and JPEG-q95
+re-encoding do not resolve the ADM shortfall: controlled AUCs are
+0.586/0.544/0.567. This combined control cannot establish that source
+shortcuts have been removed.
+
+The intervals condition on two fixed checkpoints per condition and do
+not measure training-seed uncertainty or adjust for multiple comparisons.
+Shared settings and identical core training code also do not remove
+differences in realised updates (1,500--3,000) and training hardware
+(A100 for A/B, H800 for C). The released-run comparisons therefore
+support bounded empirical findings rather than an equal-compute causal
+claim about the JS term.

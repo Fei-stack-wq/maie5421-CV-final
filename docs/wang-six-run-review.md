@@ -31,4 +31,4 @@ A/B 四次与 C 两次正式训练均已交付，台账更新为 **6/6 completed
 - [TONG A/B 模型与记录 Release](https://github.com/Fei-stack-wq/maie5421-CV-final/releases/tag/tong-ab-formal-2026-11-18)、[固定版本交付说明](https://github.com/Fei-stack-wq/maie5421-CV-final/blob/d59c6e090456ae729fed2fae4d2d4dd36f21b2b2/docs/tong-formal-results/README.md)。记录包是发布前快照，当前下载位置以 Release 为准。
 - [WANG C 模型与记录](wang-formal-results/README.md)。所有评估所需的 best 模型及原始训练记录均可通过 GitHub 获取，不要求共享训练服务器。
 
-下一步由 ZHANG 对六个模型进行 held-out seen/unseen、扰动与偏差对照评估，并提供逐图预测、统计和图表。WANG收到后补写消融分析，保留上述预算及硬件差异。本次未合并 TONG 的 PR，也未接管其他成员的评估或推理工具任务。
+ZHANG已交付六模型的held-out seen/unseen、扰动与偏差对照评估。WANG于11月19日完成 [评估复核和消融分析](wang-ablation.md)，保留上述预算及硬件差异。本次未合并 TONG 的 PR，也未接管其他成员的评估或推理工具任务。

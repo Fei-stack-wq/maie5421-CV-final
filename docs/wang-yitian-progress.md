@@ -26,6 +26,8 @@
 
 **11 月 19 日，六次实验交接**：已核对TONG交付的四次正式A/B配置、训练日志、验证记录和发布哈希，与本人两次C完成共同协议核对，台账为 **6/6 completed**。核心训练代码及共同配置一致，实际更新次数因早停而不同；A/B使用A100，C使用H800。详见 [六次交接核对](wang-six-run-review.md)。本次没有重新运行模型或进行正式测试。
 
+**11 月 19 日，消融分析**：收到ZHANG正式评估，完成逐图概率的指标复算及A/B、B/C配对AUC区间复现。已写好 [消融分析](wang-ablation.md) 和 [英文报告片段](wang_ablation.tex)，并保留 [复核记录](wang-ablation-review.json)。结论区分clean、JPEG、降采样、模糊及偏差对照，不将局部AUC收益表述为全面性能提升。
+
 ## 接口与配置
 
 TONG 的 `BinaryResNet18` 已输出单个 raw AI logit，训练入口已调用 `paired_view_loss`；`consistency_weight=0` 对应 B，`1` 对应 C。无需再手动转换输出。损失支持 `(N,)` 和 `(N,1)`，标签 `0=real, 1=AI`，两路样本顺序一致。
@@ -39,4 +41,4 @@ TONG 的 `BinaryResNet18` 已输出单个 raw AI logit，训练入口已调用 `
 - **训练位置**：本人两次C已在HKUST Superpod单张H800上顺序完成，训练与独立重载核验均通过；A/B四次由TONG负责。
 - **运行记录**：见 [six-run-ledger.csv](six-run-ledger.csv)，六次均已交付，包含A/B固定版本配置、日志链接及GitHub模型地址。服务器作业入口及依赖关系见 [运行说明](../scripts/superpod/README.md)。
 
-正式模型只按 clean-val AUC 选择，推理阈值固定0.5。模型、配置、日志与逐图验证记录均通过GitHub交接。方法部分和六次交接核对已完成，下一步等待ZHANG的正式评估后补写消融分析；目前不据验证集分数判断JS是否有效。
+正式模型只按 clean-val AUC 选择，推理阈值固定0.5。方法、两个C模型、六次交接核对和消融分析均已交付，本人的主要分工已完成。剩余为团队报告合稿后核对本人部分的数字、表格和引用，并配合必要修订；不是等待正式评估或再次训练。报告片段尚需在完整文档中编译并检查排版。
