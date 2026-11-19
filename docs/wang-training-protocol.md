@@ -14,7 +14,7 @@
 | 损失 | B使用双视图平均BCE；C在其上加lambda=1的Bernoulli JS |
 | 推理 | AI=1，阈值0.5 |
 
-C 的 AMP 初始 scale 使用本分支实测通过的1024；这是 WANG 的 GPU 配置，TONG 原分支没有该配置字段。A/B 使用本分支时应显式对齐；共同记录实际优化器更新、AMP跳步及早停，不能仅按epoch上限判断预算一致。
+C 的 AMP 初始 scale 使用本分支实测通过的1024；TONG后续交付的四次正式A/B配置也显式使用1024。11月19日已完成 [六次记录核对](wang-six-run-review.md)。共同记录实际优化器更新、AMP跳步及早停，不能仅按epoch上限判断预算一致。
 
 正式C配置：[c_5421.yaml](../configs/wang/c_5421.yaml)、[c_2026.yaml](../configs/wang/c_2026.yaml)。`protocol_confirmed: true` 记录上述参数已获 WANG 确认，不代表服务器数据接收核验或训练已经完成。
 

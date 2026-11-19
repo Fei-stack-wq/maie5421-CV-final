@@ -1,6 +1,6 @@
 # WANG Yitian 工作进度
 
-更新：2026-11-12。项目第 1 天为 2026-11-05。
+更新：2026-11-19。项目第 1 天为 2026-11-05。
 
 我负责一致性损失、C 配置和 C 的两个模型，以及六次训练的排期和记录。按《AI生成图像检测_五人两周工作安排》执行。
 
@@ -24,6 +24,8 @@
 
 **11 月 12 日，报告方法部分**：完成 [英文正文](wang_methods.tex)、[参考文献](wang_references.bib) 和 [方法说明](wang_methods.md)，包含双视图 BCE + JS 公式、lambda=1、A/B/C 对照关系、冻结策略及两次 C 的实际训练设置。消融效果结论留待正式测试。
 
+**11 月 19 日，六次实验交接**：已核对TONG交付的四次正式A/B配置、训练日志、验证记录和发布哈希，与本人两次C完成共同协议核对，台账为 **6/6 completed**。核心训练代码及共同配置一致，实际更新次数因早停而不同；A/B使用A100，C使用H800。详见 [六次交接核对](wang-six-run-review.md)。本次没有重新运行模型或进行正式测试。
+
 ## 接口与配置
 
 TONG 的 `BinaryResNet18` 已输出单个 raw AI logit，训练入口已调用 `paired_view_loss`；`consistency_weight=0` 对应 B，`1` 对应 C。无需再手动转换输出。损失支持 `(N,)` 和 `(N,1)`，标签 `0=real, 1=AI`，两路样本顺序一致。
@@ -33,8 +35,8 @@ TONG 的 `BinaryResNet18` 已输出单个 raw AI logit，训练入口已调用 `
 ## 下一步与交接
 
 - **数据接入已完成**：OUYANG模块与训练入口已联调，Superpod全量数据接收、QA和候选处置核对已完成，证据已随正式结果交付；无需再为这两次C实验下载完整数据到本机。
-- **参数确认**：11月11日已同意TONG交接清单中的参数，种子确定为5421/2026；C配置已生成，见 [正式训练设置](wang-training-protocol.md)。AMP初始scale=1024是本分支的GPU实测设置，A/B执行时需显式对齐。
+- **参数确认**：共享种子5421/2026，见 [正式训练设置](wang-training-protocol.md)。已核对四次A/B实际配置，包含AMP初始scale=1024，与共同协议一致。
 - **训练位置**：本人两次C已在HKUST Superpod单张H800上顺序完成，训练与独立重载核验均通过；A/B四次由TONG负责。
-- **运行记录**：见 [six-run-ledger.csv](six-run-ledger.csv)，本人两次C已完成并通过独立核验；A/B的状态和交付由TONG更新。服务器作业入口及依赖关系见 [运行说明](../scripts/superpod/README.md)。
+- **运行记录**：见 [six-run-ledger.csv](six-run-ledger.csv)，六次均已交付，包含A/B固定版本配置、日志链接及GitHub模型地址。服务器作业入口及依赖关系见 [运行说明](../scripts/superpod/README.md)。
 
-正式模型只按 clean-val AUC 选择，推理阈值固定0.5。C权重、配置、日志与逐图验证记录统一通过GitHub Release和本分支交付。方法部分已完成，下一步核对TONG的A/B交付，并根据ZHANG的正式评估补写消融分析；目前不据验证集分数判断JS是否有效。
+正式模型只按 clean-val AUC 选择，推理阈值固定0.5。模型、配置、日志与逐图验证记录均通过GitHub交接。方法部分和六次交接核对已完成，下一步等待ZHANG的正式评估后补写消融分析；目前不据验证集分数判断JS是否有效。
