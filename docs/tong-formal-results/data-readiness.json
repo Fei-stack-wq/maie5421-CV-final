@@ -1,0 +1,10 @@
+{
+  "ready_for_training": true,
+  "fresh_qa_sha256": "1ef812f9a2d586a1fb38eeb1882de808f5e34caed635b366b09100967d6f02c6",
+  "manifest_sha256": "265cdc4036036058666479cf2d717ed6eb2a7cdb6c7554109819b9c9280fa5f5",
+  "verified_images": 12100,
+  "reviewed_candidate_pairs": 1,
+  "reviewer_type": "assistant_visual_inspection",
+  "raw_qa_full_pass": false,
+  "note": "Fresh byte audit and screening match the existing versioned review; not new human sign-off."
+}

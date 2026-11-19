@@ -1,0 +1,13 @@
+{
+  "configs/tong/a_2026.yaml": "66f3e171256ea80a063712a01ca6dc8937ca97b9547e7c2da6981b37576857d4",
+  "configs/tong/a_5421.yaml": "169a68ef6b94c42df00686e9c9c4f3f24efdec8134708776030cb12f1d63ec36",
+  "configs/tong/b_2026.yaml": "e5dae610575df3cf80e7e1e3377448442a6d1dea3c034835e192c601e21ea8a2",
+  "configs/tong/b_5421.yaml": "54ec683a643c3c98ace8ee5fc3e0287b8bdebeb021c5298ed081be09171200c9",
+  "docs/tong-experimental-setup.md": "6d4c135c684f85061c14171d797a8952c25e6aaf03ba004fb9ae5c6c666d9e70",
+  "docs/tong-formal-ab.md": "9288f1dd97af9cec1dae5a0a18c476c67231730ee6799c097114b545fdf3f04b",
+  "scripts/tong/formal_ab.sbatch": "a4d7993f4b56344b50a7044f8cd61cfc1e33dbe544bbf18906a05db36323491d",
+  "tests/test_run_formal_ab.py": "8d670a0bb455a17f2cc1e1049799da2789575bf2916779dc0e0bfcc8f8fde3ff",
+  "tests/test_verify_formal_ab.py": "ef75b3b51ca35d44fba7d2e8a99762b0cea75009bb7252a350f8548fc6c87e08",
+  "tools/training/run_formal_ab.py": "22b9857082dd2c43ffd447aef4159b992bf6c5aa50c5011161f1a21de7d168c1",
+  "tools/training/verify_formal_ab.py": "a959536997fb0f88bfbca0fd56dc22eec1297756c15748387ad22d2f4bfec6a5"
+}
