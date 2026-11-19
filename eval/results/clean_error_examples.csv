@@ -1,0 +1,181 @@
+image_id,label,p_ai,generator,transformation,seed,condition,split,rel_path,class_id,class_name,error_type,wrong_class_probability
+test_unseen_ADM-360385c6727a,1,3.762297426528519e-18,ADM,clean,2026,A,test_unseen_ADM,test_unseen_ADM/ADM/030_360385c672.PNG,30,bullfrog,false_negative,1.0
+test_unseen_ADM-44d3386ea777,1,5.272281472184773e-17,ADM,clean,2026,A,test_unseen_ADM,test_unseen_ADM/ADM/337_44d3386ea7.PNG,337,beaver,false_negative,1.0
+test_unseen_ADM-4c7fcc4ccd5d,1,1.0145838733231712e-19,ADM,clean,2026,A,test_unseen_ADM,test_unseen_ADM/ADM/360_4c7fcc4ccd.PNG,360,otter,false_negative,1.0
+test_unseen_ADM-4e5a131c6762,1,4.0725914341621544e-19,ADM,clean,2026,A,test_unseen_ADM,test_unseen_ADM/ADM/690_4e5a131c67.PNG,690,oxcart,false_negative,1.0
+test_unseen_ADM-55e722b8c096,1,1.5505061142606085e-19,ADM,clean,5421,A,test_unseen_ADM,test_unseen_ADM/ADM/402_55e722b8c0.PNG,402,acoustic guitar,false_negative,1.0
+test_unseen_ADM-6eadd9697cb4,1,2.682777303105218e-19,ADM,clean,5421,A,test_unseen_ADM,test_unseen_ADM/ADM/890_6eadd9697c.PNG,890,volleyball,false_negative,1.0
+test_unseen_ADM-6eadd9697cb4,1,1.9656100576605178e-18,ADM,clean,2026,A,test_unseen_ADM,test_unseen_ADM/ADM/890_6eadd9697c.PNG,890,volleyball,false_negative,1.0
+test_unseen_ADM-730e81bfc7d8,1,5.2686542102354846e-20,ADM,clean,5421,A,test_unseen_ADM,test_unseen_ADM/ADM/545_730e81bfc7.PNG,545,electric fan,false_negative,1.0
+test_unseen_ADM-aec3dad88026,1,7.632531169647245e-18,ADM,clean,5421,A,test_unseen_ADM,test_unseen_ADM/ADM/345_aec3dad880.PNG,345,ox,false_negative,1.0
+test_unseen_ADM-b0fdf096d0cf,1,1.4742854597816814e-20,ADM,clean,5421,A,test_unseen_ADM,test_unseen_ADM/ADM/310_b0fdf096d0.PNG,310,ant,false_negative,1.0
+test_unseen_ADM-dade75930f94,1,1.917347584435652e-17,ADM,clean,5421,B,test_unseen_ADM,test_unseen_ADM/ADM/476_dade75930f.PNG,476,carousel,false_negative,1.0
+test_unseen_ADM-07ce3ab74d2a,1,2.0263369350328634e-16,ADM,clean,5421,B,test_unseen_ADM,test_unseen_ADM/ADM/087_07ce3ab74d.PNG,87,African grey,false_negative,0.9999999999999998
+test_unseen_ADM-b0fdf096d0cf,1,5.096095376607877e-16,ADM,clean,5421,B,test_unseen_ADM,test_unseen_ADM/ADM/310_b0fdf096d0.PNG,310,ant,false_negative,0.9999999999999994
+test_unseen_ADM-55e722b8c096,1,6.904821474208332e-16,ADM,clean,5421,B,test_unseen_ADM,test_unseen_ADM/ADM/402_55e722b8c0.PNG,402,acoustic guitar,false_negative,0.9999999999999993
+test_unseen_ADM-6fa769c8062b,1,7.354183570034171e-16,ADM,clean,5421,B,test_unseen_ADM,test_unseen_ADM/ADM/793_6fa769c806.PNG,793,shower cap,false_negative,0.9999999999999992
+test_unseen_ADM-07ce3ab74d2a,1,4.0998491900685544e-14,ADM,clean,2026,C,test_unseen_ADM,test_unseen_ADM/ADM/087_07ce3ab74d.PNG,87,African grey,false_negative,0.999999999999959
+test_unseen_ADM-aec3dad88026,1,1.471414786888281e-12,ADM,clean,2026,C,test_unseen_ADM,test_unseen_ADM/ADM/345_aec3dad880.PNG,345,ox,false_negative,0.9999999999985286
+test_unseen_ADM-1b53e9e5aaac,1,2.478376661882442e-12,ADM,clean,2026,C,test_unseen_ADM,test_unseen_ADM/ADM/410_1b53e9e5aa.PNG,410,apiary,false_negative,0.9999999999975216
+test_unseen_ADM-1d3015421a71,1,4.453499635043157e-12,ADM,clean,2026,C,test_unseen_ADM,test_unseen_ADM/ADM/961_1d3015421a.PNG,961,dough,false_negative,0.9999999999955465
+test_unseen_ADM-2cf7f2b926fd,1,5.331198156544037e-12,ADM,clean,2026,C,test_unseen_ADM,test_unseen_ADM/ADM/552_2cf7f2b926.PNG,552,feather boa,false_negative,0.9999999999946688
+test_unseen_ADM-dade75930f94,1,2.6439322953208944e-11,ADM,clean,5421,C,test_unseen_ADM,test_unseen_ADM/ADM/476_dade75930f.PNG,476,carousel,false_negative,0.9999999999735607
+test_unseen_ADM-9c8f29a4cb19,1,3.3788940395629297e-11,ADM,clean,5421,C,test_unseen_ADM,test_unseen_ADM/ADM/012_9c8f29a4cb.PNG,12,house finch,false_negative,0.999999999966211
+test_unseen_ADM-6565fcdd0a92,1,3.4496402262496056e-11,ADM,clean,5421,C,test_unseen_ADM,test_unseen_ADM/ADM/685_6565fcdd0a.PNG,685,odometer,false_negative,0.9999999999655036
+test_unseen_ADM-6eadd9697cb4,1,3.5789322894164144e-11,ADM,clean,5421,C,test_unseen_ADM,test_unseen_ADM/ADM/890_6eadd9697c.PNG,890,volleyball,false_negative,0.9999999999642106
+test_unseen_ADM-6fa769c8062b,1,5.3104975278328575e-11,ADM,clean,5421,C,test_unseen_ADM,test_unseen_ADM/ADM/793_6fa769c806.PNG,793,shower cap,false_negative,0.999999999946895
+test_unseen_GLIDE-688488b355f2,1,7.348250452565708e-09,GLIDE,clean,5421,B,test_unseen_GLIDE,test_unseen_GLIDE/GLIDE/798_688488b355.PNG,798,slide rule,false_negative,0.9999999926517495
+test_unseen_GLIDE-ed68f85653ec,1,1.7055725720638293e-08,GLIDE,clean,5421,B,test_unseen_GLIDE,test_unseen_GLIDE/GLIDE/067_ed68f85653.PNG,67,diamondback,false_negative,0.9999999829442743
+test_seen-b761667282a0,1,2.5636810008222713e-08,stable_diffusion_v_1_4,clean,5421,B,test_seen,test_seen/stable_diffusion_v_1_4/500_b761667282.PNG,500,cliff dwelling,false_negative,0.99999997436319
+test_seen-e1ef9cbf3ac8,0,0.9999998807907104,real,clean,5421,B,test_seen,test_seen/real/839_e1ef9cbf3a.JPEG,839,suspension bridge,false_positive,0.9999998807907104
+test_seen-b761667282a0,1,1.360329520139203e-07,stable_diffusion_v_1_4,clean,2026,A,test_seen,test_seen/stable_diffusion_v_1_4/500_b761667282.PNG,500,cliff dwelling,false_negative,0.999999863967048
+test_unseen_GLIDE-ed68f85653ec,1,1.770075357399037e-07,GLIDE,clean,2026,C,test_unseen_GLIDE,test_unseen_GLIDE/GLIDE/067_ed68f85653.PNG,67,diamondback,false_negative,0.9999998229924643
+test_seen-71a32bf2d26a,1,1.8494021958304077e-07,stable_diffusion_v_1_4,clean,2026,A,test_seen,test_seen/stable_diffusion_v_1_4/332_71a32bf2d2.PNG,332,Angora,false_negative,0.9999998150597804
+test_seen-ad17aa26e6bc,1,1.9743227142043906e-07,stable_diffusion_v_1_4,clean,5421,A,test_seen,test_seen/stable_diffusion_v_1_4/458_ad17aa26e6.PNG,458,brass,false_negative,0.9999998025677286
+test_seen-b761667282a0,1,2.717058578127763e-07,stable_diffusion_v_1_4,clean,2026,C,test_seen,test_seen/stable_diffusion_v_1_4/500_b761667282.PNG,500,cliff dwelling,false_negative,0.9999997282941422
+test_seen-9dcf5d4ad8e3,1,6.881727472318744e-07,stable_diffusion_v_1_4,clean,2026,A,test_seen,test_seen/stable_diffusion_v_1_4/857_9dcf5d4ad8.PNG,857,throne,false_negative,0.9999993118272528
+test_seen-e1ef9cbf3ac8,0,0.9999992847442628,real,clean,2026,C,test_seen,test_seen/real/839_e1ef9cbf3a.JPEG,839,suspension bridge,false_positive,0.9999992847442628
+test_seen-b761667282a0,1,7.780977284710389e-07,stable_diffusion_v_1_4,clean,5421,A,test_seen,test_seen/stable_diffusion_v_1_4/500_b761667282.PNG,500,cliff dwelling,false_negative,0.9999992219022715
+test_seen-ad17aa26e6bc,1,8.30595922707289e-07,stable_diffusion_v_1_4,clean,5421,B,test_seen,test_seen/stable_diffusion_v_1_4/458_ad17aa26e6.PNG,458,brass,false_negative,0.9999991694040773
+test_seen-39f2be02272f,0,0.9999990463256836,real,clean,5421,A,test_seen,test_seen/real/889_39f2be0227.JPEG,889,violin,false_positive,0.9999990463256836
+test_seen-d945c36dfcf5,1,1.0296023447153857e-06,stable_diffusion_v_1_4,clean,5421,A,test_seen,test_seen/stable_diffusion_v_1_4/786_d945c36dfc.PNG,786,sewing machine,false_negative,0.9999989703976553
+test_unseen_GLIDE-ed68f85653ec,1,1.179825744657137e-06,GLIDE,clean,5421,A,test_unseen_GLIDE,test_unseen_GLIDE/GLIDE/067_ed68f85653.PNG,67,diamondback,false_negative,0.9999988201742553
+test_seen-a0b7e19e1503,0,0.9999988079071044,real,clean,5421,C,test_seen,test_seen/real/811_a0b7e19e15.JPEG,811,space heater,false_positive,0.9999988079071044
+test_seen-e1ef9cbf3ac8,0,0.9999988079071044,real,clean,5421,A,test_seen,test_seen/real/839_e1ef9cbf3a.JPEG,839,suspension bridge,false_positive,0.9999988079071044
+test_unseen_ADM-7ab7581cdc7f,0,0.9999988079071044,real,clean,5421,A,test_unseen_ADM,test_unseen_ADM/real/650_7ab7581cdc.JPEG,650,microphone,false_positive,0.9999988079071044
+test_seen-d945c36dfcf5,1,1.3901092188461917e-06,stable_diffusion_v_1_4,clean,5421,B,test_seen,test_seen/stable_diffusion_v_1_4/786_d945c36dfc.PNG,786,sewing machine,false_negative,0.9999986098907812
+test_unseen_ADM-395771260bec,0,0.9999985694885254,real,clean,2026,C,test_unseen_ADM,test_unseen_ADM/real/653_395771260b.JPEG,653,milk can,false_positive,0.9999985694885254
+test_unseen_GLIDE-782460e38797,1,1.4471344229605163e-06,GLIDE,clean,5421,B,test_unseen_GLIDE,test_unseen_GLIDE/GLIDE/732_782460e387.PNG,732,Polaroid camera,false_negative,0.999998552865577
+test_unseen_GLIDE-34df17e57016,1,1.5449728607563884e-06,GLIDE,clean,5421,B,test_unseen_GLIDE,test_unseen_GLIDE/GLIDE/946_34df17e570.PNG,946,cardoon,false_negative,0.9999984550271392
+test_seen-a0b7e19e1503,0,0.9999982118606568,real,clean,2026,C,test_seen,test_seen/real/811_a0b7e19e15.JPEG,811,space heater,false_positive,0.9999982118606568
+test_unseen_GLIDE-3409a9adf91e,1,1.8069483758154088e-06,GLIDE,clean,5421,A,test_unseen_GLIDE,test_unseen_GLIDE/GLIDE/021_3409a9adf9.PNG,21,kite,false_negative,0.9999981930516242
+test_unseen_GLIDE-688488b355f2,1,1.993858631976764e-06,GLIDE,clean,5421,C,test_unseen_GLIDE,test_unseen_GLIDE/GLIDE/798_688488b355.PNG,798,slide rule,false_negative,0.999998006141368
+test_unseen_GLIDE-dfca2eabe398,1,2.0121085526625397e-06,GLIDE,clean,5421,B,test_unseen_GLIDE,test_unseen_GLIDE/GLIDE/895_dfca2eabe3.PNG,895,warplane,false_negative,0.9999979878914473
+test_unseen_GLIDE-9163a131010b,0,0.9999979734420776,real,clean,2026,C,test_unseen_GLIDE,test_unseen_GLIDE/real/921_9163a13101.JPEG,921,book jacket,false_positive,0.9999979734420776
+test_unseen_GLIDE-ab9fa25365f2,0,0.999997854232788,real,clean,5421,A,test_unseen_GLIDE,test_unseen_GLIDE/real/301_ab9fa25365.JPEG,301,ladybug,false_positive,0.999997854232788
+test_seen-a60c96ec7c70,1,2.314486891918932e-06,stable_diffusion_v_1_4,clean,2026,A,test_seen,test_seen/stable_diffusion_v_1_4/913_a60c96ec7c.PNG,913,wreck,false_negative,0.9999976855131081
+test_unseen_GLIDE-3dc96e968b4b,1,2.6462198547960725e-06,GLIDE,clean,5421,C,test_unseen_GLIDE,test_unseen_GLIDE/GLIDE/801_3dc96e968b.PNG,801,snorkel,false_negative,0.9999973537801452
+test_seen-e1ef9cbf3ac8,0,0.9999972581863404,real,clean,2026,A,test_seen,test_seen/real/839_e1ef9cbf3a.JPEG,839,suspension bridge,false_positive,0.9999972581863404
+test_unseen_ADM-395771260bec,0,0.9999972581863404,real,clean,5421,A,test_unseen_ADM,test_unseen_ADM/real/653_395771260b.JPEG,653,milk can,false_positive,0.9999972581863404
+test_unseen_ADM-46fdfc521971,0,0.9999964237213136,real,clean,5421,A,test_unseen_ADM,test_unseen_ADM/real/082_46fdfc5219.JPEG,82,ruffed grouse,false_positive,0.9999964237213136
+test_unseen_GLIDE-03d10ffd102f,0,0.999996304512024,real,clean,2026,C,test_unseen_GLIDE,test_unseen_GLIDE/real/806_03d10ffd10.JPEG,806,sock,false_positive,0.999996304512024
+test_unseen_GLIDE-688488b355f2,1,3.770344619624666e-06,GLIDE,clean,5421,A,test_unseen_GLIDE,test_unseen_GLIDE/GLIDE/798_688488b355.PNG,798,slide rule,false_negative,0.9999962296553804
+test_seen-2573e24335c9,1,4.321832420828287e-06,stable_diffusion_v_1_4,clean,5421,C,test_seen,test_seen/stable_diffusion_v_1_4/950_2573e24335.PNG,950,orange,false_negative,0.9999956781675792
+test_seen-2573e24335c9,1,4.364402684586821e-06,stable_diffusion_v_1_4,clean,5421,B,test_seen,test_seen/stable_diffusion_v_1_4/950_2573e24335.PNG,950,orange,false_negative,0.9999956355973154
+test_unseen_GLIDE-cc0c4a1fdc5a,0,0.9999951124191284,real,clean,5421,A,test_unseen_GLIDE,test_unseen_GLIDE/real/402_cc0c4a1fdc.JPEG,402,acoustic guitar,false_positive,0.9999951124191284
+test_unseen_GLIDE-09ebbfd3d4a9,1,4.975685897079529e-06,GLIDE,clean,5421,C,test_unseen_GLIDE,test_unseen_GLIDE/GLIDE/755_09ebbfd3d4.PNG,755,radio telescope,false_negative,0.9999950243141029
+test_seen-2573e24335c9,1,5.358991984394379e-06,stable_diffusion_v_1_4,clean,2026,A,test_seen,test_seen/stable_diffusion_v_1_4/950_2573e24335.PNG,950,orange,false_negative,0.9999946410080156
+test_seen-df6874ccb95a,1,6.34887874184642e-06,stable_diffusion_v_1_4,clean,2026,C,test_seen,test_seen/stable_diffusion_v_1_4/976_df6874ccb9.PNG,976,promontory,false_negative,0.9999936511212582
+test_unseen_ADM-395771260bec,0,0.9999935626983644,real,clean,5421,C,test_unseen_ADM,test_unseen_ADM/real/653_395771260b.JPEG,653,milk can,false_positive,0.9999935626983644
+test_unseen_ADM-a64aefa9b45b,0,0.9999935626983644,real,clean,2026,C,test_unseen_ADM,test_unseen_ADM/real/501_a64aefa9b4.JPEG,501,cloak,false_positive,0.9999935626983644
+test_unseen_GLIDE-ab9fa25365f2,0,0.9999914169311525,real,clean,2026,A,test_unseen_GLIDE,test_unseen_GLIDE/real/301_ab9fa25365.JPEG,301,ladybug,false_positive,0.9999914169311525
+test_unseen_ADM-a64aefa9b45b,0,0.999990701675415,real,clean,2026,A,test_unseen_ADM,test_unseen_ADM/real/501_a64aefa9b4.JPEG,501,cloak,false_positive,0.999990701675415
+test_unseen_GLIDE-9163a131010b,0,0.9999892711639404,real,clean,5421,A,test_unseen_GLIDE,test_unseen_GLIDE/real/921_9163a13101.JPEG,921,book jacket,false_positive,0.9999892711639404
+test_unseen_GLIDE-6aa2f66295e8,0,0.9999887943267822,real,clean,2026,C,test_unseen_GLIDE,test_unseen_GLIDE/real/883_6aa2f66295.JPEG,883,vase,false_positive,0.9999887943267822
+test_unseen_GLIDE-6aa2f66295e8,0,0.999987244606018,real,clean,5421,C,test_unseen_GLIDE,test_unseen_GLIDE/real/883_6aa2f66295.JPEG,883,vase,false_positive,0.999987244606018
+test_seen-39f2be02272f,0,0.9999825954437256,real,clean,5421,C,test_seen,test_seen/real/889_39f2be0227.JPEG,889,violin,false_positive,0.9999825954437256
+test_unseen_GLIDE-782460e38797,1,1.8528939108364284e-05,GLIDE,clean,2026,C,test_unseen_GLIDE,test_unseen_GLIDE/GLIDE/732_782460e387.PNG,732,Polaroid camera,false_negative,0.9999814710608916
+test_unseen_ADM-aec3dad88026,1,1.9085422536591068e-05,ADM,clean,2026,B,test_unseen_ADM,test_unseen_ADM/ADM/345_aec3dad880.PNG,345,ox,false_negative,0.9999809145774634
+test_unseen_GLIDE-128b6ddae79e,1,1.9153485482092947e-05,GLIDE,clean,2026,C,test_unseen_GLIDE,test_unseen_GLIDE/GLIDE/297_128b6ddae7.PNG,297,sloth bear,false_negative,0.9999808465145179
+test_seen-d16a4a71ee8a,1,1.923916170198936e-05,stable_diffusion_v_1_4,clean,5421,B,test_seen,test_seen/stable_diffusion_v_1_4/066_d16a4a71ee.PNG,66,horned viper,false_negative,0.999980760838298
+test_unseen_GLIDE-ed68f85653ec,1,2.144040809071157e-05,GLIDE,clean,5421,C,test_unseen_GLIDE,test_unseen_GLIDE/GLIDE/067_ed68f85653.PNG,67,diamondback,false_negative,0.9999785595919093
+test_unseen_GLIDE-9163a131010b,0,0.999977707862854,real,clean,2026,A,test_unseen_GLIDE,test_unseen_GLIDE/real/921_9163a13101.JPEG,921,book jacket,false_positive,0.999977707862854
+test_unseen_GLIDE-c0d0d446fe1a,1,2.289446820213925e-05,GLIDE,clean,5421,A,test_unseen_GLIDE,test_unseen_GLIDE/GLIDE/262_c0d0d446fe.PNG,262,Brabancon griffon,false_negative,0.9999771055317979
+test_unseen_GLIDE-03d10ffd102f,0,0.9999721050262452,real,clean,5421,C,test_unseen_GLIDE,test_unseen_GLIDE/real/806_03d10ffd10.JPEG,806,sock,false_positive,0.9999721050262452
+test_seen-cc0015dea81c,0,0.9999716281890868,real,clean,2026,A,test_seen,test_seen/real/055_cc0015dea8.JPEG,55,green snake,false_positive,0.9999716281890868
+test_unseen_GLIDE-9163a131010b,0,0.999970555305481,real,clean,5421,B,test_unseen_GLIDE,test_unseen_GLIDE/real/921_9163a13101.JPEG,921,book jacket,false_positive,0.999970555305481
+test_unseen_GLIDE-ab9fa25365f2,0,0.999969720840454,real,clean,5421,C,test_unseen_GLIDE,test_unseen_GLIDE/real/301_ab9fa25365.JPEG,301,ladybug,false_positive,0.999969720840454
+test_seen-ebf8ac9b7d72,0,0.9999669790267944,real,clean,5421,A,test_seen,test_seen/real/138_ebf8ac9b7d.JPEG,138,bustard,false_positive,0.9999669790267944
+test_unseen_GLIDE-09ebbfd3d4a9,1,3.3084772439906374e-05,GLIDE,clean,2026,C,test_unseen_GLIDE,test_unseen_GLIDE/GLIDE/755_09ebbfd3d4.PNG,755,radio telescope,false_negative,0.9999669152275601
+test_seen-2573e24335c9,1,3.348429891047999e-05,stable_diffusion_v_1_4,clean,2026,C,test_seen,test_seen/stable_diffusion_v_1_4/950_2573e24335.PNG,950,orange,false_negative,0.9999665157010895
+test_seen-e1ef9cbf3ac8,0,0.9999613761901855,real,clean,5421,C,test_seen,test_seen/real/839_e1ef9cbf3a.JPEG,839,suspension bridge,false_positive,0.9999613761901855
+test_unseen_ADM-395771260bec,0,0.9999613761901855,real,clean,2026,A,test_unseen_ADM,test_unseen_ADM/real/653_395771260b.JPEG,653,milk can,false_positive,0.9999613761901855
+test_seen-a0b7e19e1503,0,0.9999593496322632,real,clean,5421,A,test_seen,test_seen/real/811_a0b7e19e15.JPEG,811,space heater,false_positive,0.9999593496322632
+test_seen-39f2be02272f,0,0.999957799911499,real,clean,5421,B,test_seen,test_seen/real/889_39f2be0227.JPEG,889,violin,false_positive,0.999957799911499
+test_unseen_ADM-46fdfc521971,0,0.9999576807022096,real,clean,5421,C,test_unseen_ADM,test_unseen_ADM/real/082_46fdfc5219.JPEG,82,ruffed grouse,false_positive,0.9999576807022096
+test_unseen_GLIDE-3fbbd2840d69,1,4.527957207756117e-05,GLIDE,clean,5421,C,test_unseen_GLIDE,test_unseen_GLIDE/GLIDE/921_3fbbd2840d.PNG,921,book jacket,false_negative,0.9999547204279224
+test_unseen_GLIDE-ab9fa25365f2,0,0.9999542236328124,real,clean,2026,C,test_unseen_GLIDE,test_unseen_GLIDE/real/301_ab9fa25365.JPEG,301,ladybug,false_positive,0.9999542236328124
+test_unseen_ADM-1d3015421a71,1,4.621910920832306e-05,ADM,clean,2026,B,test_unseen_ADM,test_unseen_ADM/ADM/961_1d3015421a.PNG,961,dough,false_negative,0.9999537808907917
+test_unseen_GLIDE-d59f671e74fd,0,0.999952793121338,real,clean,5421,A,test_unseen_GLIDE,test_unseen_GLIDE/real/522_d59f671e74.JPEG,522,croquet ball,false_positive,0.999952793121338
+test_seen-145cd2df677f,0,0.9999511241912842,real,clean,5421,A,test_seen,test_seen/real/752_145cd2df67.JPEG,752,racket,false_positive,0.9999511241912842
+test_seen-a0b7e19e1503,0,0.9999499320983888,real,clean,5421,B,test_seen,test_seen/real/811_a0b7e19e15.JPEG,811,space heater,false_positive,0.9999499320983888
+test_unseen_ADM-dade75930f94,1,5.319293632055633e-05,ADM,clean,2026,B,test_unseen_ADM,test_unseen_ADM/ADM/476_dade75930f.PNG,476,carousel,false_negative,0.9999468070636794
+test_unseen_GLIDE-cc0c4a1fdc5a,0,0.999944806098938,real,clean,5421,C,test_unseen_GLIDE,test_unseen_GLIDE/real/402_cc0c4a1fdc.JPEG,402,acoustic guitar,false_positive,0.999944806098938
+test_unseen_GLIDE-36eb2c907aac,0,0.999940037727356,real,clean,2026,C,test_unseen_GLIDE,test_unseen_GLIDE/real/043_36eb2c907a.JPEG,43,frilled lizard,false_positive,0.999940037727356
+test_unseen_GLIDE-7825679ae24f,0,0.999935507774353,real,clean,5421,C,test_unseen_GLIDE,test_unseen_GLIDE/real/889_7825679ae2.JPEG,889,violin,false_positive,0.999935507774353
+test_unseen_GLIDE-ed68f85653ec,1,6.517051951959729e-05,GLIDE,clean,2026,A,test_unseen_GLIDE,test_unseen_GLIDE/GLIDE/067_ed68f85653.PNG,67,diamondback,false_negative,0.9999348294804804
+test_unseen_GLIDE-73f3ffabd71f,0,0.9999345541000366,real,clean,5421,A,test_unseen_GLIDE,test_unseen_GLIDE/real/569_73f3ffabd7.JPEG,569,garbage truck,false_positive,0.9999345541000366
+test_unseen_ADM-395771260bec,0,0.9999289512634276,real,clean,5421,B,test_unseen_ADM,test_unseen_ADM/real/653_395771260b.JPEG,653,milk can,false_positive,0.9999289512634276
+test_seen-a0b7e19e1503,0,0.9999247789382936,real,clean,2026,A,test_seen,test_seen/real/811_a0b7e19e15.JPEG,811,space heater,false_positive,0.9999247789382936
+test_seen-ad17aa26e6bc,1,7.986492710188031e-05,stable_diffusion_v_1_4,clean,5421,C,test_seen,test_seen/stable_diffusion_v_1_4/458_ad17aa26e6.PNG,458,brass,false_negative,0.9999201350728981
+test_seen-ba7480f4b492,0,0.999918818473816,real,clean,5421,B,test_seen,test_seen/real/914_ba7480f4b4.JPEG,914,yawl,false_positive,0.999918818473816
+test_unseen_GLIDE-f5abd3d8d21f,1,8.236125722760335e-05,GLIDE,clean,2026,C,test_unseen_GLIDE,test_unseen_GLIDE/GLIDE/636_f5abd3d8d2.PNG,636,mailbag,false_negative,0.9999176387427724
+test_unseen_ADM-f3941fd35004,0,0.999916672706604,real,clean,5421,A,test_unseen_ADM,test_unseen_ADM/real/017_f3941fd350.JPEG,17,jay,false_positive,0.999916672706604
+test_unseen_GLIDE-ab9fa25365f2,0,0.9999107122421264,real,clean,5421,B,test_unseen_GLIDE,test_unseen_GLIDE/real/301_ab9fa25365.JPEG,301,ladybug,false_positive,0.9999107122421264
+test_unseen_ADM-07ce3ab74d2a,1,9.210062853526324e-05,ADM,clean,2026,B,test_unseen_ADM,test_unseen_ADM/ADM/087_07ce3ab74d.PNG,87,African grey,false_negative,0.9999078993714647
+test_seen-ef0e7589a55a,0,0.9999067783355712,real,clean,2026,C,test_seen,test_seen/real/149_ef0e7589a5.JPEG,149,dugong,false_positive,0.9999067783355712
+test_seen-6b6e37475268,1,9.48351007536985e-05,stable_diffusion_v_1_4,clean,5421,A,test_seen,test_seen/stable_diffusion_v_1_4/430_6b6e374752.PNG,430,basketball,false_negative,0.9999051648992463
+test_unseen_GLIDE-03d10ffd102f,0,0.9998955726623536,real,clean,5421,B,test_unseen_GLIDE,test_unseen_GLIDE/real/806_03d10ffd10.JPEG,806,sock,false_positive,0.9998955726623536
+test_seen-39f2be02272f,0,0.999894380569458,real,clean,2026,A,test_seen,test_seen/real/889_39f2be0227.JPEG,889,violin,false_positive,0.999894380569458
+test_unseen_ADM-e577172738c4,0,0.999894380569458,real,clean,5421,A,test_unseen_ADM,test_unseen_ADM/real/204_e577172738.JPEG,204,Lhasa,false_positive,0.999894380569458
+test_unseen_ADM-44d3386ea777,1,0.0001060795038938,ADM,clean,2026,B,test_unseen_ADM,test_unseen_ADM/ADM/337_44d3386ea7.PNG,337,beaver,false_negative,0.9998939204961061
+test_unseen_ADM-8a235df7352a,0,0.999893307685852,real,clean,5421,C,test_unseen_ADM,test_unseen_ADM/real/088_8a235df735.JPEG,88,macaw,false_positive,0.999893307685852
+test_seen-ba7480f4b492,0,0.9998891353607178,real,clean,5421,C,test_seen,test_seen/real/914_ba7480f4b4.JPEG,914,yawl,false_positive,0.9998891353607178
+test_unseen_ADM-46fdfc521971,0,0.9998890161514282,real,clean,2026,A,test_unseen_ADM,test_unseen_ADM/real/082_46fdfc5219.JPEG,82,ruffed grouse,false_positive,0.9998890161514282
+test_seen-39f2be02272f,0,0.999886155128479,real,clean,2026,C,test_seen,test_seen/real/889_39f2be0227.JPEG,889,violin,false_positive,0.999886155128479
+test_seen-9dcf5d4ad8e3,1,0.0001173692944576,stable_diffusion_v_1_4,clean,5421,A,test_seen,test_seen/stable_diffusion_v_1_4/857_9dcf5d4ad8.PNG,857,throne,false_negative,0.9998826307055424
+test_unseen_GLIDE-df95527e35b2,0,0.999853253364563,real,clean,5421,B,test_unseen_GLIDE,test_unseen_GLIDE/real/949_df95527e35.JPEG,949,strawberry,false_positive,0.999853253364563
+test_seen-5f466e828c3c,1,0.0001580237294547,stable_diffusion_v_1_4,clean,5421,C,test_seen,test_seen/stable_diffusion_v_1_4/810_5f466e828c.PNG,810,space bar,false_negative,0.9998419762705453
+test_seen-5f466e828c3c,1,0.0001614032225916,stable_diffusion_v_1_4,clean,2026,C,test_seen,test_seen/stable_diffusion_v_1_4/810_5f466e828c.PNG,810,space bar,false_negative,0.9998385967774084
+test_unseen_ADM-f306e275b51c,0,0.9998345375061036,real,clean,5421,B,test_unseen_ADM,test_unseen_ADM/real/449_f306e275b5.JPEG,449,boathouse,false_positive,0.9998345375061036
+test_unseen_ADM-18f235d09459,0,0.9998317956924438,real,clean,2026,C,test_unseen_ADM,test_unseen_ADM/real/709_18f235d094.JPEG,709,pencil box,false_positive,0.9998317956924438
+test_unseen_GLIDE-d579f725093b,1,0.0001716445112833,GLIDE,clean,5421,A,test_unseen_GLIDE,test_unseen_GLIDE/GLIDE/749_d579f72509.PNG,749,quill,false_negative,0.9998283554887167
+test_unseen_GLIDE-d59f671e74fd,0,0.9998278617858888,real,clean,2026,A,test_unseen_GLIDE,test_unseen_GLIDE/real/522_d59f671e74.JPEG,522,croquet ball,false_positive,0.9998278617858888
+test_seen-60c5d5a55f3f,0,0.9998106360435486,real,clean,2026,C,test_seen,test_seen/real/132_60c5d5a55f.JPEG,132,American egret,false_positive,0.9998106360435486
+test_seen-ef0e7589a55a,0,0.9998099207878112,real,clean,5421,B,test_seen,test_seen/real/149_ef0e7589a5.JPEG,149,dugong,false_positive,0.9998099207878112
+test_unseen_ADM-a64aefa9b45b,0,0.9998071789741516,real,clean,5421,B,test_unseen_ADM,test_unseen_ADM/real/501_a64aefa9b4.JPEG,501,cloak,false_positive,0.9998071789741516
+test_unseen_ADM-a64aefa9b45b,0,0.9998064637184144,real,clean,5421,C,test_unseen_ADM,test_unseen_ADM/real/501_a64aefa9b4.JPEG,501,cloak,false_positive,0.9998064637184144
+test_seen-7abbb129a278,0,0.9997828602790833,real,clean,2026,A,test_seen,test_seen/real/702_7abbb129a2.JPEG,702,parallel bars,false_positive,0.9997828602790833
+test_unseen_ADM-5e9192057973,0,0.9997727274894714,real,clean,5421,C,test_unseen_ADM,test_unseen_ADM/real/506_5e91920579.JPEG,506,coil,false_positive,0.9997727274894714
+test_seen-60c5d5a55f3f,0,0.999768316745758,real,clean,5421,C,test_seen,test_seen/real/132_60c5d5a55f.JPEG,132,American egret,false_positive,0.999768316745758
+test_unseen_ADM-af22dbc1c082,0,0.9997631907463074,real,clean,2026,C,test_unseen_ADM,test_unseen_ADM/real/556_af22dbc1c0.JPEG,556,fire screen,false_positive,0.9997631907463074
+test_seen-df6874ccb95a,1,0.0002411176246823,stable_diffusion_v_1_4,clean,5421,C,test_seen,test_seen/stable_diffusion_v_1_4/976_df6874ccb9.PNG,976,promontory,false_negative,0.9997588823753177
+test_unseen_ADM-af22dbc1c082,0,0.9997584223747252,real,clean,2026,A,test_unseen_ADM,test_unseen_ADM/real/556_af22dbc1c0.JPEG,556,fire screen,false_positive,0.9997584223747252
+test_unseen_GLIDE-cc0c4a1fdc5a,0,0.99974924325943,real,clean,5421,B,test_unseen_GLIDE,test_unseen_GLIDE/real/402_cc0c4a1fdc.JPEG,402,acoustic guitar,false_positive,0.99974924325943
+test_seen-b761667282a0,1,0.0002624764456413,stable_diffusion_v_1_4,clean,5421,C,test_seen,test_seen/stable_diffusion_v_1_4/500_b761667282.PNG,500,cliff dwelling,false_negative,0.9997375235543587
+test_unseen_ADM-d2db1689e584,0,0.9997283816337584,real,clean,2026,C,test_unseen_ADM,test_unseen_ADM/real/712_d2db1689e5.JPEG,712,Petri dish,false_positive,0.9997283816337584
+test_seen-d16a4a71ee8a,1,0.0003505946660879,stable_diffusion_v_1_4,clean,2026,C,test_seen,test_seen/stable_diffusion_v_1_4/066_d16a4a71ee.PNG,66,horned viper,false_negative,0.9996494053339121
+test_unseen_GLIDE-688488b355f2,1,0.0003919227456208,GLIDE,clean,2026,A,test_unseen_GLIDE,test_unseen_GLIDE/GLIDE/798_688488b355.PNG,798,slide rule,false_negative,0.9996080772543792
+test_unseen_ADM-af22dbc1c082,0,0.9995878338813782,real,clean,5421,B,test_unseen_ADM,test_unseen_ADM/real/556_af22dbc1c0.JPEG,556,fire screen,false_positive,0.9995878338813782
+test_unseen_ADM-46fdfc521971,0,0.9995657801628112,real,clean,5421,B,test_unseen_ADM,test_unseen_ADM/real/082_46fdfc5219.JPEG,82,ruffed grouse,false_positive,0.9995657801628112
+test_unseen_GLIDE-03d10ffd102f,0,0.9993669390678406,real,clean,2026,A,test_unseen_GLIDE,test_unseen_GLIDE/real/806_03d10ffd10.JPEG,806,sock,false_positive,0.9993669390678406
+test_unseen_GLIDE-3dc96e968b4b,1,0.0007051669526845,GLIDE,clean,2026,A,test_unseen_GLIDE,test_unseen_GLIDE/GLIDE/801_3dc96e968b.PNG,801,snorkel,false_negative,0.9992948330473155
+test_unseen_GLIDE-8506f34a5c99,0,0.9992287158966064,real,clean,2026,A,test_unseen_GLIDE,test_unseen_GLIDE/real/793_8506f34a5c.JPEG,793,shower cap,false_positive,0.9992287158966064
+test_unseen_GLIDE-7867b718e62f,1,0.0008913016645237,GLIDE,clean,2026,A,test_unseen_GLIDE,test_unseen_GLIDE/GLIDE/712_7867b718e6.PNG,712,Petri dish,false_negative,0.9991086983354763
+test_unseen_ADM-7ab7581cdc7f,0,0.998985230922699,real,clean,2026,A,test_unseen_ADM,test_unseen_ADM/real/650_7ab7581cdc.JPEG,650,microphone,false_positive,0.998985230922699
+test_unseen_GLIDE-69b190fcbe5d,1,0.0016212040791288,GLIDE,clean,2026,A,test_unseen_GLIDE,test_unseen_GLIDE/GLIDE/559_69b190fcbe.PNG,559,folding chair,false_negative,0.9983787959208712
+test_unseen_ADM-a64aefa9b45b,0,0.995043396949768,real,clean,2026,B,test_unseen_ADM,test_unseen_ADM/real/501_a64aefa9b4.JPEG,501,cloak,false_positive,0.995043396949768
+test_unseen_GLIDE-ed68f85653ec,1,0.0104477815330028,GLIDE,clean,2026,B,test_unseen_GLIDE,test_unseen_GLIDE/GLIDE/067_ed68f85653.PNG,67,diamondback,false_negative,0.9895522184669971
+test_unseen_GLIDE-ab9fa25365f2,0,0.9869738817214966,real,clean,2026,B,test_unseen_GLIDE,test_unseen_GLIDE/real/301_ab9fa25365.JPEG,301,ladybug,false_positive,0.9869738817214966
+test_unseen_GLIDE-3dc96e968b4b,1,0.0164052043110132,GLIDE,clean,2026,B,test_unseen_GLIDE,test_unseen_GLIDE/GLIDE/801_3dc96e968b.PNG,801,snorkel,false_negative,0.9835947956889868
+test_unseen_GLIDE-09ebbfd3d4a9,1,0.018701871857047,GLIDE,clean,2026,B,test_unseen_GLIDE,test_unseen_GLIDE/GLIDE/755_09ebbfd3d4.PNG,755,radio telescope,false_negative,0.981298128142953
+test_unseen_GLIDE-782460e38797,1,0.0191236343234777,GLIDE,clean,2026,B,test_unseen_GLIDE,test_unseen_GLIDE/GLIDE/732_782460e387.PNG,732,Polaroid camera,false_negative,0.9808763656765223
+test_unseen_GLIDE-7867b718e62f,1,0.0221839938312768,GLIDE,clean,2026,B,test_unseen_GLIDE,test_unseen_GLIDE/GLIDE/712_7867b718e6.PNG,712,Petri dish,false_negative,0.9778160061687232
+test_seen-b761667282a0,1,0.0260517206043005,stable_diffusion_v_1_4,clean,2026,B,test_seen,test_seen/stable_diffusion_v_1_4/500_b761667282.PNG,500,cliff dwelling,false_negative,0.9739482793956995
+test_seen-2573e24335c9,1,0.0265003256499767,stable_diffusion_v_1_4,clean,2026,B,test_seen,test_seen/stable_diffusion_v_1_4/950_2573e24335.PNG,950,orange,false_negative,0.9734996743500233
+test_unseen_GLIDE-321ed8091693,0,0.9681309461593628,real,clean,2026,B,test_unseen_GLIDE,test_unseen_GLIDE/real/129_321ed80916.JPEG,129,spoonbill,false_positive,0.9681309461593628
+test_seen-60c5d5a55f3f,0,0.9660376310348512,real,clean,2026,B,test_seen,test_seen/real/132_60c5d5a55f.JPEG,132,American egret,false_positive,0.9660376310348512
+test_unseen_ADM-395771260bec,0,0.9648839235305786,real,clean,2026,B,test_unseen_ADM,test_unseen_ADM/real/653_395771260b.JPEG,653,milk can,false_positive,0.9648839235305786
+test_unseen_ADM-e577172738c4,0,0.9592050909996032,real,clean,2026,B,test_unseen_ADM,test_unseen_ADM/real/204_e577172738.JPEG,204,Lhasa,false_positive,0.9592050909996032
+test_seen-a0b7e19e1503,0,0.950362265110016,real,clean,2026,B,test_seen,test_seen/real/811_a0b7e19e15.JPEG,811,space heater,false_positive,0.950362265110016
+test_seen-26d33df9dac7,0,0.949805498123169,real,clean,2026,B,test_seen,test_seen/real/145_26d33df9da.JPEG,145,king penguin,false_positive,0.949805498123169
+test_seen-bceb9a29d189,0,0.9490771293640136,real,clean,2026,B,test_seen,test_seen/real/375_bceb9a29d1.JPEG,375,colobus,false_positive,0.9490771293640136
+test_seen-2b9d214f38fc,0,0.9458838701248168,real,clean,2026,B,test_seen,test_seen/real/871_2b9d214f38.JPEG,871,trimaran,false_positive,0.9458838701248168
+test_seen-d16a4a71ee8a,1,0.0596267357468605,stable_diffusion_v_1_4,clean,2026,B,test_seen,test_seen/stable_diffusion_v_1_4/066_d16a4a71ee.PNG,66,horned viper,false_negative,0.9403732642531395
+test_unseen_GLIDE-9163a131010b,0,0.9399858117103576,real,clean,2026,B,test_unseen_GLIDE,test_unseen_GLIDE/real/921_9163a13101.JPEG,921,book jacket,false_positive,0.9399858117103576
+test_seen-18652b7fc053,1,0.0632611587643623,stable_diffusion_v_1_4,clean,2026,B,test_seen,test_seen/stable_diffusion_v_1_4/020_18652b7fc0.PNG,20,water ouzel,false_negative,0.9367388412356377
+test_seen-ad17aa26e6bc,1,0.0637190192937851,stable_diffusion_v_1_4,clean,2026,B,test_seen,test_seen/stable_diffusion_v_1_4/458_ad17aa26e6.PNG,458,brass,false_negative,0.9362809807062149
+test_unseen_ADM-af22dbc1c082,0,0.9287331700325012,real,clean,2026,B,test_unseen_ADM,test_unseen_ADM/real/556_af22dbc1c0.JPEG,556,fire screen,false_positive,0.9287331700325012
+test_unseen_ADM-46fdfc521971,0,0.9277363419532776,real,clean,2026,B,test_unseen_ADM,test_unseen_ADM/real/082_46fdfc5219.JPEG,82,ruffed grouse,false_positive,0.9277363419532776
+test_unseen_GLIDE-c4575231fdee,0,0.9236304759979248,real,clean,2026,B,test_unseen_GLIDE,test_unseen_GLIDE/real/097_c4575231fd.JPEG,97,drake,false_positive,0.9236304759979248
+test_unseen_GLIDE-03d10ffd102f,0,0.9171174168586732,real,clean,2026,B,test_unseen_GLIDE,test_unseen_GLIDE/real/806_03d10ffd10.JPEG,806,sock,false_positive,0.9171174168586732

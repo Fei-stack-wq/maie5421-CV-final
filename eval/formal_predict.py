@@ -28,6 +28,11 @@ def sha256(path):
         return hashlib.file_digest(stream, "sha256").hexdigest()
 
 
+def manifest_lf_sha256(path):
+    # Git may materialize the same CSV with CRLF on Windows.
+    return hashlib.sha256(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
+
+
 def verify_data(args):
     manifest_hash = sha256(args.manifest)
     with args.manifest.open(encoding="utf-8-sig", newline="") as stream:
@@ -47,8 +52,7 @@ def predict(args):
     torch.set_num_threads(args.threads)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     manifest_hash = verify_data(args)
-    # Git may materialize the same CSV with CRLF on Windows.
-    normalized_manifest_hash = hashlib.sha256(args.manifest.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
+    normalized_manifest_hash = manifest_lf_sha256(args.manifest)
     models = {}
     for name, spec in MODELS.items():
         files = spec["files"]
@@ -112,6 +116,7 @@ def predict(args):
                 for line in source:
                     combined.write(line)
             shard.unlink()
+    metadata["predictions_sha256"] = sha256(args.output / "predictions.csv")
     (args.output / "provenance.json").write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8")
 
 

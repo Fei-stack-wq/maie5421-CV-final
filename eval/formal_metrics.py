@@ -12,12 +12,13 @@ from scipy.stats import rankdata
 from sklearn.metrics import roc_curve
 
 from src.datasets import EVAL_SUITES
-from eval.formal_predict import SPLITS, sha256
+from eval.formal_predict import SPLITS, manifest_lf_sha256, sha256
 
 SEEDS = (5421, 2026)
 CONDITIONS = ("A", "B", "C")
 METRICS = ("accuracy", "precision", "recall", "f1", "roc_auc")
 SUITE_LABELS = ("Clean", "JPEG 70", "JPEG 50", "Half size", "Blur", "Bias control")
+SPLIT_LABELS = dict(zip(SPLITS, ("Seen", "Unseen ADM", "Unseen GLIDE")))
 
 
 def scores(labels, probabilities):
@@ -106,7 +107,7 @@ def make_figures(predictions, metrics, contrasts, folder):
             ax.plot(range(6), rows.roc_auc, "-o", color=color, label=condition)
             ax.fill_between(range(6), rows.roc_auc_low, rows.roc_auc_high, color=color, alpha=0.12)
         ax.set_xticks(range(6), SUITE_LABELS, rotation=35, ha="right")
-        ax.set_title(split.removeprefix("test_").replace("unseen_", "Unseen "))
+        ax.set_title(SPLIT_LABELS[split])
         ax.grid(axis="y", alpha=0.25)
     axes[0].set_ylabel("ROC-AUC (two-seed mean)")
     axes[-1].legend()
@@ -124,13 +125,13 @@ def make_figures(predictions, metrics, contrasts, folder):
                 curves.append(np.interp(grid, fpr, tpr))
             ax.plot(grid, np.mean(curves, axis=0), color=color, label=condition)
         ax.plot([0, 1], [0, 1], color="grey", linestyle=":")
-        ax.set(xlabel="False positive rate", title=split.removeprefix("test_"), xlim=(0, 1), ylim=(0, 1))
+        ax.set(xlabel="False positive rate", title=SPLIT_LABELS[split], xlim=(0, 1), ylim=(0, 1))
     axes[0].set_ylabel("True positive rate (two-seed mean)")
     axes[-1].legend()
     fig.savefig(folder / "clean_roc.png", dpi=180)
     plt.close(fig)
 
-    fig, axes = plt.subplots(1, 3, figsize=(13, 4), sharey=True, layout="constrained")
+    fig, axes = plt.subplots(1, 3, figsize=(13, 4), sharex=True, sharey=True, layout="constrained")
     for split, ax in zip(SPLITS, axes):
         for offset, label, color in [(-0.13, "B-A", colors["B"]), (0.13, "C-B", colors["C"])]:
             rows = contrasts[(contrasts.split == split) & (contrasts.comparison == label)
@@ -140,7 +141,7 @@ def make_figures(predictions, metrics, contrasts, folder):
             ax.scatter(rows.delta * 100, positions, color=color, label=label)
         ax.axvline(0, color="grey", linestyle=":")
         ax.set(yticks=range(6), yticklabels=SUITE_LABELS, xlabel="ROC-AUC difference (percentage points)",
-               title=split.removeprefix("test_"))
+               title=SPLIT_LABELS[split])
     axes[0].invert_yaxis()
     axes[-1].legend()
     fig.savefig(folder / "paired_auc_differences.png", dpi=180)
@@ -166,7 +167,8 @@ def export_errors(predictions, manifest, folder):
 
 def main(args):
     provenance = json.loads((args.results / "provenance.json").read_text(encoding="utf-8"))
-    if sha256(args.manifest) != provenance["manifest_sha256"]:
+    if (sha256(args.manifest) != provenance["manifest_sha256"]
+            and manifest_lf_sha256(args.manifest) != provenance.get("manifest_lf_sha256")):
         raise ValueError("Manifest differs from the one used for inference")
     predictions = pd.read_csv(args.results / "predictions.csv")
     manifest = pd.read_csv(args.manifest)

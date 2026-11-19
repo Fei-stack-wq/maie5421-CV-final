@@ -1,0 +1,21 @@
+{
+  "manifest_sha256": "abc40960e3dd2b2a49b92ce95e454ac6802f9c7aaefbf3cde9345c2f617a53e9",
+  "preprocessing_sha256": "a5618523e8077bdb917d2ed63b483e20487014f2e5b59a2e7195f6d21622bbae",
+  "python": "3.12.14",
+  "torch": "2.7.1+cu126",
+  "pillow": "13.0.0",
+  "device": "cuda",
+  "batch_size": 96,
+  "models": {
+    "A_5421": "11ac81f9140311b32244e23d49802f179251dea582bb6f2b058d0427af72b7a4",
+    "A_2026": "ce42faa622bcbad10338eb739ea0efc53f380c1434f6affde488210a487708fd",
+    "B_5421": "69c6c49d4a146760ebf76c5c851cbb16190c237c9397f3fd6d145d7476f80f07",
+    "B_2026": "e38a1c2ac1b41c90be33be8865c7625970e8a46b8aa48dafa8eb126c68a394e1",
+    "C_5421": "5f07fbcc7ffdf9126b6c3338f109479c298c24be283cde35c838d98a52d9ec7c",
+    "C_2026": "958b0f820bb205954370cf87f0aa011289c05b2efed4d090b00176140c612f4c"
+  },
+  "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+  "cuda": "12.6",
+  "manifest_lf_sha256": "265cdc4036036058666479cf2d717ed6eb2a7cdb6c7554109819b9c9280fa5f5",
+  "predictions_sha256": "9faf26463ec9d2049bef37a15842fe1d1c29643b8f93e06e9503034bc048debf"
+}
