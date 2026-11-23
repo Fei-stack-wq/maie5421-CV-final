@@ -1,0 +1,27 @@
+{
+  "condition": "C",
+  "seed": 5421,
+  "best_epoch": 5,
+  "best_val_auc": 0.9648533333333333,
+  "completed_epochs": 8,
+  "early_stopped": true,
+  "provenance": {
+    "commit": "b16b057ab82802da016639d605707fb482be72b1",
+    "working_tree_dirty": false,
+    "torch": "2.3.0+cu121",
+    "torchvision": "0.18.0+cu121",
+    "device": "cuda",
+    "amp_enabled": true,
+    "manifest_sha256": "265cdc4036036058666479cf2d717ed6eb2a7cdb6c7554109819b9c9280fa5f5",
+    "run_kind": "formal",
+    "purpose": "formal experiment",
+    "train_images": 6000,
+    "val_images": 1500,
+    "data_audit": {
+      "manifest_rows": 12000,
+      "sha256_verified": 12000,
+      "missing_hashes": 0,
+      "perceptual_duplicates_checked": false
+    }
+  }
+}

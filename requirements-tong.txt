@@ -1,0 +1,6 @@
+# Independently tested training dependencies. Does not replace the team's CLI environment.
+torch==2.15.0
+torchvision==0.29.2
+numpy==2.3.5
+Pillow==13.0.0
+PyYAML==6.0.3

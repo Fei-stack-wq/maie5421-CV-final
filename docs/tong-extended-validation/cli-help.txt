@@ -1,0 +1,11 @@
+usage: train.py [-h] --config CONFIG --output-dir OUTPUT_DIR [--resume RESUME]
+
+Run TONG's A/B training, or integrate WANG's C loss with the same loop.
+Example: python -m src.train --config examples/tong/pilot_a.yaml
+
+options:
+  -h, --help            show this help message and exit
+  --config CONFIG
+  --output-dir OUTPUT_DIR
+  --resume RESUME       Resume the output directory's last.pt at the next
+                        epoch

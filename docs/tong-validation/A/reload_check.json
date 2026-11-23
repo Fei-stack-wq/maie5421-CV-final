@@ -1,0 +1,22 @@
+{
+  "condition": "A",
+  "purpose": "workflow validation only; not formal results",
+  "reloaded_images": 16,
+  "max_absolute_probability_difference": 0.0,
+  "checkpoint_sha256": "8e4bea3742ade639cdd921a2fa74fba86fa907205086e23c7200d96cd10d34be",
+  "checkpoint_bytes": 111970915,
+  "validation_metrics": {
+    "val_loss": 0.6365559846162796,
+    "val_auc": 0.765625,
+    "val_accuracy": 0.5625,
+    "val_images": 16
+  },
+  "data_audit": {
+    "manifest_rows": 12000,
+    "sha256_verified": 12000,
+    "missing_hashes": 0,
+    "perceptual_duplicates_checked": false
+  },
+  "code_commit": "b45be8efff19632b988a530fbaefde1a20a7eeec",
+  "working_tree_dirty_during_training": false
+}

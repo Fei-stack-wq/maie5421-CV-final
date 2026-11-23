@@ -1,0 +1,70 @@
+{
+  "status": "passed",
+  "scope": "data interface only; not a model-training pilot",
+  "split": "fixture",
+  "manifest": "E:\\Users\\PC\\Desktop\\CV_group_project\\maie5421-CV-final\\Images\\fixture\\manifest_fixture.csv",
+  "manifest_sha256": "e4310fce463eec22d3028a86ed9cc8db92a792033344718f1182d886423fba60",
+  "data_config": {
+    "version": "ouyang-v1",
+    "image_size": 224,
+    "resize_size": 256,
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "jpeg_quality_min": 50,
+    "jpeg_quality_max": 95,
+    "downsample_min": 0.5,
+    "downsample_max": 0.9,
+    "control_size": 256,
+    "control_quality": 95
+  },
+  "config_fingerprint": "a5618523e8077bdb917d2ed63b483e20487014f2e5b59a2e7195f6d21622bbae",
+  "seed": 5421,
+  "images_checked": 100,
+  "batch_shape": [
+    16,
+    3,
+    224,
+    224
+  ],
+  "checks": [
+    "RGB shape/dtype/finite",
+    "A/B shared clean preprocessing",
+    "B/C identical views and parameters at epoch 0 and first item at epoch 1",
+    "default collate",
+    "fixed suites retain image IDs"
+  ],
+  "suites": {
+    "clean": {
+      "examples_checked": 3
+    },
+    "jpeg_q70": {
+      "examples_checked": 3
+    },
+    "jpeg_q50": {
+      "examples_checked": 3
+    },
+    "downsample_0.5": {
+      "examples_checked": 3
+    },
+    "gaussian_blur_1.0": {
+      "examples_checked": 3
+    },
+    "bias_control_jpeg95": {
+      "examples_checked": 3
+    }
+  },
+  "versions": {
+    "python": "3.9.13",
+    "torch": "2.6.0+cpu",
+    "Pillow": "11.3.0",
+    "numpy": "1.24.3"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "purpose": "formal A/B checkpoint and clean-validation reproduction",
+  "device": "cuda",
+  "requested_runs": [
+    "B_5421"
+  ],
+  "runs": {
+    "B_5421": {
+      "status": "verified",
+      "summary": {
+        "condition": "B",
+        "seed": 5421,
+        "best_epoch": 4,
+        "best_val_auc": 0.9651288888888889,
+        "completed_epochs": 7,
+        "early_stopped": true,
+        "provenance": {
+          "commit": "d1a7752e557d77ba0f99a8d7243f4b51e166729b",
+          "working_tree_dirty": false,
+          "torch": "2.3.0+cu121",
+          "torchvision": "0.18.0+cu121",
+          "device": "cuda",
+          "amp_enabled": true,
+          "manifest_sha256": "265cdc4036036058666479cf2d717ed6eb2a7cdb6c7554109819b9c9280fa5f5",
+          "run_kind": "formal",
+          "purpose": "formal experiment",
+          "train_images": 6000,
+          "val_images": 1500,
+          "data_audit": {
+            "manifest_rows": 12000,
+            "sha256_verified": 12000,
+            "missing_hashes": 0,
+            "perceptual_duplicates_checked": false
+          }
+        }
+      },
+      "budget": {
+        "epochs": 7,
+        "optimizer_steps": 2625,
+        "amp_skipped_steps": 0
+      },
+      "budget_review_required": false,
+      "verification_scope": "best.pt inference reload; last.pt records/hash only, not a resume test",
+      "validation_images": 1500,
+      "reloaded_validation_metrics": {
+        "val_loss": 0.36435201781572457,
+        "val_auc": 0.9651288888888889,
+        "val_accuracy": 0.9126666666666666,
+        "val_images": 1500
+      },
+      "max_probability_error": 0.0,
+      "probability_tolerance": 1e-05,
+      "sha256": {
+        "best.pt": "69c6c49d4a146760ebf76c5c851cbb16190c237c9397f3fd6d145d7476f80f07",
+        "last.pt": "a8ff70f032ae726fa71153d2f145271bff34b577ba02d22c5aa7f95b2e3bced2",
+        "config.yaml": "f56c99b68086125229e6041d11800e3b1bd3052f7b4e02d3135640ec2a80b3d7",
+        "summary.json": "f898c3df09c67a730a781581b9077fce463dc2fa5ccb4cfacef83b0fa31f4025",
+        "history.csv": "a53d6c3d4eca5a4b49d7e6d34a189a644042825322d2081ab1040c0e9bb27850",
+        "val_predictions.csv": "2e3b17312168cb2246cdfe5f2adb7f6bd0bd293dfcc958dc50bf014b225a81ed"
+      }
+    }
+  },
+  "not_verified_runs": [
+    "A_5421",
+    "A_2026",
+    "B_2026"
+  ],
+  "all_four_verified": false,
+  "selected_verified": true
+}

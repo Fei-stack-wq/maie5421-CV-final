@@ -1,0 +1,25 @@
+{
+  "release_url": "https://github.com/Fei-stack-wq/maie5421-CV-final/releases/tag/wang-c-formal-2026-11-12",
+  "tag": "wang-c-formal-2026-11-12",
+  "target_commit": "97a6c3086179dccc101962b2fc10df160d33e905",
+  "assets": [
+    {
+      "name": "C_2026_best.pt",
+      "bytes": 112048980,
+      "sha256": "958b0f820bb205954370cf87f0aa011289c05b2efed4d090b00176140c612f4c",
+      "download_url": "https://github.com/Fei-stack-wq/maie5421-CV-final/releases/download/wang-c-formal-2026-11-12/C_2026_best.pt"
+    },
+    {
+      "name": "C_5421_best.pt",
+      "bytes": 112048916,
+      "sha256": "5f07fbcc7ffdf9126b6c3338f109479c298c24be283cde35c838d98a52d9ec7c",
+      "download_url": "https://github.com/Fei-stack-wq/maie5421-CV-final/releases/download/wang-c-formal-2026-11-12/C_5421_best.pt"
+    },
+    {
+      "name": "wang_c_records.zip",
+      "bytes": 83958,
+      "sha256": "bee776c73422e0270856c8384ea056730872fc982927cf920b28af140e1b920a",
+      "download_url": "https://github.com/Fei-stack-wq/maie5421-CV-final/releases/download/wang-c-formal-2026-11-12/wang_c_records.zip"
+    }
+  ]
+}

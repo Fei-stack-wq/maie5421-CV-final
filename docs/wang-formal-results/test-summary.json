@@ -1,0 +1,16 @@
+{
+  "cpu": {
+    "tests": "102",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "2",
+    "time": "7.167"
+  },
+  "gpu": {
+    "tests": "102",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "1",
+    "time": "15.050"
+  }
+}

@@ -1,0 +1,3 @@
+epoch,train_loss,optimizer_steps,amp_skipped_steps,train_images,val_loss,val_auc,val_accuracy,val_images,seconds,is_best,bad_epochs
+0,0.8272372558712959,2,0,32,0.8142735958099365,0.265625,0.4375,16,3.351040274999832,True,0
+1,0.3873239532113075,2,0,32,0.8874334916472435,0.34375,0.5625,16,5.37973374899957,True,0

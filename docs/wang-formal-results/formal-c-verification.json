@@ -1,0 +1,90 @@
+{
+  "purpose": "formal C checkpoint and clean-validation reproduction",
+  "device": "cuda",
+  "runs": {
+    "C_5421": {
+      "best_checkpoint_sha256": "5f07fbcc7ffdf9126b6c3338f109479c298c24be283cde35c838d98a52d9ec7c",
+      "last_checkpoint_sha256": "3d0a97bf96a6e8ae68a27c68a9a7db27167b9bcb220371920a0d27973aa16631",
+      "config_sha256": "c7ab35d2d10a4968ab6af1bff407aeee53b1f65b43684a17570accc294c93841",
+      "summary": {
+        "condition": "C",
+        "seed": 5421,
+        "best_epoch": 5,
+        "best_val_auc": 0.9648533333333333,
+        "completed_epochs": 8,
+        "early_stopped": true,
+        "provenance": {
+          "commit": "b16b057ab82802da016639d605707fb482be72b1",
+          "working_tree_dirty": false,
+          "torch": "2.3.0+cu121",
+          "torchvision": "0.18.0+cu121",
+          "device": "cuda",
+          "amp_enabled": true,
+          "manifest_sha256": "265cdc4036036058666479cf2d717ed6eb2a7cdb6c7554109819b9c9280fa5f5",
+          "run_kind": "formal",
+          "purpose": "formal experiment",
+          "train_images": 6000,
+          "val_images": 1500,
+          "data_audit": {
+            "manifest_rows": 12000,
+            "sha256_verified": 12000,
+            "missing_hashes": 0,
+            "perceptual_duplicates_checked": false
+          }
+        }
+      },
+      "reloaded_validation_metrics": {
+        "val_loss": 0.32846400925570013,
+        "val_auc": 0.9648533333333333,
+        "val_accuracy": 0.9046666666666666,
+        "val_images": 1500
+      },
+      "validation_images": 1500,
+      "max_probability_error": 0.0,
+      "probability_tolerance": 1e-05
+    },
+    "C_2026": {
+      "best_checkpoint_sha256": "958b0f820bb205954370cf87f0aa011289c05b2efed4d090b00176140c612f4c",
+      "last_checkpoint_sha256": "7d3f228d4f2b902fd56ddc1c8e8d82172e48a4e3cc565621d027596ee0d44ab1",
+      "config_sha256": "7da627d546e2092154a5e903a48d13045d8e3911ea752d2d790510f5285f5420",
+      "summary": {
+        "condition": "C",
+        "seed": 2026,
+        "best_epoch": 5,
+        "best_val_auc": 0.9612248888888889,
+        "completed_epochs": 8,
+        "early_stopped": true,
+        "provenance": {
+          "commit": "b16b057ab82802da016639d605707fb482be72b1",
+          "working_tree_dirty": false,
+          "torch": "2.3.0+cu121",
+          "torchvision": "0.18.0+cu121",
+          "device": "cuda",
+          "amp_enabled": true,
+          "manifest_sha256": "265cdc4036036058666479cf2d717ed6eb2a7cdb6c7554109819b9c9280fa5f5",
+          "run_kind": "formal",
+          "purpose": "formal experiment",
+          "train_images": 6000,
+          "val_images": 1500,
+          "data_audit": {
+            "manifest_rows": 12000,
+            "sha256_verified": 12000,
+            "missing_hashes": 0,
+            "perceptual_duplicates_checked": false
+          }
+        }
+      },
+      "reloaded_validation_metrics": {
+        "val_loss": 0.35470590707937943,
+        "val_auc": 0.9612248888888889,
+        "val_accuracy": 0.9,
+        "val_images": 1500
+      },
+      "validation_images": 1500,
+      "max_probability_error": 0.0,
+      "probability_tolerance": 1e-05
+    }
+  },
+  "ok": true,
+  "gpu": "NVIDIA H800"
+}

@@ -1,0 +1,226 @@
+{
+  "date": "2026-11-19",
+  "scope": "Record and configuration review; no model execution or held-out evaluation",
+  "status": "passed",
+  "ab_delivery_commit": "d59c6e090456ae729fed2fae4d2d4dd36f21b2b2",
+  "ab_release": "https://github.com/Fei-stack-wq/maie5421-CV-final/releases/tag/tong-ab-formal-2026-11-18",
+  "ab_records_zip_sha256": "1710be9f78c22b9fb6554e7f746cb2f873caac66a5a6aa05dcb1b67f6b4e0342",
+  "ab_records_zip_bytes": 191312,
+  "core_training_source_identical": true,
+  "compared_paths": [
+    "src/",
+    "configs/ouyang_data_v1.json",
+    "requirements-training.txt"
+  ],
+  "common_manifest_sha256": "265cdc4036036058666479cf2d717ed6eb2a7cdb6c7554109819b9c9280fa5f5",
+  "validation_id_label_order_identical": true,
+  "validation_images_per_run": 1500,
+  "validation_real_ai_counts": [
+    750,
+    750
+  ],
+  "ab_record_hashes_match_producer_verification": true,
+  "ab_best_model_digests_match_github_release_metadata": true,
+  "model_files_downloaded_or_executed_in_this_review": false,
+  "limitations": [
+    "Actual optimiser updates differ due to early stopping.",
+    "A/B ran on A100; C ran on H800; timing is not a controlled hardware benchmark.",
+    "Initial parameters and per-training-step views were not re-executed or independently compared in this review.",
+    "Reload checks are producer evidence, not a new independent checkpoint execution.",
+    "Validation AUC is for selection, not held-out ablation evidence."
+  ],
+  "runs": [
+    {
+      "run_id": "A_5421",
+      "condition": "A",
+      "seed": 5421,
+      "epochs": 7,
+      "optimizer_updates": 2625,
+      "amp_skips": 0,
+      "best_epoch_zero_based": 4,
+      "best_clean_val_auc": 0.9674808888888888,
+      "early_stopped": true,
+      "source_commit": "d1a7752e557d77ba0f99a8d7243f4b51e166729b",
+      "manifest_sha256": "265cdc4036036058666479cf2d717ed6eb2a7cdb6c7554109819b9c9280fa5f5",
+      "config_differences_from_C": {
+        "condition": [
+          "A",
+          "C"
+        ],
+        "consistency_weight": [
+          0.0,
+          1.0
+        ]
+      },
+      "record_sha256": {
+        "config.yaml": "c9de9df65c69ecd2ee0bb91b81124b02b74823497efa32d61afbb903a56b963e",
+        "summary.json": "d57b6c2bf563728f9dce028f334bde6918f24313ce2912f29dfba922a7183a41",
+        "history.csv": "2c65b0b25e7797842a49a2b33c31a804e56c24016ca07e9e83ffbfaaf819e7fe",
+        "val_predictions.csv": "621f237b4f2cc01eba7d8f8860e26cc39552e5f107344dc937966afede94db3a"
+      },
+      "best_checkpoint_sha256": "11ac81f9140311b32244e23d49802f179251dea582bb6f2b058d0427af72b7a4",
+      "checkpoint_url": "https://github.com/Fei-stack-wq/maie5421-CV-final/releases/download/tong-ab-formal-2026-11-18/A_5421_best.pt",
+      "records_base_url": "https://github.com/Fei-stack-wq/maie5421-CV-final/blob/d59c6e090456ae729fed2fae4d2d4dd36f21b2b2/docs/tong-formal-results/A_5421",
+      "reported_reload_max_probability_error": 0,
+      "recorded_train_validation_seconds": 491.8415158729913,
+      "gpu": "NVIDIA A100-SXM4-80GB"
+    },
+    {
+      "run_id": "B_5421",
+      "condition": "B",
+      "seed": 5421,
+      "epochs": 7,
+      "optimizer_updates": 2625,
+      "amp_skips": 0,
+      "best_epoch_zero_based": 4,
+      "best_clean_val_auc": 0.9651288888888889,
+      "early_stopped": true,
+      "source_commit": "d1a7752e557d77ba0f99a8d7243f4b51e166729b",
+      "manifest_sha256": "265cdc4036036058666479cf2d717ed6eb2a7cdb6c7554109819b9c9280fa5f5",
+      "config_differences_from_C": {
+        "condition": [
+          "B",
+          "C"
+        ],
+        "consistency_weight": [
+          0.0,
+          1.0
+        ]
+      },
+      "record_sha256": {
+        "config.yaml": "f56c99b68086125229e6041d11800e3b1bd3052f7b4e02d3135640ec2a80b3d7",
+        "summary.json": "f898c3df09c67a730a781581b9077fce463dc2fa5ccb4cfacef83b0fa31f4025",
+        "history.csv": "a53d6c3d4eca5a4b49d7e6d34a189a644042825322d2081ab1040c0e9bb27850",
+        "val_predictions.csv": "2e3b17312168cb2246cdfe5f2adb7f6bd0bd293dfcc958dc50bf014b225a81ed"
+      },
+      "best_checkpoint_sha256": "69c6c49d4a146760ebf76c5c851cbb16190c237c9397f3fd6d145d7476f80f07",
+      "checkpoint_url": "https://github.com/Fei-stack-wq/maie5421-CV-final/releases/download/tong-ab-formal-2026-11-18/B_5421_best.pt",
+      "records_base_url": "https://github.com/Fei-stack-wq/maie5421-CV-final/blob/d59c6e090456ae729fed2fae4d2d4dd36f21b2b2/docs/tong-formal-results/B_5421",
+      "reported_reload_max_probability_error": 0,
+      "recorded_train_validation_seconds": 630.6016024360288,
+      "gpu": "NVIDIA A100-SXM4-80GB"
+    },
+    {
+      "run_id": "C_5421",
+      "condition": "C",
+      "seed": 5421,
+      "epochs": 8,
+      "optimizer_updates": 3000,
+      "amp_skips": 0,
+      "best_epoch_zero_based": 5,
+      "best_clean_val_auc": 0.9648533333333333,
+      "early_stopped": true,
+      "source_commit": "b16b057ab82802da016639d605707fb482be72b1",
+      "manifest_sha256": "265cdc4036036058666479cf2d717ed6eb2a7cdb6c7554109819b9c9280fa5f5",
+      "config_differences_from_C": {},
+      "record_sha256": {
+        "config.yaml": "c7ab35d2d10a4968ab6af1bff407aeee53b1f65b43684a17570accc294c93841",
+        "summary.json": "21d0d8429bfb3bec80ad166fab9b4c7153aa13ba808cc9b9d20441640092c7c3",
+        "history.csv": "631befb572d6dcdd4cfd3f4f0c8a04f4ea661a6c71cbe855148e6082f67df4b1",
+        "val_predictions.csv": "6966f93747e4b6235740615c876fee787bc00a13aa73037a58104814af4b6731"
+      },
+      "best_checkpoint_sha256": "5f07fbcc7ffdf9126b6c3338f109479c298c24be283cde35c838d98a52d9ec7c",
+      "checkpoint_url": "https://github.com/Fei-stack-wq/maie5421-CV-final/releases/download/wang-c-formal-2026-11-12/C_5421_best.pt",
+      "records_base_url": "docs/wang-formal-results/C_5421",
+      "reported_reload_max_probability_error": 0,
+      "recorded_train_validation_seconds": 512.3618941679597,
+      "gpu": "NVIDIA H800 80GB"
+    },
+    {
+      "run_id": "A_2026",
+      "condition": "A",
+      "seed": 2026,
+      "epochs": 8,
+      "optimizer_updates": 3000,
+      "amp_skips": 0,
+      "best_epoch_zero_based": 6,
+      "best_clean_val_auc": 0.9729191111111111,
+      "early_stopped": false,
+      "source_commit": "d1a7752e557d77ba0f99a8d7243f4b51e166729b",
+      "manifest_sha256": "265cdc4036036058666479cf2d717ed6eb2a7cdb6c7554109819b9c9280fa5f5",
+      "config_differences_from_C": {
+        "condition": [
+          "A",
+          "C"
+        ],
+        "consistency_weight": [
+          0.0,
+          1.0
+        ]
+      },
+      "record_sha256": {
+        "config.yaml": "2174ce2d8df8185aa2356f1816bdb50094d92eacb06862977de83713fad51ed1",
+        "summary.json": "1b9afb171f3aadfdcd6c2835d934d5c266760d63d8c2801c4b86bbae2b9bf2df",
+        "history.csv": "4db1aaf9c77e599ad1e8481270f674552acfcc75ca94ae22c578c624a55c4901",
+        "val_predictions.csv": "ff452b47363f4c64468d7dc8916197b5b8e2760195812f3680a83e9a4f9521dd"
+      },
+      "best_checkpoint_sha256": "ce42faa622bcbad10338eb739ea0efc53f380c1434f6affde488210a487708fd",
+      "checkpoint_url": "https://github.com/Fei-stack-wq/maie5421-CV-final/releases/download/tong-ab-formal-2026-11-18/A_2026_best.pt",
+      "records_base_url": "https://github.com/Fei-stack-wq/maie5421-CV-final/blob/d59c6e090456ae729fed2fae4d2d4dd36f21b2b2/docs/tong-formal-results/A_2026",
+      "reported_reload_max_probability_error": 0,
+      "recorded_train_validation_seconds": 563.739731308,
+      "gpu": "NVIDIA A100-SXM4-80GB"
+    },
+    {
+      "run_id": "B_2026",
+      "condition": "B",
+      "seed": 2026,
+      "epochs": 4,
+      "optimizer_updates": 1500,
+      "amp_skips": 0,
+      "best_epoch_zero_based": 1,
+      "best_clean_val_auc": 0.9623946666666666,
+      "early_stopped": true,
+      "source_commit": "d1a7752e557d77ba0f99a8d7243f4b51e166729b",
+      "manifest_sha256": "265cdc4036036058666479cf2d717ed6eb2a7cdb6c7554109819b9c9280fa5f5",
+      "config_differences_from_C": {
+        "condition": [
+          "B",
+          "C"
+        ],
+        "consistency_weight": [
+          0.0,
+          1.0
+        ]
+      },
+      "record_sha256": {
+        "config.yaml": "080d8e353a3e3292512bb8a434cacb1dde248187d42da13eeed4ee711fd31cd3",
+        "summary.json": "2d77b1cc33d0e0d9c7e74d9e91cc8e85958bc333d8507bc6bf63685b3a1e9d7d",
+        "history.csv": "9560fd71c3911ef695e25ba36bf72388f9890adab4b796dd1a3e412f0fea7c42",
+        "val_predictions.csv": "1aa9a9148e5c8c46cf1c4f196d7734d7d8abe5d33fcdec97f1b3fd1987c31142"
+      },
+      "best_checkpoint_sha256": "e38a1c2ac1b41c90be33be8865c7625970e8a46b8aa48dafa8eb126c68a394e1",
+      "checkpoint_url": "https://github.com/Fei-stack-wq/maie5421-CV-final/releases/download/tong-ab-formal-2026-11-18/B_2026_best.pt",
+      "records_base_url": "https://github.com/Fei-stack-wq/maie5421-CV-final/blob/d59c6e090456ae729fed2fae4d2d4dd36f21b2b2/docs/tong-formal-results/B_2026",
+      "reported_reload_max_probability_error": 0,
+      "recorded_train_validation_seconds": 364.62795907798863,
+      "gpu": "NVIDIA A100-SXM4-80GB"
+    },
+    {
+      "run_id": "C_2026",
+      "condition": "C",
+      "seed": 2026,
+      "epochs": 8,
+      "optimizer_updates": 3000,
+      "amp_skips": 0,
+      "best_epoch_zero_based": 5,
+      "best_clean_val_auc": 0.9612248888888889,
+      "early_stopped": true,
+      "source_commit": "b16b057ab82802da016639d605707fb482be72b1",
+      "manifest_sha256": "265cdc4036036058666479cf2d717ed6eb2a7cdb6c7554109819b9c9280fa5f5",
+      "config_differences_from_C": {},
+      "record_sha256": {
+        "config.yaml": "7da627d546e2092154a5e903a48d13045d8e3911ea752d2d790510f5285f5420",
+        "summary.json": "6883bfb1f79d5291089df4715f3b5a960930379ab6ff69857d295ef9b72ca5d3",
+        "history.csv": "817cc8315360bcddbfc8a40df9d47b9f136577acd77aaef3bf36fa9262551cba",
+        "val_predictions.csv": "b625a0174e73a9ce9e4db892fb9887e459f23b389aab46064885d3b78dc9c21a"
+      },
+      "best_checkpoint_sha256": "958b0f820bb205954370cf87f0aa011289c05b2efed4d090b00176140c612f4c",
+      "checkpoint_url": "https://github.com/Fei-stack-wq/maie5421-CV-final/releases/download/wang-c-formal-2026-11-12/C_2026_best.pt",
+      "records_base_url": "docs/wang-formal-results/C_2026",
+      "reported_reload_max_probability_error": 0,
+      "recorded_train_validation_seconds": 507.20799337583594,
+      "gpu": "NVIDIA H800 80GB"
+    }
+  ]
+}

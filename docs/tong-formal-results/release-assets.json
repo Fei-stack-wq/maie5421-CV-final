@@ -1,0 +1,118 @@
+{
+  "checked_at_utc": "2026-11-18T15:46:50.490855+00:00",
+  "repository": "Fei-stack-wq/maie5421-CV-final",
+  "tag": "tong-ab-formal-2026-11-18",
+  "release_id": 450179435,
+  "release_url": "https://github.com/Fei-stack-wq/maie5421-CV-final/releases/tag/tong-ab-formal-2026-11-18",
+  "draft": false,
+  "published_at": "2026-11-18T15:46:34Z",
+  "status": "published_sha256_and_public_download_verified",
+  "assets": [
+    {
+      "id": 763912362,
+      "name": "A_5421_best.pt",
+      "state": "uploaded",
+      "size": 112048788,
+      "digest": "sha256:11ac81f9140311b32244e23d49802f179251dea582bb6f2b058d0427af72b7a4",
+      "browser_download_url": "https://github.com/Fei-stack-wq/maie5421-CV-final/releases/download/tong-ab-formal-2026-11-18/A_5421_best.pt"
+    },
+    {
+      "id": 763928243,
+      "name": "B_5421_best.pt",
+      "state": "uploaded",
+      "size": 112048788,
+      "digest": "sha256:69c6c49d4a146760ebf76c5c851cbb16190c237c9397f3fd6d145d7476f80f07",
+      "browser_download_url": "https://github.com/Fei-stack-wq/maie5421-CV-final/releases/download/tong-ab-formal-2026-11-18/B_5421_best.pt"
+    },
+    {
+      "id": 763945384,
+      "name": "A_2026_best.pt",
+      "state": "uploaded",
+      "size": 112049108,
+      "digest": "sha256:ce42faa622bcbad10338eb739ea0efc53f380c1434f6affde488210a487708fd",
+      "browser_download_url": "https://github.com/Fei-stack-wq/maie5421-CV-final/releases/download/tong-ab-formal-2026-11-18/A_2026_best.pt"
+    },
+    {
+      "id": 763961433,
+      "name": "B_2026_best.pt",
+      "state": "uploaded",
+      "size": 112048468,
+      "digest": "sha256:e38a1c2ac1b41c90be33be8865c7625970e8a46b8aa48dafa8eb126c68a394e1",
+      "browser_download_url": "https://github.com/Fei-stack-wq/maie5421-CV-final/releases/download/tong-ab-formal-2026-11-18/B_2026_best.pt"
+    },
+    {
+      "id": 763977781,
+      "name": "TONG_AB_records.zip",
+      "state": "uploaded",
+      "size": 191312,
+      "digest": "sha256:1710be9f78c22b9fb6554e7f746cb2f873caac66a5a6aa05dcb1b67f6b4e0342",
+      "browser_download_url": "https://github.com/Fei-stack-wq/maie5421-CV-final/releases/download/tong-ab-formal-2026-11-18/TONG_AB_records.zip"
+    },
+    {
+      "id": 763977847,
+      "name": "TONG_AB_training_source.bundle",
+      "state": "uploaded",
+      "size": 24897,
+      "digest": "sha256:753992d3d7de6e05c20f4e6983c086707c25fc769bf15948a7ae5221a522b561",
+      "browser_download_url": "https://github.com/Fei-stack-wq/maie5421-CV-final/releases/download/tong-ab-formal-2026-11-18/TONG_AB_training_source.bundle"
+    },
+    {
+      "id": 763978025,
+      "name": "SHA256SUMS.txt",
+      "state": "uploaded",
+      "size": 513,
+      "digest": "sha256:4179fa88a5652c888cbc1ebe0535b83c760375d5fe71d25b06677c118008845c",
+      "browser_download_url": "https://github.com/Fei-stack-wq/maie5421-CV-final/releases/download/tong-ab-formal-2026-11-18/SHA256SUMS.txt"
+    },
+    {
+      "id": 763978101,
+      "name": "release-manifest.json",
+      "state": "uploaded",
+      "size": 1708,
+      "digest": "sha256:e940bcd20c6bfd87eaa0266a573fc14ab9466b786e4ca6fe40d923bbc4ad8df1",
+      "browser_download_url": "https://github.com/Fei-stack-wq/maie5421-CV-final/releases/download/tong-ab-formal-2026-11-18/release-manifest.json"
+    }
+  ],
+  "public_download_checks": [
+    {
+      "name": "A_5421_best.pt",
+      "status": 206,
+      "bytes_read": 1024
+    },
+    {
+      "name": "B_5421_best.pt",
+      "status": 206,
+      "bytes_read": 1024
+    },
+    {
+      "name": "A_2026_best.pt",
+      "status": 206,
+      "bytes_read": 1024
+    },
+    {
+      "name": "B_2026_best.pt",
+      "status": 206,
+      "bytes_read": 1024
+    },
+    {
+      "name": "TONG_AB_records.zip",
+      "status": 206,
+      "bytes_read": 1024
+    },
+    {
+      "name": "TONG_AB_training_source.bundle",
+      "status": 206,
+      "bytes_read": 1024
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "status": 206,
+      "bytes_read": 513
+    },
+    {
+      "name": "release-manifest.json",
+      "status": 206,
+      "bytes_read": 1024
+    }
+  ]
+}

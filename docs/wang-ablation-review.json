@@ -1,0 +1,333 @@
+{
+  "date": "2026-11-19",
+  "source_commit": "2d724acb8527d0e2424c239e3aea264576345f8d",
+  "source_url": "https://github.com/Fei-stack-wq/maie5421-CV-final/pull/4",
+  "status": "passed",
+  "scope": "Offline recomputation from published probabilities; no new inference, image-byte audit or retraining",
+  "source_sha256": {
+    "README.md": "970ecf10c3bccb65659d53bb0b75265aa7dcbdd3a3c6150c68d18b6c9412624f",
+    "RESULTS.md": "36572e805bb7dd0980c0b2bd2eb7ceb3372ddf774ba1704b9544ffc15952cbe6",
+    "formal_metrics.py": "35a59a8944c50a7b80485789c83161364e98fb467e35932901b82a4b13e1fd42",
+    "formal_predict.py": "235680417c24f80f64b29a11e7a7860acbbb2d35a7bb877b75b3c61264394071",
+    "metrics.csv": "47994eb4fbdec82b9c32d83969ccbd46a7e5d3d804fd28361e7dbaef18035ec7",
+    "paired_intervals.csv": "460368f375f68d9cbdb882a557e8f64ce94fd23b4eac3045604df2b72782ad38",
+    "provenance.json": "2131cd4b5c36c03627ce50211afb056f3bdebbaa259642a809241a11e2ee07b5",
+    "predictions.csv": "9faf26463ec9d2049bef37a15842fe1d1c29643b8f93e06e9503034bc048debf"
+  },
+  "predictions": 162000,
+  "run_suite_groups": 108,
+  "seed_mean_groups": 54,
+  "paired_point_estimates": 405,
+  "model_hashes_match_six_run_review": true,
+  "manifest_lf_hash_matches_training": true,
+  "preprocessing_hash_matches_training": true,
+  "all_prediction_groups_match_manifest_ids_labels_generators_paths": true,
+  "point_metrics_recomputed_with": "scikit-learn",
+  "max_metric_absolute_error": 2.220446049250313e-16,
+  "bootstrap": {
+    "draws": 2000,
+    "seed": 5421,
+    "stratification": "label",
+    "pairing": "same image IDs across conditions, seeds and suites within each split",
+    "recomputed_auc_contrasts": 36,
+    "max_interval_endpoint_error": 9.71445146547012e-17,
+    "scope": "Pointwise image-sampling intervals conditional on the two fixed seeds; no seed/population uncertainty or multiplicity correction"
+  },
+  "auc_contrasts": [
+    {
+      "split": "test_seen",
+      "transformation": "clean",
+      "comparison": "B-A",
+      "delta": -0.0100408888888888,
+      "low": -0.0151562444444444,
+      "high": -0.0047102333333333
+    },
+    {
+      "split": "test_seen",
+      "transformation": "jpeg_q70",
+      "comparison": "B-A",
+      "delta": 0.0083155555555555,
+      "low": 0.0024373333333333,
+      "high": 0.0150448
+    },
+    {
+      "split": "test_seen",
+      "transformation": "jpeg_q50",
+      "comparison": "B-A",
+      "delta": 0.0224986666666666,
+      "low": 0.0151926222222222,
+      "high": 0.0307550888888888
+    },
+    {
+      "split": "test_seen",
+      "transformation": "downsample_0.5",
+      "comparison": "B-A",
+      "delta": 0.064051111111111,
+      "low": 0.0525512666666666,
+      "high": 0.0761679111111111
+    },
+    {
+      "split": "test_seen",
+      "transformation": "gaussian_blur_1.0",
+      "comparison": "B-A",
+      "delta": 0.0638693333333332,
+      "low": 0.0523731222222222,
+      "high": 0.0763761333333333
+    },
+    {
+      "split": "test_seen",
+      "transformation": "bias_control_jpeg95",
+      "comparison": "B-A",
+      "delta": -0.0054675555555555,
+      "low": -0.0104930444444444,
+      "high": -0.0003766444444444
+    },
+    {
+      "split": "test_seen",
+      "transformation": "clean",
+      "comparison": "C-B",
+      "delta": -0.0029168888888888,
+      "low": -0.007073811111111,
+      "high": 0.0010526444444444
+    },
+    {
+      "split": "test_seen",
+      "transformation": "jpeg_q70",
+      "comparison": "C-B",
+      "delta": -0.0008053333333333,
+      "low": -0.0053505222222222,
+      "high": 0.0037561999999999
+    },
+    {
+      "split": "test_seen",
+      "transformation": "jpeg_q50",
+      "comparison": "C-B",
+      "delta": 0.0011537777777778,
+      "low": -0.0038762555555556,
+      "high": 0.0061787888888889
+    },
+    {
+      "split": "test_seen",
+      "transformation": "downsample_0.5",
+      "comparison": "C-B",
+      "delta": 0.0133391111111111,
+      "low": 0.0067841,
+      "high": 0.0196867888888889
+    },
+    {
+      "split": "test_seen",
+      "transformation": "gaussian_blur_1.0",
+      "comparison": "C-B",
+      "delta": 0.0164728888888888,
+      "low": 0.0098044333333333,
+      "high": 0.022743311111111
+    },
+    {
+      "split": "test_seen",
+      "transformation": "bias_control_jpeg95",
+      "comparison": "C-B",
+      "delta": -0.0023822222222222,
+      "low": -0.006719811111111,
+      "high": 0.001878811111111
+    },
+    {
+      "split": "test_unseen_ADM",
+      "transformation": "clean",
+      "comparison": "B-A",
+      "delta": -0.0480346666666666,
+      "low": -0.0618910666666666,
+      "high": -0.0337377333333332
+    },
+    {
+      "split": "test_unseen_ADM",
+      "transformation": "jpeg_q70",
+      "comparison": "B-A",
+      "delta": -0.0276168888888889,
+      "low": -0.0423022666666666,
+      "high": -0.0132054666666666
+    },
+    {
+      "split": "test_unseen_ADM",
+      "transformation": "jpeg_q50",
+      "comparison": "B-A",
+      "delta": -0.0131502222222221,
+      "low": -0.0285303333333333,
+      "high": 0.001640311111111
+    },
+    {
+      "split": "test_unseen_ADM",
+      "transformation": "downsample_0.5",
+      "comparison": "B-A",
+      "delta": 0.0103613333333333,
+      "low": -0.0093727444444444,
+      "high": 0.0293863666666667
+    },
+    {
+      "split": "test_unseen_ADM",
+      "transformation": "gaussian_blur_1.0",
+      "comparison": "B-A",
+      "delta": 0.0196991111111111,
+      "low": 0.0015683555555555,
+      "high": 0.0375969
+    },
+    {
+      "split": "test_unseen_ADM",
+      "transformation": "bias_control_jpeg95",
+      "comparison": "B-A",
+      "delta": -0.0419515555555555,
+      "low": -0.0558266888888889,
+      "high": -0.0279763999999999
+    },
+    {
+      "split": "test_unseen_ADM",
+      "transformation": "clean",
+      "comparison": "C-B",
+      "delta": 0.0306053333333333,
+      "low": 0.0201725555555555,
+      "high": 0.0415312666666666
+    },
+    {
+      "split": "test_unseen_ADM",
+      "transformation": "jpeg_q70",
+      "comparison": "C-B",
+      "delta": 0.0231422222222221,
+      "low": 0.0126944444444444,
+      "high": 0.0340773777777777
+    },
+    {
+      "split": "test_unseen_ADM",
+      "transformation": "jpeg_q50",
+      "comparison": "C-B",
+      "delta": 0.0207706666666667,
+      "low": 0.0105428666666667,
+      "high": 0.031628511111111
+    },
+    {
+      "split": "test_unseen_ADM",
+      "transformation": "downsample_0.5",
+      "comparison": "C-B",
+      "delta": 0.0115355555555555,
+      "low": 0.0017892999999999,
+      "high": 0.0221505666666666
+    },
+    {
+      "split": "test_unseen_ADM",
+      "transformation": "gaussian_blur_1.0",
+      "comparison": "C-B",
+      "delta": 0.01338,
+      "low": 0.003788811111111,
+      "high": 0.0237279888888889
+    },
+    {
+      "split": "test_unseen_ADM",
+      "transformation": "bias_control_jpeg95",
+      "comparison": "C-B",
+      "delta": 0.0230573333333333,
+      "low": 0.0124777777777777,
+      "high": 0.0343998222222222
+    },
+    {
+      "split": "test_unseen_GLIDE",
+      "transformation": "clean",
+      "comparison": "B-A",
+      "delta": -0.0824871111111111,
+      "low": -0.0935393111111111,
+      "high": -0.0715293333333333
+    },
+    {
+      "split": "test_unseen_GLIDE",
+      "transformation": "jpeg_q70",
+      "comparison": "B-A",
+      "delta": -0.0447004444444444,
+      "low": -0.0553922222222221,
+      "high": -0.0338521555555555
+    },
+    {
+      "split": "test_unseen_GLIDE",
+      "transformation": "jpeg_q50",
+      "comparison": "B-A",
+      "delta": -0.0263813333333333,
+      "low": -0.0378620222222222,
+      "high": -0.0147298444444445
+    },
+    {
+      "split": "test_unseen_GLIDE",
+      "transformation": "downsample_0.5",
+      "comparison": "B-A",
+      "delta": 0.0523248888888888,
+      "low": 0.0361153999999999,
+      "high": 0.0682650444444444
+    },
+    {
+      "split": "test_unseen_GLIDE",
+      "transformation": "gaussian_blur_1.0",
+      "comparison": "B-A",
+      "delta": 0.0697,
+      "low": 0.0536909999999999,
+      "high": 0.086021511111111
+    },
+    {
+      "split": "test_unseen_GLIDE",
+      "transformation": "bias_control_jpeg95",
+      "comparison": "B-A",
+      "delta": -0.069963111111111,
+      "low": -0.0809449777777777,
+      "high": -0.0595059333333332
+    },
+    {
+      "split": "test_unseen_GLIDE",
+      "transformation": "clean",
+      "comparison": "C-B",
+      "delta": 0.00028,
+      "low": -0.0066523777777777,
+      "high": 0.0071371777777778
+    },
+    {
+      "split": "test_unseen_GLIDE",
+      "transformation": "jpeg_q70",
+      "comparison": "C-B",
+      "delta": 9.422222222227328e-05,
+      "low": -0.0070191333333332,
+      "high": 0.0069944666666666
+    },
+    {
+      "split": "test_unseen_GLIDE",
+      "transformation": "jpeg_q50",
+      "comparison": "C-B",
+      "delta": 0.0028706666666666,
+      "low": -0.0044959666666666,
+      "high": 0.0101616
+    },
+    {
+      "split": "test_unseen_GLIDE",
+      "transformation": "downsample_0.5",
+      "comparison": "C-B",
+      "delta": 0.0283937777777777,
+      "low": 0.0187396888888888,
+      "high": 0.0381731999999999
+    },
+    {
+      "split": "test_unseen_GLIDE",
+      "transformation": "gaussian_blur_1.0",
+      "comparison": "C-B",
+      "delta": 0.0282719999999999,
+      "low": 0.0185443333333333,
+      "high": 0.0381838666666666
+    },
+    {
+      "split": "test_unseen_GLIDE",
+      "transformation": "bias_control_jpeg95",
+      "comparison": "C-B",
+      "delta": -0.0020146666666666,
+      "low": -0.0089014333333333,
+      "high": 0.0051637111111111
+    }
+  ],
+  "verification_environment": {
+    "python": "3.11.9",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "scipy": "1.14.1",
+    "scikit-learn": "1.6.0"
+  }
+}

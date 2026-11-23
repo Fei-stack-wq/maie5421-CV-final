@@ -1,0 +1,42 @@
+{
+  "A_5421": {
+    "file": "TONG_A_5421_artifacts.zip",
+    "bytes": 730314012,
+    "sha256": "87831caad0025c7961e494f2bc7eb2d6fa824643d944d3c82f4f3bad0ca4b26e",
+    "includes_all_versioned_checkpoints": true,
+    "windows_copy_and_extraction_verified": true,
+    "verified_files": 14,
+    "public_download_url": null,
+    "availability": "Preserved in authorized DSW workspace and owner D-drive delivery; obtain archive from project owner."
+  },
+  "B_5421": {
+    "file": "TONG_B_5421_artifacts.zip",
+    "bytes": 625751899,
+    "sha256": "dd1d433adfa99ca9662c1c550012ad33e01808188e2c5ed4f02d809eca28acd9",
+    "includes_all_versioned_checkpoints": true,
+    "windows_copy_and_extraction_verified": true,
+    "verified_files": 13,
+    "public_download_url": null,
+    "availability": "Preserved in authorized DSW workspace and owner D-drive delivery; obtain archive from project owner."
+  },
+  "A_2026": {
+    "file": "TONG_A_2026_artifacts.zip",
+    "bytes": 731237847,
+    "sha256": "c138171178f64b0ec458185491d7c78f16a3d324ed62117eb01ef04268e1d357",
+    "includes_all_versioned_checkpoints": true,
+    "windows_copy_and_extraction_verified": true,
+    "verified_files": 14,
+    "public_download_url": null,
+    "availability": "Preserved in authorized DSW workspace and owner D-drive delivery; obtain archive from project owner."
+  },
+  "B_2026": {
+    "file": "TONG_B_2026_artifacts.zip",
+    "bytes": 417106959,
+    "sha256": "08b0decefaed297c6c48f4766411ad155d2a85c8d6e926ff73de0a099d2cb0d0",
+    "includes_all_versioned_checkpoints": true,
+    "windows_copy_and_extraction_verified": true,
+    "verified_files": 11,
+    "public_download_url": null,
+    "availability": "Preserved in authorized DSW workspace and owner D-drive delivery; obtain archive from project owner."
+  }
+}

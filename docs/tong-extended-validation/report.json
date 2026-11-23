@@ -1,0 +1,649 @@
+{
+  "purpose": "CPU workflow/integration validation only; not formal experiments",
+  "formal_models_completed": 0,
+  "protocol_confirmed": false,
+  "checks": {
+    "unit_tests": {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "returncode": 0,
+      "seconds": 4.88481520500045
+    },
+    "compileall": {
+      "command": [
+        "python",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "tests"
+      ],
+      "returncode": 0,
+      "seconds": 0.04484008399958839
+    },
+    "cli_help": {
+      "command": [
+        "python",
+        "-m",
+        "src.train",
+        "--help"
+      ],
+      "returncode": 0,
+      "seconds": 3.2614790950001407
+    },
+    "full_dataset_audit": {
+      "command": [
+        "python",
+        "runs/tong_extended_validation_v1/dataset-audit/tools/dataset/verify_dataset.py"
+      ],
+      "returncode": 0,
+      "seconds": 49.657706494000195,
+      "ok": true,
+      "files_checked": 12000,
+      "bad_files": 0,
+      "cross_split_shared_images": 0,
+      "original_report_unchanged": true,
+      "perceptual_near_duplicates_checked": false
+    },
+    "fixture_audit": {
+      "manifest_rows": 100,
+      "sha256_verified": 100,
+      "missing_hashes": 0,
+      "perceptual_duplicates_checked": false,
+      "decoded": 100,
+      "exact_overlap_with_formal": 0
+    },
+    "B_equals_C_lambda_zero": {
+      "equal": true,
+      "fields": [
+        "model_state",
+        "optimizer_state",
+        "scaler_state",
+        "best_epoch",
+        "best_val_auc",
+        "bad_epochs",
+        "epoch",
+        "history_without_wall_time"
+      ]
+    },
+    "real_resnet_epoch_resume": {
+      "equal": true,
+      "fields": [
+        "model_state",
+        "optimizer_state",
+        "scaler_state",
+        "best_epoch",
+        "best_val_auc",
+        "bad_epochs",
+        "epoch",
+        "history_without_wall_time"
+      ]
+    }
+  },
+  "runs": {
+    "A_5421": {
+      "executions": [
+        {
+          "command": [
+            "python",
+            "-m",
+            "src.train",
+            "--config",
+            "runs/tong_extended_validation_v1/A_5421.yaml",
+            "--output-dir",
+            "runs/tong_extended_validation_v1/A_5421"
+          ],
+          "returncode": 0,
+          "seconds": 15.02970668099988
+        }
+      ],
+      "summary": {
+        "condition": "A",
+        "seed": 5421,
+        "best_epoch": 1,
+        "best_val_auc": 0.78125,
+        "completed_epochs": 2,
+        "early_stopped": false,
+        "provenance": {
+          "commit": "a337e000aa81ebaa60884c27c53870b5fa7fd448",
+          "working_tree_dirty": false,
+          "torch": "2.15.0+cpu",
+          "torchvision": "0.29.2+cpu",
+          "device": "cpu",
+          "amp_enabled": false,
+          "manifest_sha256": "265cdc4036036058666479cf2d717ed6eb2a7cdb6c7554109819b9c9280fa5f5",
+          "run_kind": "pilot",
+          "purpose": "workflow validation, not final results",
+          "train_images": 32,
+          "val_images": 16,
+          "data_audit": {
+            "manifest_rows": 12000,
+            "sha256_verified": 12000,
+            "missing_hashes": 0,
+            "perceptual_duplicates_checked": false
+          }
+        }
+      },
+      "reload_check": {
+        "images": 16,
+        "max_absolute_probability_difference": 0.0,
+        "best_checkpoint_sha256": "9cb4f0a6ca1173d99ff87f943cd4969d8859869c5595a3b1eacff307123b3f97",
+        "validation_metrics": {
+          "val_loss": 0.573294572532177,
+          "val_auc": 0.78125,
+          "val_accuracy": 0.75,
+          "val_images": 16
+        }
+      },
+      "freeze_check": {
+        "unchanged_frozen_tensors": 105,
+        "all_bn_buffers_fixed": true,
+        "head_weights_updated": true
+      }
+    },
+    "B_5421": {
+      "executions": [
+        {
+          "command": [
+            "python",
+            "-m",
+            "src.train",
+            "--config",
+            "runs/tong_extended_validation_v1/B_5421.yaml",
+            "--output-dir",
+            "runs/tong_extended_validation_v1/B_5421"
+          ],
+          "returncode": 0,
+          "seconds": 20.312376260999372
+        }
+      ],
+      "summary": {
+        "condition": "B",
+        "seed": 5421,
+        "best_epoch": 1,
+        "best_val_auc": 0.75,
+        "completed_epochs": 2,
+        "early_stopped": false,
+        "provenance": {
+          "commit": "a337e000aa81ebaa60884c27c53870b5fa7fd448",
+          "working_tree_dirty": false,
+          "torch": "2.15.0+cpu",
+          "torchvision": "0.29.2+cpu",
+          "device": "cpu",
+          "amp_enabled": false,
+          "manifest_sha256": "265cdc4036036058666479cf2d717ed6eb2a7cdb6c7554109819b9c9280fa5f5",
+          "run_kind": "pilot",
+          "purpose": "workflow validation, not final results",
+          "train_images": 32,
+          "val_images": 16,
+          "data_audit": {
+            "manifest_rows": 12000,
+            "sha256_verified": 12000,
+            "missing_hashes": 0,
+            "perceptual_duplicates_checked": false
+          }
+        }
+      },
+      "reload_check": {
+        "images": 16,
+        "max_absolute_probability_difference": 0.0,
+        "best_checkpoint_sha256": "53c7ea5fd14f5bd500b30a4ffbba70378f75bf380553c0d9bf122269a4cd76e1",
+        "validation_metrics": {
+          "val_loss": 0.5800832286477089,
+          "val_auc": 0.75,
+          "val_accuracy": 0.75,
+          "val_images": 16
+        }
+      },
+      "freeze_check": {
+        "unchanged_frozen_tensors": 105,
+        "all_bn_buffers_fixed": true,
+        "head_weights_updated": true
+      }
+    },
+    "C_5421": {
+      "executions": [
+        {
+          "command": [
+            "python",
+            "-m",
+            "src.train",
+            "--config",
+            "runs/tong_extended_validation_v1/C_5421.yaml",
+            "--output-dir",
+            "runs/tong_extended_validation_v1/C_5421"
+          ],
+          "returncode": 0,
+          "seconds": 21.42476518100011
+        }
+      ],
+      "summary": {
+        "condition": "C",
+        "seed": 5421,
+        "best_epoch": 1,
+        "best_val_auc": 0.75,
+        "completed_epochs": 2,
+        "early_stopped": false,
+        "provenance": {
+          "commit": "a337e000aa81ebaa60884c27c53870b5fa7fd448",
+          "working_tree_dirty": false,
+          "torch": "2.15.0+cpu",
+          "torchvision": "0.29.2+cpu",
+          "device": "cpu",
+          "amp_enabled": false,
+          "manifest_sha256": "265cdc4036036058666479cf2d717ed6eb2a7cdb6c7554109819b9c9280fa5f5",
+          "run_kind": "pilot",
+          "purpose": "workflow validation, not final results",
+          "train_images": 32,
+          "val_images": 16,
+          "data_audit": {
+            "manifest_rows": 12000,
+            "sha256_verified": 12000,
+            "missing_hashes": 0,
+            "perceptual_duplicates_checked": false
+          }
+        }
+      },
+      "reload_check": {
+        "images": 16,
+        "max_absolute_probability_difference": 0.0,
+        "best_checkpoint_sha256": "9d64d7155aa04f9db093240f78c470a888c5b8f518b466ce41c6e4d4340605fd",
+        "validation_metrics": {
+          "val_loss": 0.5803249701857567,
+          "val_auc": 0.75,
+          "val_accuracy": 0.75,
+          "val_images": 16
+        }
+      },
+      "freeze_check": {
+        "unchanged_frozen_tensors": 105,
+        "all_bn_buffers_fixed": true,
+        "head_weights_updated": true
+      }
+    },
+    "A_2026": {
+      "executions": [
+        {
+          "command": [
+            "python",
+            "-m",
+            "src.train",
+            "--config",
+            "runs/tong_extended_validation_v1/A_2026.yaml",
+            "--output-dir",
+            "runs/tong_extended_validation_v1/A_2026"
+          ],
+          "returncode": 0,
+          "seconds": 16.913857190999806
+        }
+      ],
+      "summary": {
+        "condition": "A",
+        "seed": 2026,
+        "best_epoch": 1,
+        "best_val_auc": 0.328125,
+        "completed_epochs": 2,
+        "early_stopped": false,
+        "provenance": {
+          "commit": "a337e000aa81ebaa60884c27c53870b5fa7fd448",
+          "working_tree_dirty": false,
+          "torch": "2.15.0+cpu",
+          "torchvision": "0.29.2+cpu",
+          "device": "cpu",
+          "amp_enabled": false,
+          "manifest_sha256": "265cdc4036036058666479cf2d717ed6eb2a7cdb6c7554109819b9c9280fa5f5",
+          "run_kind": "pilot",
+          "purpose": "workflow validation, not final results",
+          "train_images": 32,
+          "val_images": 16,
+          "data_audit": {
+            "manifest_rows": 12000,
+            "sha256_verified": 12000,
+            "missing_hashes": 0,
+            "perceptual_duplicates_checked": false
+          }
+        }
+      },
+      "reload_check": {
+        "images": 16,
+        "max_absolute_probability_difference": 0.0,
+        "best_checkpoint_sha256": "29fdb1ec2bd74ebddaea1558a3e4939114cc3d12aaf1dcc820438f716dc5c98e",
+        "validation_metrics": {
+          "val_loss": 0.8719184845685959,
+          "val_auc": 0.328125,
+          "val_accuracy": 0.5625,
+          "val_images": 16
+        }
+      },
+      "freeze_check": {
+        "unchanged_frozen_tensors": 105,
+        "all_bn_buffers_fixed": true,
+        "head_weights_updated": true
+      }
+    },
+    "B_2026": {
+      "executions": [
+        {
+          "command": [
+            "python",
+            "-m",
+            "src.train",
+            "--config",
+            "runs/tong_extended_validation_v1/B_2026.yaml",
+            "--output-dir",
+            "runs/tong_extended_validation_v1/B_2026"
+          ],
+          "returncode": 0,
+          "seconds": 16.315315438999278
+        }
+      ],
+      "summary": {
+        "condition": "B",
+        "seed": 2026,
+        "best_epoch": 1,
+        "best_val_auc": 0.34375,
+        "completed_epochs": 2,
+        "early_stopped": false,
+        "provenance": {
+          "commit": "a337e000aa81ebaa60884c27c53870b5fa7fd448",
+          "working_tree_dirty": false,
+          "torch": "2.15.0+cpu",
+          "torchvision": "0.29.2+cpu",
+          "device": "cpu",
+          "amp_enabled": false,
+          "manifest_sha256": "265cdc4036036058666479cf2d717ed6eb2a7cdb6c7554109819b9c9280fa5f5",
+          "run_kind": "pilot",
+          "purpose": "workflow validation, not final results",
+          "train_images": 32,
+          "val_images": 16,
+          "data_audit": {
+            "manifest_rows": 12000,
+            "sha256_verified": 12000,
+            "missing_hashes": 0,
+            "perceptual_duplicates_checked": false
+          }
+        }
+      },
+      "reload_check": {
+        "images": 16,
+        "max_absolute_probability_difference": 0.0,
+        "best_checkpoint_sha256": "08d4134dfd3410deaacf4b6e5defe47dafbce7df29e94604f2cf3d29ad520f05",
+        "validation_metrics": {
+          "val_loss": 0.8893913850188255,
+          "val_auc": 0.34375,
+          "val_accuracy": 0.5625,
+          "val_images": 16
+        }
+      },
+      "freeze_check": {
+        "unchanged_frozen_tensors": 105,
+        "all_bn_buffers_fixed": true,
+        "head_weights_updated": true
+      }
+    },
+    "C_2026": {
+      "executions": [
+        {
+          "command": [
+            "python",
+            "-m",
+            "src.train",
+            "--config",
+            "runs/tong_extended_validation_v1/C_2026.yaml",
+            "--output-dir",
+            "runs/tong_extended_validation_v1/C_2026"
+          ],
+          "returncode": 0,
+          "seconds": 16.53692670199962
+        }
+      ],
+      "summary": {
+        "condition": "C",
+        "seed": 2026,
+        "best_epoch": 1,
+        "best_val_auc": 0.34375,
+        "completed_epochs": 2,
+        "early_stopped": false,
+        "provenance": {
+          "commit": "a337e000aa81ebaa60884c27c53870b5fa7fd448",
+          "working_tree_dirty": false,
+          "torch": "2.15.0+cpu",
+          "torchvision": "0.29.2+cpu",
+          "device": "cpu",
+          "amp_enabled": false,
+          "manifest_sha256": "265cdc4036036058666479cf2d717ed6eb2a7cdb6c7554109819b9c9280fa5f5",
+          "run_kind": "pilot",
+          "purpose": "workflow validation, not final results",
+          "train_images": 32,
+          "val_images": 16,
+          "data_audit": {
+            "manifest_rows": 12000,
+            "sha256_verified": 12000,
+            "missing_hashes": 0,
+            "perceptual_duplicates_checked": false
+          }
+        }
+      },
+      "reload_check": {
+        "images": 16,
+        "max_absolute_probability_difference": 0.0,
+        "best_checkpoint_sha256": "3737252b0480c92160fd31239280228370dcc1765f81348eb9decb746eaf7198",
+        "validation_metrics": {
+          "val_loss": 0.8874334916472435,
+          "val_auc": 0.34375,
+          "val_accuracy": 0.5625,
+          "val_images": 16
+        }
+      },
+      "freeze_check": {
+        "unchanged_frozen_tensors": 105,
+        "all_bn_buffers_fixed": true,
+        "head_weights_updated": true
+      }
+    },
+    "C_zero_5421": {
+      "executions": [
+        {
+          "command": [
+            "python",
+            "-m",
+            "src.train",
+            "--config",
+            "runs/tong_extended_validation_v1/C_zero_5421.yaml",
+            "--output-dir",
+            "runs/tong_extended_validation_v1/C_zero_5421"
+          ],
+          "returncode": 0,
+          "seconds": 17.848614831000305
+        }
+      ],
+      "summary": {
+        "condition": "C",
+        "seed": 5421,
+        "best_epoch": 1,
+        "best_val_auc": 0.75,
+        "completed_epochs": 2,
+        "early_stopped": false,
+        "provenance": {
+          "commit": "a337e000aa81ebaa60884c27c53870b5fa7fd448",
+          "working_tree_dirty": false,
+          "torch": "2.15.0+cpu",
+          "torchvision": "0.29.2+cpu",
+          "device": "cpu",
+          "amp_enabled": false,
+          "manifest_sha256": "265cdc4036036058666479cf2d717ed6eb2a7cdb6c7554109819b9c9280fa5f5",
+          "run_kind": "pilot",
+          "purpose": "workflow validation, not final results",
+          "train_images": 32,
+          "val_images": 16,
+          "data_audit": {
+            "manifest_rows": 12000,
+            "sha256_verified": 12000,
+            "missing_hashes": 0,
+            "perceptual_duplicates_checked": false
+          }
+        }
+      },
+      "reload_check": {
+        "images": 16,
+        "max_absolute_probability_difference": 0.0,
+        "best_checkpoint_sha256": "b31b91fb43a6ef213809130fe8f6a51ecc0d4eaac7822aac4f786174004f6a77",
+        "validation_metrics": {
+          "val_loss": 0.5800832286477089,
+          "val_auc": 0.75,
+          "val_accuracy": 0.75,
+          "val_images": 16
+        }
+      },
+      "freeze_check": {
+        "unchanged_frozen_tensors": 105,
+        "all_bn_buffers_fixed": true,
+        "head_weights_updated": true
+      }
+    },
+    "A_resumed_5421": {
+      "executions": [
+        {
+          "command": [
+            "python",
+            "-m",
+            "src.train",
+            "--config",
+            "runs/tong_extended_validation_v1/A_resumed_5421.yaml",
+            "--output-dir",
+            "runs/tong_extended_validation_v1/A_resumed_5421"
+          ],
+          "returncode": 0,
+          "seconds": 9.71328116299992
+        },
+        {
+          "command": [
+            "python",
+            "-m",
+            "src.train",
+            "--config",
+            "runs/tong_extended_validation_v1/A_resumed_5421.yaml",
+            "--output-dir",
+            "runs/tong_extended_validation_v1/A_resumed_5421",
+            "--resume",
+            "runs/tong_extended_validation_v1/A_resumed_5421/last.pt"
+          ],
+          "returncode": 0,
+          "seconds": 9.831648201999997
+        }
+      ],
+      "summary": {
+        "condition": "A",
+        "seed": 5421,
+        "best_epoch": 1,
+        "best_val_auc": 0.78125,
+        "completed_epochs": 2,
+        "early_stopped": false,
+        "provenance": {
+          "commit": "a337e000aa81ebaa60884c27c53870b5fa7fd448",
+          "working_tree_dirty": false,
+          "torch": "2.15.0+cpu",
+          "torchvision": "0.29.2+cpu",
+          "device": "cpu",
+          "amp_enabled": false,
+          "manifest_sha256": "265cdc4036036058666479cf2d717ed6eb2a7cdb6c7554109819b9c9280fa5f5",
+          "run_kind": "pilot",
+          "purpose": "workflow validation, not final results",
+          "train_images": 32,
+          "val_images": 16,
+          "data_audit": {
+            "manifest_rows": 12000,
+            "sha256_verified": 12000,
+            "missing_hashes": 0,
+            "perceptual_duplicates_checked": false
+          },
+          "resumed_from_epoch": 0
+        }
+      },
+      "reload_check": {
+        "images": 16,
+        "max_absolute_probability_difference": 0.0,
+        "best_checkpoint_sha256": "72d8dbcfaf70deeac86e2108ef31a39181bcd1b8264c09d71d69014563b33227",
+        "validation_metrics": {
+          "val_loss": 0.573294572532177,
+          "val_auc": 0.78125,
+          "val_accuracy": 0.75,
+          "val_images": 16
+        }
+      },
+      "freeze_check": {
+        "unchanged_frozen_tensors": 105,
+        "all_bn_buffers_fixed": true,
+        "head_weights_updated": true
+      }
+    }
+  },
+  "environment": {
+    "scope": "current cloud execution environment, not the user personal computer",
+    "python": "3.12.14",
+    "torch": "2.15.0+cpu",
+    "torchvision": "0.29.2+cpu",
+    "numpy": "2.3.5",
+    "pillow": "13.0.0",
+    "pyyaml": "6.0.3",
+    "cuda_available": false,
+    "torch_cuda_runtime": null,
+    "cpu_count": 9,
+    "ram_gib": 9.7,
+    "initial_disk_free_gib": 53.7
+  },
+  "git_commit": "a337e000aa81ebaa60884c27c53870b5fa7fd448",
+  "working_tree_dirty": false,
+  "blocked_checks": {
+    "num_workers_2": {
+      "status": "blocked_by_environment",
+      "operation": "PyTorch multiprocessing resource_sharer socket",
+      "error": "PermissionError: [Errno 1] Operation not permitted",
+      "attempt_stopped": true,
+      "training_completed": false,
+      "not_verified": [
+        "workers=0/2 full training equality",
+        "workers=0/2 sample/view equality"
+      ],
+      "supported_setting": "num_workers=0"
+    },
+    "cuda": {
+      "status": "unavailable",
+      "not_verified": [
+        "GPU AMP",
+        "GPU memory",
+        "GPU throughput",
+        "GPU determinism"
+      ]
+    },
+    "formal_training": {
+      "status": "pending_team_integration",
+      "final_A_B_models_completed": 0,
+      "requires": [
+        "OUYANG formal data and paired views",
+        "shared seeds and training settings",
+        "target-machine integration"
+      ]
+    }
+  },
+  "status": "passed_available_single_process_CPU_checks_with_documented_blockers",
+  "ok": false,
+  "available_cpu_checks_passed": true,
+  "completed_pilot_runs": 8,
+  "completed_model_reloads": 8,
+  "final_unit_test_suite": {
+    "tests_run": 45,
+    "passed": 43,
+    "skipped": 2,
+    "skipped_reason": "CUDA unavailable",
+    "log": "unit-tests.txt",
+    "model_and_training_source_changed": false
+  }
+}

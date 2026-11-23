@@ -1,0 +1,15 @@
+.s.s.................................................................... [ 51%]
+....................................................................     [100%]
+-------------- generated xml file: /tmp/cv-ab-tests-completed.xml --------------
+============================= slowest 10 durations =============================
+0.56s call     tests/test_tong_training.py::ModelTests::test_checkpoint_load_has_no_download_and_same_predictions
+0.19s call     tests/test_ouyang_factory.py::OuyangFactoryTests::test_bc_views_and_epoch_forwarding
+0.15s call     tests/test_tong_training.py::ModelTests::test_freeze_batchnorm_and_gradient_policy
+0.11s call     tests/test_tong_training.py::ModelTests::test_predict_requires_eval
+0.10s call     tests/test_tong_training.py::ResumeTests::test_epoch_boundary_resume_matches_uninterrupted_run
+0.08s call     tests/test_qa_received.py::test_identical_pixels_different_encodings_need_review
+0.08s call     tests/test_tong_extended_validation.py::TrainingGuardTests::test_patience_stops_after_two_non_improvements_and_rejects_resume
+0.07s call     tests/test_ouyang_factory.py::OuyangFactoryTests::test_canonical_order_and_balanced_subset_through_training_contract
+0.06s call     tests/test_tong_training.py::DataTests::test_factory_rng_does_not_change_initialization
+0.06s call     tests/test_tong_training.py::ResumeTests::test_resume_checkpoint_without_amp_init_scale
+138 passed, 2 skipped, 1 deselected in 4.29s

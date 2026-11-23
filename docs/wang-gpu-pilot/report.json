@@ -1,0 +1,252 @@
+{
+  "purpose": "CUDA integration pilot, not formal model results",
+  "protocol_confirmed": false,
+  "formal_c_models_completed": 0,
+  "source_commit": "eb6bd2ff56f1b012112dd24988bd4a11e20618fd",
+  "source_sha256": {
+    "src\\losses\\__init__.py": "5f080426d3ce5f630a88e9e352f8601b7a9a2e2c8961b00c22a7ec14b9a3b030",
+    "src\\losses\\consistency.py": "8042118c83c23c4459a6049e676bf585d7440c23d637f440fc36348d5796bcac",
+    "src\\models\\__init__.py": "b37d5fe3dc62512319eca39550debe6d294cb1ccca783748442245979f6144bc",
+    "src\\models\\resnet18.py": "9bab282a3da7ffa8d4692a4492f460ff0a1f6d4d0d149168ccc91a7b3791d6c0",
+    "src\\train.py": "03885f91689765401df0611c3d2928687f84c294d938a5c90d2dc7eb7bead905",
+    "src\\training\\__init__.py": "824a7b20b59049b72bfeab52c2b2bc9c7f61530cc8097b6d3c50ccd4a25d6eea",
+    "src\\training\\checkpoint.py": "f2892170c3f2af13cc8c0d29e3095a4d84b26954e47342ab55ac86c5cec8e13a",
+    "src\\training\\data.py": "a82f450a1c0056836159bc42214be6730c735c7feea5267c54d081509541e0e8",
+    "src\\training\\engine.py": "b18f020859d6e562fbd1faf0d959bc5d9661dc61d67477b0202d498ec6c93b65",
+    "tools\\training\\cuda_pilot.py": "732ba4d117e249d0fadf6ddd21616b32d80ca01dd69b11742fabf24c28f6f961"
+  },
+  "config_sha256": "cef1dd26f2ce546d766a131b26bffd5d80093a44675d5a0cccb5a5c74d514d78",
+  "source_manifest_sha256": "abc40960e3dd2b2a49b92ce95e454ac6802f9c7aaefbf3cde9345c2f617a53e9",
+  "pilot_manifest_sha256": "12b45dce0632bfa80d06f3c2069a93236cd7e9cab4767b0c03f40673c57ee6e6",
+  "environment": {
+    "python": "3.11.9",
+    "torch": "2.3.0+cu121",
+    "torchvision": "0.18.0+cu121",
+    "pillow": "10.2.0",
+    "cuda_runtime": "12.1",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_total_bytes": 8585216000
+  },
+  "runs": {
+    "B": {
+      "summary": {
+        "condition": "B",
+        "seed": 5421,
+        "best_epoch": 1,
+        "best_val_auc": 0.75,
+        "completed_epochs": 2,
+        "early_stopped": false,
+        "provenance": {
+          "commit": "eb6bd2ff56f1b012112dd24988bd4a11e20618fd",
+          "working_tree_dirty": false,
+          "torch": "2.3.0+cu121",
+          "torchvision": "0.18.0+cu121",
+          "device": "cuda",
+          "amp_enabled": true,
+          "manifest_sha256": "12b45dce0632bfa80d06f3c2069a93236cd7e9cab4767b0c03f40673c57ee6e6",
+          "run_kind": "pilot",
+          "purpose": "workflow validation, not final results",
+          "train_images": 32,
+          "val_images": 16,
+          "data_audit": {
+            "manifest_rows": 48,
+            "sha256_verified": 48,
+            "missing_hashes": 0,
+            "perceptual_duplicates_checked": false
+          }
+        }
+      },
+      "wall_seconds": 3.9087799000553787,
+      "peak_allocated_bytes": 261752320,
+      "peak_reserved_bytes": 289406976,
+      "frozen_tensors_unchanged": true,
+      "frozen_tensor_count": 105,
+      "changed_trainable_tensors": 17,
+      "checkpoint_sha256": "d709bb81178a1244f1daba7ae88560a0b14bc5628e8fa3db69a4380ecc7d2270",
+      "reload_max_probability_error": 0.0
+    },
+    "C_zero": {
+      "summary": {
+        "condition": "C",
+        "seed": 5421,
+        "best_epoch": 1,
+        "best_val_auc": 0.75,
+        "completed_epochs": 2,
+        "early_stopped": false,
+        "provenance": {
+          "commit": "eb6bd2ff56f1b012112dd24988bd4a11e20618fd",
+          "working_tree_dirty": false,
+          "torch": "2.3.0+cu121",
+          "torchvision": "0.18.0+cu121",
+          "device": "cuda",
+          "amp_enabled": true,
+          "manifest_sha256": "12b45dce0632bfa80d06f3c2069a93236cd7e9cab4767b0c03f40673c57ee6e6",
+          "run_kind": "pilot",
+          "purpose": "workflow validation, not final results",
+          "train_images": 32,
+          "val_images": 16,
+          "data_audit": {
+            "manifest_rows": 48,
+            "sha256_verified": 48,
+            "missing_hashes": 0,
+            "perceptual_duplicates_checked": false
+          }
+        }
+      },
+      "wall_seconds": 3.26392830000259,
+      "peak_allocated_bytes": 261801472,
+      "peak_reserved_bytes": 289406976,
+      "frozen_tensors_unchanged": true,
+      "frozen_tensor_count": 105,
+      "changed_trainable_tensors": 17,
+      "checkpoint_sha256": "72afc29d94aca36fd671061960399f7a201c6113117609aa0663b74d7ee58128",
+      "reload_max_probability_error": 0.0
+    },
+    "C": {
+      "summary": {
+        "condition": "C",
+        "seed": 5421,
+        "best_epoch": 1,
+        "best_val_auc": 0.75,
+        "completed_epochs": 2,
+        "early_stopped": false,
+        "provenance": {
+          "commit": "eb6bd2ff56f1b012112dd24988bd4a11e20618fd",
+          "working_tree_dirty": false,
+          "torch": "2.3.0+cu121",
+          "torchvision": "0.18.0+cu121",
+          "device": "cuda",
+          "amp_enabled": true,
+          "manifest_sha256": "12b45dce0632bfa80d06f3c2069a93236cd7e9cab4767b0c03f40673c57ee6e6",
+          "run_kind": "pilot",
+          "purpose": "workflow validation, not final results",
+          "train_images": 32,
+          "val_images": 16,
+          "data_audit": {
+            "manifest_rows": 48,
+            "sha256_verified": 48,
+            "missing_hashes": 0,
+            "perceptual_duplicates_checked": false
+          }
+        }
+      },
+      "wall_seconds": 3.5460886999499053,
+      "peak_allocated_bytes": 261801472,
+      "peak_reserved_bytes": 289406976,
+      "frozen_tensors_unchanged": true,
+      "frozen_tensor_count": 105,
+      "changed_trainable_tensors": 17,
+      "checkpoint_sha256": "5865d8fbccced9db059869d90a046de67a5a4a7a32410850a9456f22693f58b1",
+      "reload_max_probability_error": 0.0
+    },
+    "C_resume": {
+      "summary": {
+        "condition": "C",
+        "seed": 5421,
+        "best_epoch": 0,
+        "best_val_auc": 0.734375,
+        "completed_epochs": 1,
+        "early_stopped": false,
+        "provenance": {
+          "commit": "eb6bd2ff56f1b012112dd24988bd4a11e20618fd",
+          "working_tree_dirty": false,
+          "torch": "2.3.0+cu121",
+          "torchvision": "0.18.0+cu121",
+          "device": "cuda",
+          "amp_enabled": true,
+          "manifest_sha256": "12b45dce0632bfa80d06f3c2069a93236cd7e9cab4767b0c03f40673c57ee6e6",
+          "run_kind": "pilot",
+          "purpose": "workflow validation, not final results",
+          "train_images": 32,
+          "val_images": 16,
+          "data_audit": {
+            "manifest_rows": 48,
+            "sha256_verified": 48,
+            "missing_hashes": 0,
+            "perceptual_duplicates_checked": false
+          }
+        }
+      },
+      "wall_seconds": 2.2589929001405835,
+      "peak_allocated_bytes": 261703168,
+      "peak_reserved_bytes": 289406976,
+      "frozen_tensors_unchanged": true,
+      "frozen_tensor_count": 105,
+      "changed_trainable_tensors": 17,
+      "checkpoint_sha256": "09363ef3c3974c98d88d08db42118701b009dc0f134f17bf2903c2c2aff7bf64",
+      "reload_max_probability_error": 0.0
+    },
+    "C_resume_resumed": {
+      "summary": {
+        "condition": "C",
+        "seed": 5421,
+        "best_epoch": 1,
+        "best_val_auc": 0.75,
+        "completed_epochs": 2,
+        "early_stopped": false,
+        "provenance": {
+          "commit": "eb6bd2ff56f1b012112dd24988bd4a11e20618fd",
+          "working_tree_dirty": false,
+          "torch": "2.3.0+cu121",
+          "torchvision": "0.18.0+cu121",
+          "device": "cuda",
+          "amp_enabled": true,
+          "manifest_sha256": "12b45dce0632bfa80d06f3c2069a93236cd7e9cab4767b0c03f40673c57ee6e6",
+          "run_kind": "pilot",
+          "purpose": "workflow validation, not final results",
+          "train_images": 32,
+          "val_images": 16,
+          "data_audit": {
+            "manifest_rows": 48,
+            "sha256_verified": 48,
+            "missing_hashes": 0,
+            "perceptual_duplicates_checked": false
+          },
+          "resumed_from_epoch": 0
+        }
+      },
+      "wall_seconds": 2.3981941998936236,
+      "peak_allocated_bytes": 261752320,
+      "peak_reserved_bytes": 289406976,
+      "frozen_tensors_unchanged": true,
+      "frozen_tensor_count": 105,
+      "changed_trainable_tensors": 17,
+      "checkpoint_sha256": "f9ef6310e6cfbb1481eba91f67a4721acd112f0b06e6196ef4c553ad90a1b4df",
+      "reload_max_probability_error": 0.0
+    }
+  },
+  "checks": {
+    "b_matches_c_zero": {
+      "model_state": true,
+      "optimizer_state": true,
+      "scaler_state": true,
+      "rng_state": true,
+      "epoch": true,
+      "best_epoch": true,
+      "best_val_auc": true,
+      "bad_epochs": true,
+      "val_predictions": true,
+      "history_except_seconds": true
+    },
+    "c_epoch_resume_matches_full": {
+      "model_state": true,
+      "optimizer_state": true,
+      "scaler_state": true,
+      "rng_state": true,
+      "epoch": true,
+      "best_epoch": true,
+      "best_val_auc": true,
+      "bad_epochs": true,
+      "val_predictions": true,
+      "history_except_seconds": true
+    }
+  },
+  "ok": true,
+  "unit_tests": {
+    "total": 46,
+    "passed": 45,
+    "skipped": 1,
+    "skip_reason": "unavailable-CUDA guard skipped because CUDA is available",
+    "command": "python -m unittest discover -s tests -v"
+  }
+}

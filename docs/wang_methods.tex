@@ -1,0 +1,67 @@
+% Author: WANG Yitian. Insert after the paired-view data description.
+% Requires amsmath. Merge wang_references.bib into the report bibliography.
+
+\subsection{Supervised prediction consistency}
+\label{sec:wang-consistency}
+For an image $x$ with label $y\in\{0,1\}$ (AI-generated is 1), the same
+network produces logits $z=f_\theta(x)$ and $\tilde z=f_\theta(T(x))$ for
+the clean and transformed views. The transformation $T$ follows the paired
+JPEG/downsampling procedure described above. Let $p=\sigma(z)$,
+$q=\sigma(\tilde z)$, $P=(1-p,p)$, $Q=(1-q,q)$, and $M=(P+Q)/2$.
+We use the equally weighted Jensen--Shannon divergence~\cite{wang_lin1991}
+to penalise disagreement:
+\begin{equation}
+\label{eq:wang-js}
+ J(P,Q)=\tfrac12\mathrm{KL}(P\Vert M)
+       +\tfrac12\mathrm{KL}(Q\Vert M).
+\end{equation}
+With natural logarithms, $0\leq J(P,Q)\leq\ln 2$. Both views receive the
+same ground-truth label. Their supervised loss and the condition-C objective
+for a batch of $N$ original images are
+\begin{align}
+ s_i &= \tfrac12\bigl[\ell_{\mathrm{BCE}}(z_i,y_i)
+                  +\ell_{\mathrm{BCE}}(\tilde z_i,y_i)\bigr],
+ \label{eq:wang-supervised}\\
+ \mathcal{L}_{C} &= \frac{1}{N}\sum_{i=1}^{N}
+             \bigl[s_i+\lambda J(P_i,Q_i)\bigr],\qquad\lambda=1.
+ \label{eq:wang-objective}
+\end{align}
+Here $\ell_{\mathrm{BCE}}$ denotes binary cross-entropy evaluated directly
+from logits. The two views share parameters and both retain gradients;
+there is no detached teacher. We compute log-probabilities with
+\texttt{logsigmoid} and the mixture with \texttt{logaddexp}, promoting
+half-precision logits to FP32 for the loss. Reduction and gradient
+accumulation are normalised by the number of original images.
+
+\subsection{Ablation design}
+\label{sec:wang-ablation-design}
+Condition A uses clean-view BCE. Condition B uses the mean BCE of both
+views, $s_i$, without consistency regularisation. Condition C adds the JS
+term to B, with its weight fixed at one. Thus B versus C tests the added
+consistency penalty, whereas A versus B changes the supervised views and
+also increases the number of forward passes per image.
+
+The protocol specifies two shared seeds, 5421 and 2026, and the same
+manifest, model initialisation, batch order, optimiser, and maximum epoch
+budget across conditions. B and C additionally share transformed views
+through the deterministic seed--epoch--image-ID rule. Actual optimiser
+updates, AMP skips, and stopping epochs are recorded separately, since a
+common maximum budget does not guarantee identical realised updates.
+
+\subsection{Training and model selection}
+\label{sec:wang-training}
+The detector is an ImageNet-pretrained ResNet-18~\cite{wang_he2016} with a
+single-logit binary head. Only the final residual stage (\texttt{layer4})
+and head are trainable. All batch-normalisation running statistics remain
+fixed; affine parameters in the final stage remain trainable.
+
+The two completed C runs use AdamW with learning rate $10^{-4}$ and weight
+decay $0.01$, microbatches of four original images, and four-step
+accumulation (effective batch size 16). Training uses FP16 AMP with initial
+loss scale 1024 on one NVIDIA H800 80GB GPU, PyTorch 2.3.0+cu121, and
+torchvision 0.18.0+cu121. The maximum is eight epochs; early stopping has
+patience two and zero minimum improvement. Checkpoints are selected by
+clean-validation ROC-AUC, without using test data for selection. Both C
+runs completed eight epochs and 3000 optimiser updates with no AMP skips.
+At inference, a single view yields $p_{\mathrm{AI}}=\sigma(f_\theta(x))$;
+the classification threshold is fixed at 0.5.
